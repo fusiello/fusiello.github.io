@@ -1,0 +1,70 @@
+
+
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>On Computing the Translations Norm in the Epipolar Graph </title>
+   <meta name="keywords" content="multi-model fitting">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="../../../../~fusiello/demo/demo.css">
+</head>
+<body>
+
+
+<center>
+<h1>    On Computing the Translations Norm in the Epipolar Graph  </h1>
+	
+<p class="center"> F. Arrigoni, A. Fusiello, B. Rossi </p>
+</center> 
+<p>
+
+<hr WIDTH="100%">
+
+<h3> Overview </h3> 
+<p>
+
+In this paper we deal with the Epipolar Scales Computation (ESC) problem, namely the problem of recovering (up to a global scale factor) the unknown norms - also referred to as Epipolar Scales - of the relative translation directions extracted from the essential matrices.
+In fact, only the translation directions can be computed from the epipolar geometries, but not their norms, owing to the well-known depth-speed ambiguity.
+The problem can be usefully modeled by considering the Epipolar Graph, where nodes are the images and edges correspond to epipolar relationships between them.
+
+
+
+
+
+<h3> Method </h3> 
+
+<p>
+In this paper we provide theoretical conditions that guarantee solvability of the ESC problem, and we propose a two-stage method to solve it. First, a cycle basis for the epipolar graph is computed, then all the scaling factors are recovered simultaneously by solving a homogeneous linear system. The key observation is that the compatibility constraints associated to cycles can be seen as equations in the unknown scales. Thus the ESC problem is cast to the resolution of a single linear system, and solvability depends on the algebraic properties of the coefficient matrix.</p>
+<p>
+We consider two variants of our method, which differ for the algorithm used to obtain a cycle basis, namely computing a Fundamental Cycle Basis (FCB) or a Minimum Cycle Basis (MCB).
+Experiments on synthetic and real data show that they both recover the epipolar scales accurately, and the lowest errors are obtained when using a MCB. Moreover, a MCB can be made resilient to outliers, which pays back for its higher computational cost. </div>
+
+</p>
+<img src="thumbnails/ESC.png" width=100%>
+
+<p> 
+
+<hr>
+<h3>   Code  </h3>
+The MATLAB code can be downloaded here: <a href="ESC-code.zip">ESC code</a> <br>
+
+Some of the functions in this package use  <a href="http://www.mathworks.com/matlabcentral/fileexchange/10922-matlabbgl">   MatlabBGL </a> - a MATLAB toolbox providing efficient graph
+algorithms.
+
+
+
+<hr>
+
+
+
+<h3>    Reference paper </h3>
+
+<ul>
+
+<li> F.&nbsp;Arrigoni, A.&nbsp;Fusiello, B.&nbsp;Rossi. On Computing the Translations Norm in the Epipolar Graph. <CITE>International Conference on 3D Vision (3DV)</CITE>, 2015.  (<A HREF="Arrigoni3DV2015.pdf">PDF</A>) <li>
+
+</ul>
+
+
+

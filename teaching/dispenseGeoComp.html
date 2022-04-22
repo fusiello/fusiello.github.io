@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Appunti di Geometria Computazionale">
+      <meta name="keywords" content="Algoritmi geometrici, Convex hull, Delaunauy, Voronoi">
+       <meta name="author" content="Andrea Fusiello">
+
+    <title>Geometria Computazionale</title>
+    <link type="text/css" rel="stylesheet" href="dispenseGeoComp/StileAppunti.css">
+  </head>
+  <body>
+  
+    <h1>Appunti di Geometria Computazionale</h1>
+        <h3> Andrea Fusiello - 2008</h3>
+    
+ 
+ <p> 
+ La Geometria Computazionale studia algoritmi che risolvono problemi geometrici Ha molte applicazioni in Informatica, Ingegneria e Matematica, tra le quali citiamo  grafica, robotica, progetto di circuiti VLSI, CAD, ricerca operativa  e statistica Queste aree applicative forniscono problemi di natura geometrica per i quali è necessario sviluppare  algoritmi efficienti Dal punto di vista teorico lo studio della complessità degli algoritmi geometrici è interessante in quanto mette in luce la inerente  difficoltà dei problemi I problemi tipici sono: calcolo del guscio convesso, problemi di prossimità, ricerca geometrica, intersezioni Pur mantenendo sempre un taglio applicativo,  con lo scopo di motivare la rilevanza dei problemi affrontati, non verrà mai trascurato l'aspetto formale sia nello sviluppo degli strumenti geometrici che nell'analisi della complessità computazionale
+</p>     
+
+   
+<ul>         
+<li> <A href='dispenseGeoComp/GC-00-Appunti.pdf'> Appunti.pdf </a> </li>  
+</ul>
+
+
+<h2> Argomenti </h2>
+
+ <ul>
+      <li><strong> Preliminari </strong></li>
+      <ul>
+        <li> Geometrici </li>
+        <li> Algoritmici </li>
+        <li> Operazioni di base </li>
+        <ul>
+          <li> Orientamento di una terna di punti </li>
+        </ul>
+      </ul>
+      <li> <strong>Triangolazione del poligono</strong> </li>
+      <ul>
+        <li> Poligoni </li>
+        <li> Triangolazione di poligoni semplici </li>
+        <ul>
+          <li> Algoritmo del taglio degli orecchi </li>
+        </ul>
+      </ul>
+      <li> <strong>Guscio convesso </strong></li>
+      <ul>
+        <li> Graham’s scan </li>
+        <li> Algoritmo incrementale </li>
+        <li> Jarvis’s march </li>
+        <li> QuickHull </li>
+        <li> MergeHull (cenni) </li>
+        <li> Guscio convesso in D (cenni) </li>
+        <li> Applicazioni </li>
+      </ul>
+      <li> <strong>Intersezioni </strong></li>
+      <ul>
+        <li> Intersezione di segmenti </li>
+        <ul>
+          <li> Test di intersezione </li>
+          <li> Algoritmo plane sweep </li>
+        </ul>
+        <li> Intersezione di poligoni </li>
+        <ul>
+          <li> Algoritmo plane sweep </li>
+          <li> Metodo delle strisce </li>
+          <li> Algoritmo plane sweep per poligoni convessi </li>
+        </ul>
+        <li> Intersezione di semipiani </li>
+        <ul>
+          <li> Algoritmo “divide-et-impera” </li>
+        </ul>
+        <li> Intersezione di semispazi in 3D (cenni) </li>
+      </ul>
+      <li> <strong>Suddivisioni piane </strong></li>
+      <ul>
+        <li> Grafi piani </li>
+        <li> Suddivisione piana </li>
+        <ul>
+          <li> DCEL </li>
+        </ul>
+        <li> Triangolazione di punti </li>
+        <ul>
+          <li> Algoritmo incrementale </li>
+        </ul>
+        <li> Disposizione di rette </li>
+        <ul>
+          <li> Algoritmo incrementale </li>
+        </ul>
+        <li> Dualitàa punto-retta </li>
+      </ul>
+      <li><strong> Ricerca geometrica </strong></li>
+      <ul>
+        <li> Localizzazione di un punto in un poligono </li>
+        <ul>
+          <li> Metodo di Jordan </li>
+          <li> Metodo dei semipiani </li>
+          <li> Metodo delle fette </li>
+        </ul>
+      </ul>
+      <ul>
+        <li> Localizzazione di un punto in un poliedro (cenni) </li>
+        <li> Localizzazione di un punto in una suddivisione piana </li>
+        <ul>
+          <li> Metodo delle strisce </li>
+        </ul>
+        <li> Range search </li>
+        <ul>
+          <li> Point Quadtree </li>
+          <li> k-d Tree </li>
+        </ul>
+      </ul>
+      <li><strong>Prossimità </strong></li>
+      <ul>
+        <ul>
+        </ul>
+      </ul>
+      <ul>
+        <li> Closest pair: Algoritmo di Shamos </li>
+        <li> Diagramma di Voronoi </li>
+        <ul>
+          <li> Algoritmo divide-et-impera (cenni) </li>
+          <li> Algoritmo di Fortune </li>
+          <li> Applicazioni </li>
+        </ul>
+        <li> Triangolazione di Delaunay </li>
+      </ul>
+      <ul>
+        <ul>
+          <li> Flip algorithm </li>
+          <li> Proprietà del max-min angolo </li>
+          <li> Algoritmo incrementale </li>
+          <li> Sollevamento e guscio convesso </li>
+          <li> Problemi collegati </li>
+          <li> Minimo albero di ricoprimento </li>
+          <li> Applicazioni </li>
+        </ul>
+      </ul>
+    </ul>
+   
+   
+
+
+ <p style="font-size: 80%; ">
+ Tutto il materiale non coperto da altre forme di copyright viene pubblicato con Licenza Creative Commons Attribuzione-NonCommerciale-Condividi allo stesso modo.
+ </p>
+     
+ 
+<p style="text-align:left; font-size: 20%; ">      
+Unique hits: 
+ 
+759 
+ </p>  
+   
+   
+</body>
+</html>

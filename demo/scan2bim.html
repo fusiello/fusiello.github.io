@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>
+			Reconstruction of interior walls from point cloud data with min-hashed J-linkage
+		</title>
+		<meta name="keywords" content="multi-model fitting">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../../~fusiello/demo/demo.css">
+	</head>
+	<body>
+		<h1>
+			Reconstruction of interior walls from point cloud data with min-hashed J-linkage
+		</h1>
+		<p class="center">
+			with L. Magri and E. Maset
+		</p>
+		<hr width="100%">
+		<h3>
+			Overview
+		</h3>
+		<p>
+			Given in input a scanned point cloud of an interior environment, the aim is to automatically reconstruct its primary facility surfaces - such as floors, walls, and ceilings. This is an essential step and a preparatory phase common to many scan2bim applications. In practice, this problem translates in the robust extraction of multiple geometric structures consisting of lines or planes - from a 3D point cloud or a collection of projected 2D points respectively.
+		</p>
+		<figure>
+			<img src="scan2bim/thumbnails/clouds.png" class="centerImage" style="width:40%">
+		</figure>
+		<p>
+			Our solution builds on and improves the efficiency of J-Linkage: we propose to use an efficient min-hash scheme to approximate the Jaccard distances in order to speed up the computation and be capable to tackle large dataset.
+		</p>
+		<figure>
+			<img src="scan2bim/thumbnails/minhash.png" alt="minhash" style="width:40%" class="centerImage">
+			<figcaption>
+				<i>The main idea is to approximate the Jaccard distance between preference set, as the hamming distance between min-hash signatures. Min-Hash signatures collect the minimum of preference sets over uniform random permutations.</i>
+			</figcaption>
+		</figure>
+		<h3>
+			Wall reconstruction
+		</h3>
+		<p>
+			The proposed indoor modeling method consists of the following steps. At first we project the 3D point cloud on a 2D plane corresponding to the plane floor, which as been previously detected. 2D wall samples are identified, then we use our min-hashed J-linkage to robustly recover the dominant lines. The preferences of points take into consideration information on their orientations. The partition of the plane induced by the retrieved lines is organised in a cell-complex, and exploited to to perform a simple topological analysis to segment the main room of the building and reject spurious wall segments.
+		</p>
+		<figure>
+			<img src="scan2bim/thumbnails/walls.png" alt="minhash" style="width:80%" class="centerImage">
+		</figure>
+		<hr>
+		<h3>
+			Code
+		</h3>
+		<p>
+			A MATLAB implementation of min-hashed J-Linkage is available: <a href="scan2bim/minHashJLinkage_beta.zip">demo code</a>
+		</p>
+		<hr>
+		<p>
+			Reference papers
+		</p>
+		<ol class="biblio">
+			<li>L.&nbsp;Magri, A.&nbsp;Fusiello. Reconstruction of interior walls from point cloud data with min-hashed J-linkage. <cite>3DV</cite>, 2018. (<a href="../papers/3dv18.pdf">PDF</a>, <a href="scan2bim/poster_3dv18.pdf">Poster</a>)
+			</li>
+			<li>Maset, E.; Magri, L. and Fusiello, A. Improving Automatic Reconstruction of Interior Walls from Point Cloud Data. <cite>In Proceedings of the ISPRS Workshop Indoor 3D, pages 849-855, ISPRS - International Archives of Photogrammetry, Remote Sensing and Spatial Information Sciences XLII-2/W13,</cite> 2019. (<a href="../papers/isprs19.pdf">PDF</a>)
+			</li>
+		</ol>
+	</body>
+</html>

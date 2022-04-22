@@ -1,0 +1,129 @@
+
+
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>Robust Multiple Model Fitting with Preference Analysis and Low-rank Approximation   </title>
+   <meta name="keywords" content="multi-model fitting">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="../../~fusiello/demo/demo.css">
+</head>
+<body>
+
+
+<center>
+<h1>    Robust Multiple Model Fitting with Preference Analysis and Low-rank Approximation  </h1>
+	
+<authors> L. Magri, A. Fusiello
+</center>
+<p>
+
+<hr WIDTH="100%">
+
+<h3> Overview </h3> 
+<p>
+This paper tackles the problem of geometric multi-model fitting which is aimed at extracting parametric  models from unstructured  data   in order to organize and aggregate visual content in suitable higher-level geometric structures.
+</p>
+<img src="rpa/thumbnails/metodo3.png" width=100%>
+
+
+
+
+
+
+
+
+<h3> Method </h3> 
+
+<p> The method we present reduces the multi-model fitting task to many easier single robust model estimation problems,  by combining preference analysis and robust low rank approximation. 
+Three main step can be single out in our appraoch.</p>
+<div>
+ At first  data points  are shifted in a conceptual space, where they are framed as a preference matrix.
+ Our conceptual representation makes use of an M-estimator in order to model points preferences, in this way a first protection against outlier is achieved. The preference space is then equipped with a kernel, based on the Tanimoto distance,  in this way an affinity matrix  K, which  measures the agreement between the preferences of points, is derived.  </div>
+
+<div>
+The second step is devoted to robustly segment points explointing the information encapsulated in K.  This stage can be thought as a sort of ``robust spectral clustering''. It is well known that spectral clustering produces accurate segmentations in two steps: at first  data are projected on the space of the first eigenvectors of the Laplacian matrix and then  k-means is applied. The shortcoming of spectral clustering however is that it is not robust to outliers.
+We propose to follow the same scheme enforcing robustness exploiting the low rank nature of the problem.
+We decompose the affinity matrix as
+K= UU' +S. </div>
+
+<div>
+The matrix S models the sparse preferences expressed  by outliers, and is obtained by appling  Robust PCA, which replaces  the eigen-decomposition step of spectral clustering. The low rank part  of K, representing symilarity between inliers,  is hence decomposed  as UU' taking advantage of  Symmetric NMF, which plays the role of k-means. The obtained matrix U represents a soft segmentation of the data in which outliers are underweighted.</div>
+
+
+Finally, models are extracted inspecting the product of the preference matrix with  a thresholded U, mimicking the MSAC strategy. The use of robust statistics for adaptatively estimate the inlier threshold constituites a third guard against the presence of outliers. 
+
+<p> 
+
+<hr>
+<h3>   Code  </h3>
+MATLAB code available:
+<a href="rpa/RPA_v02.zip">RPA code</a> <br> 
+
+
+Required third party code:
+ <a href="http://perception.csl.illinois.edu/matrix-rank/sample_code.html">   Inexact Augmented Lagrange Multiplier (ALM) Method </a>, 
+ <a href="https://github.com/dakuang/symnmf">   Symmetric Nonnegative Matrix Factorization </a>
+
+
+<!-- 
+<hr width="100%">
+<h3> Sample resutls</h3>
+
+
+ 
+ 
+
+<table>
+ <tbody>
+ <tr>
+     <th> Dataset </th>
+     <th> Multi fundamental matrices fitting</th>
+     <th> Plane segmentation</th>
+ </tr>
+ 
+<tr>
+  <td >
+    <a href="https://cs.adelaide.edu.au/~hwong/doku.php?id=data">   AdelaideRMF </a>
+    
+  </td>
+  <td>
+
+<a href="thumbnails/breadcubechips.png"> 
+      <img src="thumbnails/breadcubechips.png"  border="0"  height="140"></a> 
+ <a href="thumbnails/cubebreadtoychips.png"> 
+      <img src="thumbnails/cubebreadtoychips.png"  border="0"  height="140"></a>  
+  </td>
+  <td>
+
+<a href="thumbnails/breadcubechips.png"> 
+      <img src="thumbnails/breadcubechips.png"  border="0"  height="140"></a> 
+ <a href="thumbnails/cubebreadtoychips.png"> 
+      <img src="thumbnails/cubebreadtoychips.png"  border="0"  height="140"></a>  
+  </td>
+
+ 
+ </tr>
+</tbody>
+</table>
+-->
+
+<hr>
+
+
+
+
+
+<h3>    Reference paper </h3>
+
+<ul>
+
+<LI> L.&nbsp;Magri, A.&nbsp;Fusiello. Robust Multiple Model Fitting with Preference Analysis and Low-rank Approximation.
+  <CITE>BMVC</CITE>, 2015.  (<A
+  HREF="rpa/bmvc15.pdf">PDF</A>)
+
+</ul>
+
+
+

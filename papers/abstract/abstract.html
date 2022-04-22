@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3O//DTD W3 HTML 2.0//EN">
+<!Converted with LaTeX2HTML 95 (Thu Jan 19 1995) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds >
+<HEAD>
+<TITLE>
+	 Metodi 
+	 per la navigazione autonoma e  
+	 la sintesi automatica di mappe 
+	 di ambienti interni 
+	 in presenza di dati sensor&#238; incerti  </TITLE>
+</HEAD>
+<BODY>
+<meta name="description" value="
+	 Metodi 
+	 per la navigazione autonoma e  
+	 la sintesi automatica di mappe 
+	 di ambienti interni 
+	 in presenza di dati sensor&#238; incerti  ">
+<meta name="keywords" value="abstract">
+<meta name="resource-type" value="document">
+<meta name="distribution" value="global">
+<P>
+<H1>
+	 Metodi 
+	 per la navigazione autonoma e  
+	 la sintesi automatica di mappe 
+	 di ambienti interni 
+	 in presenza di dati sensor&#238; incerti </H1>
+<P><STRONG>Andrea Fusiello</STRONG><P> <P><STRONG>1 marzo
+1994</STRONG><P> <P> <H4><i> Abstract</H4></i> <P> Questa tesi si
+occupa in generale di robotica ed in particolare affronta il problema
+della sintesi automatica di mappe di ambienti interni mediante un veicolo <A
+HREF="robot.jpg"> [foto] </A> che naviga autonomamente. Il veicolo
+&#232; mobile su ruote ed &#232; dotato di sensori ultrasonici (SONAR)
+i quali misurano con una certa precisione la distanza dagli oggetti
+che si trovano all'interno di un cono solido attorno all'asse del
+sensore. &#200; inoltre capace di registrare la propria posizione in
+un sistema di riferimento cartesiano mediante l'integrazione del
+movimento (<i>dead reckoning</i>) delle ruote motrici.  <P> Lo scopo
+della tesi &#232; definire una architettura che permetta al veicolo
+mobile di esplorare autonomamente l'ambiente che lo circonda
+producendone una mappa ovvero una rappresentazione che gli permetta di
+eseguire missioni, consistenti tipicamente nel navigare da un luogo ad
+un altro.  Nell'ipotesi ideale di sensori immuni da errori o -
+equivalentemente - di operare in un ambiente virtuale, il problema
+della sintesi di mappe &#232; facilmente risolvibile.  Nel caso reale
+di cui ci occupiamo (ambiente reale, sensori reali), il problema
+riveste un certo interesse [<A HREF="node1.html#LeoDur92">4</A>].  <P>
+Da un lato l'imprecisione nella rilevazione del movimento porta
+all'accumulazione dell'errore nella posizione stimata del veicolo,
+sino a renderla rapidamente inutilizzabile. Dall'altro il sonar
+presenta una risoluzione angolare cosi grossolana (oltre che
+presentare il ben noto problema delle ``false riflessioni''), che
+l'interpretazione corretta dei dati sonar costituisce di per s&#232;
+un problema complesso, su cui interessanti articoli sono stati
+pubblicati [<A HREF="node1.html#BozKuc91">2</A>].  <P> Due sono i
+punti di forza che in questa tesi consentono di trattare
+l'imprecisione sensoriale: la modellizzazione dell'incertezza e
+l'approccio qualitativo alla rappresentazione ambientale.  <P>
+L'errore nella stima della posizione viene trattato dal punto di vista
+statistico con una accurata modellizzazione del processo di
+localizzazione e con l'introduzione di un formalismo per il
+trattamento dell'incertezza, derivato dalla teoria del filtraggio di
+Kalman [<A HREF="node1.html#SmiSelChe88">5</A>].  <P> La struttura
+dell'ambiente, viene rappresentata come un grafo etichettato.  I
+vertici sono associati a luoghi caratterizzati da percezioni
+sensoriali qualitativamente distinte e riproducibili, tipicamente per
+la presenza di strutture ambientali ``notevoli''
+(<i>landmarks</i>). Gli archi sono etichettati con le azioni motorie
+che consentono di transitare da un vertice all'altro.  <P> L'approccio
+qualitativo, tuttavia, non elimina la presenza dell'incertezza,
+semplicemente sposta il livello al quale si &#232; costretti ad
+occuparsene.  Mentre il classico approccio a mappe di occupazione
+(<i>occupancy-grids</i>) tratta l'incertezza al livello del sensore,
+nell'approccio qualitativo l'incertezza transita nella identificazione
+dei vertici del grafo.  Il vantaggio che se ne ricava consiste in una
+maggior astrazione che consente soprattutto la pi&#249; agevole
+integrazione di informazione multisensoriale e l'impiego pi&#249;
+trasparente di conoscenza a priori sull'ambiente.  <P> Per quel che
+riguarda la ricostruzione in presenza di errori del grafo che
+rappresenta l'ambiente ci siamo basati su di un algoritmo dovuto a
+Basye [<A HREF="node1.html#Bas92">1</A>] al quale abbiamo apportato
+una modifica che lo rende - riteniamo - pi&#249; robusto in ambienti
+reali.  <P> Per quanto riguarda le abilit&#224; senso-motorie del
+veicolo, abbiamo tratto vantaggio non meno che ispirazione dal lavoro
+di ricerca e di esperimentazione nel campo della navigazione
+automatica che viene attualmente realizzato all'Istituto per la
+Ricerca Scientifica e Tecnologica di Trento, dove questa tesi si
+&#232; svolta. Allo stato attuale del lavoro, tutti i moduli
+realizzati quali componenti del sistema descritto, si inseriscono
+compiutamente nella preesistente architettura funzionale del robot
+(ARCA) [<A HREF="node1.html#CatDicAstCap94a">3</A>].  <P> <BR> <HR>
+<UL> <LI> <A NAME=tex2html3
+HREF="node1.html#SECTION00010000000000000000">References</A><P> <LI>
+<A NAME=tex2html3
+HREF="ftp://ftp.sci.univr.it/pub/Papers/Fusiello/fus-tesi.ps.gz">Tesi
+(Postscript)</A> </UL> <BR> <HR> <P><ADDRESS> <I>Andrea Fusiello <BR>
+Wed Jun 4 14:31:25 MET DST 1995</I> </ADDRESS> </BODY>

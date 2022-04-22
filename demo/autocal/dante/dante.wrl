@@ -1,0 +1,837 @@
+#VRML V2.0 utf8
+WorldInfo {title "Matlab-VRML"}
+NavigationInfo {
+ headlight FALSE
+ type "EXAMINE"
+}
+Background {
+ skyColor [0.800000 0.800000 0.800000]
+}
+Transform {
+ scale 434.000000 342.300000 570.500000
+ children [
+  Transform {
+   translation -0.634345 1.401331 -12.084636
+   children [
+  Viewpoint {
+   position 0.634345 -1.401331 74.033056
+   fieldOfView 0.086130
+   orientation 0.000000 0.000000 0.000000 0.000000
+   description "Original"
+  }
+  Viewpoint {
+   position 0.634345 -1.401331 61.948420
+   fieldOfView 0.086130
+   description "View along Z"
+  }
+  Shape {
+   geometry IndexedLineSet {
+    coord Coordinate {
+     point [
+      -2.750251 -4.070794 7.635530,
+-2.750251 -4.070794 16.533742,
+-2.750251 1.268133 7.635530,
+-2.750251 1.268133 16.533742,
+4.018941 -4.070794 7.635530,
+4.018941 -4.070794 16.533742,
+4.018941 1.268133 7.635530,
+4.018941 1.268133 16.533742,
+     ]
+    }
+    coordIndex [
+     0,1,3,2,-1
+     4,6,7,5,-1
+     0,2,6,4,-1
+     1,5,7,3,-1
+     6,2,3,7,-1
+     0,4,5,1,-1
+    ]
+    color Color {color [0.000000 0.000000 0.000000]}
+    colorPerVertex FALSE
+   }
+  }
+  Shape {
+   geometry IndexedLineSet {
+    coord Coordinate{
+     point [
+      -2.000000 -4.070794 7.635530,
+-1.000000 -4.070794 7.635530,
+0.000000 -4.070794 7.635530,
+1.000000 -4.070794 7.635530,
+2.000000 -4.070794 7.635530,
+3.000000 -4.070794 7.635530,
+4.000000 -4.070794 7.635530,
+-2.000000 -4.020794 7.635530,
+-1.000000 -4.020794 7.635530,
+0.000000 -4.020794 7.635530,
+1.000000 -4.020794 7.635530,
+2.000000 -4.020794 7.635530,
+3.000000 -4.020794 7.635530,
+4.000000 -4.020794 7.635530,
+      -2.750251 -4.000000 7.635530,
+-2.750251 -3.500000 7.635530,
+-2.750251 -3.000000 7.635530,
+-2.750251 -2.500000 7.635530,
+-2.750251 -2.000000 7.635530,
+-2.750251 -1.500000 7.635530,
+-2.750251 -1.000000 7.635530,
+-2.750251 -0.500000 7.635530,
+-2.750251 0.000000 7.635530,
+-2.750251 0.500000 7.635530,
+-2.750251 1.000000 7.635530,
+-2.700251 -4.000000 7.635530,
+-2.700251 -3.500000 7.635530,
+-2.700251 -3.000000 7.635530,
+-2.700251 -2.500000 7.635530,
+-2.700251 -2.000000 7.635530,
+-2.700251 -1.500000 7.635530,
+-2.700251 -1.000000 7.635530,
+-2.700251 -0.500000 7.635530,
+-2.700251 0.000000 7.635530,
+-2.700251 0.500000 7.635530,
+-2.700251 1.000000 7.635530,
+      -2.750251 1.268133 10.000000,
+-2.750251 1.268133 15.000000,
+-2.750251 1.318133 10.000000,
+-2.750251 1.318133 15.000000,
+     ]    }
+    coordIndex [
+      0 7 -1
+1 8 -1
+2 9 -1
+3 10 -1
+4 11 -1
+5 12 -1
+6 13 -1
+      14 25 -1
+15 26 -1
+16 27 -1
+17 28 -1
+18 29 -1
+19 30 -1
+20 31 -1
+21 32 -1
+22 33 -1
+23 34 -1
+24 35 -1
+      36 38 -1
+37 39 -1
+    ]
+   }
+  }
+  Transform {
+   translation -2.000000 -4.604687 7.635530
+   children [
+  Shape {
+   geometry Text {
+     string ["-2"]
+     fontStyle FontStyle {
+      size 0.07
+      justify "MIDDLE"
+     }
+   }
+  }
+   ]
+  }
+  Transform {
+   translation -1.000000 -4.604687 7.635530
+   children [
+  Shape {
+   geometry Text {
+     string ["-1"]
+     fontStyle FontStyle {
+      size 0.07
+      justify "MIDDLE"
+     }
+   }
+  }
+   ]
+  }
+  Transform {
+   translation 0.000000 -4.604687 7.635530
+   children [
+  Shape {
+   geometry Text {
+     string ["0"]
+     fontStyle FontStyle {
+      size 0.07
+      justify "MIDDLE"
+     }
+   }
+  }
+   ]
+  }
+  Transform {
+   translation 1.000000 -4.604687 7.635530
+   children [
+  Shape {
+   geometry Text {
+     string ["1"]
+     fontStyle FontStyle {
+      size 0.07
+      justify "MIDDLE"
+     }
+   }
+  }
+   ]
+  }
+  Transform {
+   translation 2.000000 -4.604687 7.635530
+   children [
+  Shape {
+   geometry Text {
+     string ["2"]
+     fontStyle FontStyle {
+      size 0.07
+      justify "MIDDLE"
+     }
+   }
+  }
+   ]
+  }
+  Transform {
+   translation 3.000000 -4.604687 7.635530
+   children [
+  Shape {
+   geometry Text {
+     string ["3"]
+     fontStyle FontStyle {
+      size 0.07
+      justify "MIDDLE"
+     }
+   }
+  }
+   ]
+  }
+  Transform {
+   translation 4.000000 -4.604687 7.635530
+   children [
+  Shape {
+   geometry Text {
+     string ["4"]
+     fontStyle FontStyle {
+      size 0.07
+      justify "MIDDLE"
+     }
+   }
+  }
+   ]
+  }
+  Transform {
+   translation -3.427170 -4.000000 7.635530
+   children [
+  Shape {
+   geometry Text {
+     string ["-4"]
+     fontStyle FontStyle {
+      size 0.07
+      justify "MIDDLE"
+     }
+   }
+  }
+   ]
+  }
+  Transform {
+   translation -3.427170 -3.500000 7.635530
+   children [
+  Shape {
+   geometry Text {
+     string ["-3.5"]
+     fontStyle FontStyle {
+      size 0.07
+      justify "MIDDLE"
+     }
+   }
+  }
+   ]
+  }
+  Transform {
+   translation -3.427170 -3.000000 7.635530
+   children [
+  Shape {
+   geometry Text {
+     string ["-3"]
+     fontStyle FontStyle {
+      size 0.07
+      justify "MIDDLE"
+     }
+   }
+  }
+   ]
+  }
+  Transform {
+   translation -3.427170 -2.500000 7.635530
+   children [
+  Shape {
+   geometry Text {
+     string ["-2.5"]
+     fontStyle FontStyle {
+      size 0.07
+      justify "MIDDLE"
+     }
+   }
+  }
+   ]
+  }
+  Transform {
+   translation -3.427170 -2.000000 7.635530
+   children [
+  Shape {
+   geometry Text {
+     string ["-2"]
+     fontStyle FontStyle {
+      size 0.07
+      justify "MIDDLE"
+     }
+   }
+  }
+   ]
+  }
+  Transform {
+   translation -3.427170 -1.500000 7.635530
+   children [
+  Shape {
+   geometry Text {
+     string ["-1.5"]
+     fontStyle FontStyle {
+      size 0.07
+      justify "MIDDLE"
+     }
+   }
+  }
+   ]
+  }
+  Transform {
+   translation -3.427170 -1.000000 7.635530
+   children [
+  Shape {
+   geometry Text {
+     string ["-1"]
+     fontStyle FontStyle {
+      size 0.07
+      justify "MIDDLE"
+     }
+   }
+  }
+   ]
+  }
+  Transform {
+   translation -3.427170 -0.500000 7.635530
+   children [
+  Shape {
+   geometry Text {
+     string ["-0.5"]
+     fontStyle FontStyle {
+      size 0.07
+      justify "MIDDLE"
+     }
+   }
+  }
+   ]
+  }
+  Transform {
+   translation -3.427170 0.000000 7.635530
+   children [
+  Shape {
+   geometry Text {
+     string ["0"]
+     fontStyle FontStyle {
+      size 0.07
+      justify "MIDDLE"
+     }
+   }
+  }
+   ]
+  }
+  Transform {
+   translation -3.427170 0.500000 7.635530
+   children [
+  Shape {
+   geometry Text {
+     string ["0.5"]
+     fontStyle FontStyle {
+      size 0.07
+      justify "MIDDLE"
+     }
+   }
+  }
+   ]
+  }
+  Transform {
+   translation -3.427170 1.000000 7.635530
+   children [
+  Shape {
+   geometry Text {
+     string ["1"]
+     fontStyle FontStyle {
+      size 0.07
+      justify "MIDDLE"
+     }
+   }
+  }
+   ]
+  }
+  Transform {
+   translation -3.427170 1.268133 10.000000
+   children [
+  Shape {
+   geometry Text {
+     string ["10"]
+     fontStyle FontStyle {
+      size 0.07
+      justify "MIDDLE"
+     }
+   }
+  }
+   ]
+  }
+  Transform {
+   translation -3.427170 1.268133 15.000000
+   children [
+  Shape {
+   geometry Text {
+     string ["15"]
+     fontStyle FontStyle {
+      size 0.07
+      justify "MIDDLE"
+     }
+   }
+  }
+   ]
+  }
+  Shape {
+   geometry IndexedLineSet {
+    coord Coordinate{
+     point [
+      2.239401 -1.023701 12.349565,
+      1.923790 -0.996106 12.621473,
+     ]    }
+    coordIndex [
+      0,  1,  -1
+    ]
+    color Color {
+     color [
+      0 0 1     
+     ]
+    }
+    colorPerVertex FALSE
+   }
+  }
+  Shape {
+   geometry IndexedLineSet {
+    coord Coordinate{
+     point [
+      2.234184 -1.447301 12.383401,
+      2.239401 -1.023701 12.349565,
+     ]    }
+    coordIndex [
+      0,  1,  -1
+    ]
+    color Color {
+     color [
+      0 0 1     
+     ]
+    }
+    colorPerVertex FALSE
+   }
+  }
+  Shape {
+   geometry IndexedLineSet {
+    coord Coordinate{
+     point [
+      1.918981 -1.426478 12.662275,
+      2.234184 -1.447301 12.383401,
+     ]    }
+    coordIndex [
+      0,  1,  -1
+    ]
+    color Color {
+     color [
+      0 0 1     
+     ]
+    }
+    colorPerVertex FALSE
+   }
+  }
+  Shape {
+   geometry IndexedLineSet {
+    coord Coordinate{
+     point [
+      1.922562 -0.987893 12.625610,
+      1.918981 -1.426478 12.662275,
+     ]    }
+    coordIndex [
+      0,  1,  -1
+    ]
+    color Color {
+     color [
+      0 0 1     
+     ]
+    }
+    colorPerVertex FALSE
+   }
+  }
+  Shape {
+   geometry IndexedLineSet {
+    coord Coordinate{
+     point [
+      1.185218 0.308277 13.089845,
+      1.199308 -2.140505 13.388708,
+     ]    }
+    coordIndex [
+      0,  1,  -1
+    ]
+    color Color {
+     color [
+      0 0 1     
+     ]
+    }
+    colorPerVertex FALSE
+   }
+  }
+  Shape {
+   geometry IndexedLineSet {
+    coord Coordinate{
+     point [
+      2.838107 0.145628 11.695569,
+      1.185218 0.308277 13.089845,
+     ]    }
+    coordIndex [
+      0,  1,  -1
+    ]
+    color Color {
+     color [
+      0 0 1     
+     ]
+    }
+    colorPerVertex FALSE
+   }
+  }
+  Shape {
+   geometry IndexedLineSet {
+    coord Coordinate{
+     point [
+      3.047013 -2.294305 11.852811,
+      2.838107 0.145628 11.695569,
+     ]    }
+    coordIndex [
+      0,  1,  -1
+    ]
+    color Color {
+     color [
+      0 0 1     
+     ]
+    }
+    colorPerVertex FALSE
+   }
+  }
+  Shape {
+   geometry IndexedLineSet {
+    coord Coordinate{
+     point [
+      1.202466 -2.136560 13.403152,
+      3.047013 -2.294305 11.852811,
+     ]    }
+    coordIndex [
+      0,  1,  -1
+    ]
+    color Color {
+     color [
+      0 0 1     
+     ]
+    }
+    colorPerVertex FALSE
+   }
+  }
+  Shape {
+   geometry IndexedLineSet {
+    coord Coordinate{
+     point [
+      1.593338 -3.244303 13.139569,
+      0.475776 -3.148962 14.091762,
+     ]    }
+    coordIndex [
+      0,  1,  -1
+    ]
+    color Color {
+     color [
+      0 0 1     
+     ]
+    }
+    colorPerVertex FALSE
+   }
+  }
+  Shape {
+   geometry IndexedLineSet {
+    coord Coordinate{
+     point [
+      1.579065 -3.522731 13.187233,
+      1.593338 -3.244303 13.139569,
+     ]    }
+    coordIndex [
+      0,  1,  -1
+    ]
+    color Color {
+     color [
+      0 0 1     
+     ]
+    }
+    colorPerVertex FALSE
+   }
+  }
+  Shape {
+   geometry IndexedLineSet {
+    coord Coordinate{
+     point [
+      1.323403 -3.508182 13.399548,
+      1.579065 -3.522731 13.187233,
+     ]    }
+    coordIndex [
+      0,  1,  -1
+    ]
+    color Color {
+     color [
+      0 0 1     
+     ]
+    }
+    colorPerVertex FALSE
+   }
+  }
+  Shape {
+   geometry IndexedLineSet {
+    coord Coordinate{
+     point [
+      1.305313 -4.070794 13.471122,
+      1.323403 -3.508182 13.399548,
+     ]    }
+    coordIndex [
+      0,  1,  -1
+    ]
+    color Color {
+     color [
+      0 0 1     
+     ]
+    }
+    colorPerVertex FALSE
+   }
+  }
+  Shape {
+   geometry IndexedLineSet {
+    coord Coordinate{
+     point [
+      1.184587 -3.823667 13.594550,
+      1.305313 -4.070794 13.471122,
+     ]    }
+    coordIndex [
+      0,  1,  -1
+    ]
+    color Color {
+     color [
+      0 0 1     
+     ]
+    }
+    colorPerVertex FALSE
+   }
+  }
+  Shape {
+   geometry IndexedLineSet {
+    coord Coordinate{
+     point [
+      1.023591 -4.058887 13.720413,
+      1.184587 -3.823667 13.594550,
+     ]    }
+    coordIndex [
+      0,  1,  -1
+    ]
+    color Color {
+     color [
+      0 0 1     
+     ]
+    }
+    colorPerVertex FALSE
+   }
+  }
+  Shape {
+   geometry IndexedLineSet {
+    coord Coordinate{
+     point [
+      1.018930 -3.472830 13.663599,
+      1.023591 -4.058887 13.720413,
+     ]    }
+    coordIndex [
+      0,  1,  -1
+    ]
+    color Color {
+     color [
+      0 0 1     
+     ]
+    }
+    colorPerVertex FALSE
+   }
+  }
+  Shape {
+   geometry IndexedLineSet {
+    coord Coordinate{
+     point [
+      0.761512 -3.464883 13.869230,
+      1.018930 -3.472830 13.663599,
+     ]    }
+    coordIndex [
+      0,  1,  -1
+    ]
+    color Color {
+     color [
+      0 0 1     
+     ]
+    }
+    colorPerVertex FALSE
+   }
+  }
+  Shape {
+   geometry IndexedLineSet {
+    coord Coordinate{
+     point [
+      0.752429 -4.008709 13.917049,
+      0.761512 -3.464883 13.869230,
+     ]    }
+    coordIndex [
+      0,  1,  -1
+    ]
+    color Color {
+     color [
+      0 0 1     
+     ]
+    }
+    colorPerVertex FALSE
+   }
+  }
+  Shape {
+   geometry IndexedLineSet {
+    coord Coordinate{
+     point [
+      0.625161 -3.766604 14.039528,
+      0.752429 -4.008709 13.917049,
+     ]    }
+    coordIndex [
+      0,  1,  -1
+    ]
+    color Color {
+     color [
+      0 0 1     
+     ]
+    }
+    colorPerVertex FALSE
+   }
+  }
+  Shape {
+   geometry IndexedLineSet {
+    coord Coordinate{
+     point [
+      0.479427 -4.013159 14.170701,
+      0.625161 -3.766604 14.039528,
+     ]    }
+    coordIndex [
+      0,  1,  -1
+    ]
+    color Color {
+     color [
+      0 0 1     
+     ]
+    }
+    colorPerVertex FALSE
+   }
+  }
+  Shape {
+   geometry IndexedLineSet {
+    coord Coordinate{
+     point [
+      0.471805 -3.154849 14.086552,
+      0.479427 -4.013159 14.170701,
+     ]    }
+    coordIndex [
+      0,  1,  -1
+    ]
+    color Color {
+     color [
+      0 0 1     
+     ]
+    }
+    colorPerVertex FALSE
+   }
+  }
+  Shape {
+   geometry IndexedLineSet {
+    coord Coordinate{
+     point [
+      0.793209 1.267399 13.362722,
+      -1.778152 0.873824 9.998572,
+     ]    }
+    coordIndex [
+      0,  1,  -1
+    ]
+    color Color {
+     color [
+      0 0 1     
+     ]
+    }
+    colorPerVertex FALSE
+   }
+  }
+  Shape {
+   geometry IndexedLineSet {
+    coord Coordinate{
+     point [
+      0.826273 -1.951769 13.648016,
+      0.791687 1.268133 13.370687,
+     ]    }
+    coordIndex [
+      0,  1,  -1
+    ]
+    color Color {
+     color [
+      0 0 1     
+     ]
+    }
+    colorPerVertex FALSE
+   }
+  }
+  Shape {
+   geometry IndexedLineSet {
+    coord Coordinate{
+     point [
+      -1.705418 -2.312544 10.295498,
+      0.826273 -1.951769 13.648016,
+     ]    }
+    coordIndex [
+      0,  1,  -1
+    ]
+    color Color {
+     color [
+      0 0 1     
+     ]
+    }
+    colorPerVertex FALSE
+   }
+  }
+  Shape {
+   geometry IndexedLineSet {
+    coord Coordinate{
+     point [
+      -1.778324 0.875784 9.999090,
+      -1.705418 -2.312544 10.295498,
+     ]    }
+    coordIndex [
+      0,  1,  -1
+    ]
+    color Color {
+     color [
+      0 0 1     
+     ]
+    }
+    colorPerVertex FALSE
+   }
+  }
+   ]
+  }
+ ]
+}

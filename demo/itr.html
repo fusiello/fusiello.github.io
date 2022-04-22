@@ -1,0 +1,222 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>  
+  <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Reconstruction with Interval Constraints Propagation</title>
+  <link rel="stylesheet" href="../../~fusiello/demo/demo.css" type="text/css">
+</head>
+<body>
+
+<center>
+<h1>Reconstruction with Interval Constraints Propagation</h1>
+	
+<authors> M. Farenzena, A.  Fusiello and A. Dovier. </authors>
+<affiliation> Department of Computer Science<br>
+              University of Verona, Verona - Italy </affiliation>
+</center>
+
+<h3>  Overview    </h3>
+Interval Analysis and Constraint Logic Programming can be used to obtain an accurate geometric model of a scene that rigorously takes into account the propagation of data errors and roundoff. Image points are represented as small rectangles: as a result, the output of the n-views triangulation is not a single point in space, but a polyhedron that contains all the possible solutions. Interval Analysis is used to bound this polyhedron with a box. Geometrical constraints such as orthogonality, parallellism and coplanarity are subsequently enforced in order to reduce the size of these boxes, using Constraints Logic Programming.
+
+<h3>Method</h3>
+  <ul type="circle">
+  <li>For each couple of images the interval-based triangulation is computed;</li>
+  <li>The interval-based reconstruction is achived by intersecting the results; </li>
+  <li>Geometric constraints are semiautomatically deduced and a pointwise solution is obtained by constraints propagation. </li>
+	<img id="_x0000_i1028" src="itr/method.jpg" u7:shapes="_x0000_i1028" border="0"  height="200">
+  </ul>
+</ul>
+<hr width="100%">
+<h3> Experiments</h3>
+<table>
+ <tbody>
+   
+ <tr>
+     <th> Sequence</th>
+     <th> Points and <br>
+Constraints</th>
+     <th> Interval-based <br>reconstruction</th>
+     <th> After propagation </th>
+	 <th> Textured </th>
+ </tr>
+ <tr>
+  <td >
+      <a href="itr/images_chiostro.zip" title="The 5 images of the sequence"> 
+      <img id="_x0000_i1028" src="itr/chiostro1.jpg" u7:shapes="_x0000_i1028" border="0"  height="140"></a>
+  </td>
+  <td>
+      
+     <table>
+   <tbody>
+          <tr>
+   <td class="no_border">
+            53 
+    </td>
+   <td class="no_border">         
+            points 
+    </td>
+
+   
+   </tr>
+   
+  <tr>
+   <td class="no_border">
+            36     
+   </td>
+   <td class="no_border">         
+            orthogonalities
+
+    </td>
+
+   </tr>
+   <tr>
+   <td class="no_border">
+            34
+    </td>
+   <td class="no_border">
+            parallellisms
+    </td>
+   
+   </tr>
+   <tr>
+   <td class="no_border">
+            4
+    </td>
+   <td class="no_border">
+            coplanarities
+    </td>
+   
+   </tr>
+  
+        </tbody>
+      </table>
+    
+  </td>
+  
+  <td>
+  
+      <table>
+   		<tbody>
+  			<img id="_x0000_i1029" src="itr/chiostro_int.gif" u7:shapes="_x0000_i1029" border="0" height="140">          
+  
+        </tbody>
+          
+      </table>
+       
+		<p style="font-size:smaller;"> Average side length of the 3D boxes: 10 cm </p>
+
+  </td>
+  <td>
+  		<img id="_x0000_i1029" src="itr/chiostro_shad.jpg" u7:shapes="_x0000_i1029" border="0" height="130">
+		<p style="font-size:smaller;"> Average side length of the 3D boxes after propagation: 5 mm</p>
+
+        </td>
+  <td>	
+  <a href="itr/chiostro.wrl"> <img id="_x0000_i1029" src="itr/chiostro3D.jpg" u7:shapes="_x0000_i1029" border="0" height="140"> </a>
+  	
+
+  </td>	
+ 
+ </tr>
+
+ 
+ <tr>
+  <td>
+        <a href="itr/images_cvecchio.zip" title="The 5 images of the sequence">
+        <img id="_x0000_i1029" src="itr/cvecchio1.jpg" u7:shapes="_x0000_i1029" border="0" height="100"></a>
+  </td>
+  <td>
+      <table>
+   <tbody>
+          <tr>
+   <td class="no_border">
+            33 
+    </td>
+   <td class="no_border">         
+            points 
+    </td>
+
+   
+   </tr>
+   
+  <tr>
+   <td class="no_border">
+            16     
+   </td>
+   <td class="no_border">         
+            orthogonalities
+
+    </td>
+
+   </tr>
+   <tr>
+   <td class="no_border">
+            22
+    </td>
+   <td class="no_border">
+            parallellisms
+    </td>
+   
+   </tr>
+   <tr>
+   <td class="no_border">
+            33
+    </td>
+   <td class="no_border">
+            coplanarities
+    </td>
+   
+   </tr>
+  
+        </tbody>
+      </table>
+     
+  </td>
+  <td>
+   <img id="_x0000_i1029" src="itr/cvecchio_int.gif" u7:shapes="_x0000_i1029" border="0" height="110">
+   <p style="font-size:smaller;"> Average side length of the 3D boxes: 70 cm</p>
+  </td>
+  <td>
+   <img id="_x0000_i1029" src="itr/cvecchio_shad.jpg" u7:shapes="_x0000_i1029" border="0" height="110">
+   <p style="font-size:smaller;"> Average side length of the 3D boxes after propagation: 10 cm</p>
+  </td>
+
+  <td>
+   <a href="itr/cvecchio.wrl">
+   <img id="_x0000_i1029" src="itr/cvecchio3D.jpg" u7:shapes="_x0000_i1029" border="0" height="120">
+   </a>
+
+  </td> 
+ </tr>
+ 
+</tbody>
+</table>
+
+<br>
+<br>
+
+
+
+<hr width="100%">
+<h3> Code </h3>
+<ul>
+<li>
+Matlab code for interval-based triangulation is available <a href="itr/code/ibtriangulation.m.html">here</a>. <br>
+It is based on INTLAB, Matlab toolbox for self-validating algorithms, that can be downloaded from <a href="http://www.ti3.tu-harburg.de/~rump/intlab/"> here </a> <br>
+</li> </ul>
+<br>
+<br>
+
+<hr width="100%">
+<h3> Reference Paper </h3>
+<UL>
+<LI><A NAME="FarFusAgo06"></A> A.
+  M.Farenzena, A.Fusiello, A.Dovier. Reconstruction with Interval Constraints Propagation.
+<CITE>Proceedings of Computer Vision and Pattern Recognition</CITE>,
+  New York, June 2006.
+(<A HREF="../papers/cvpr06.pdf">PDF</A>)</LI>
+</ul>
+
+</body>
+</html>

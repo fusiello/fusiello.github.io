@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		
+<title>Fondamenti di Informatica - Andrea Fusiello</title>
+<meta name="keywords" content="Fondamenti di Informatica, andrea fusiello,  computer vision,  stereo matching,  rectification,  tracking,  motion segmention,  mosaics,  view synthesis,  image-based rendering,  auto-calibration,  3-D modeling,  model acquisition,  range images" />
+<meta name="description" content="Fondamenti di Informatica. Andrea Fusiello's home page" />
+<meta name="generator" content="Typesetter CMS" />
+<link rel="stylesheet" type="text/css" href="../../data/_cache/combined_zxx384qliz763bl0zr5g5s.css"/>
+<link rel="canonical" href="Fondamenti_di_Informatica.html" />
+
+		<!--[if lt IE 9]>
+<script type="text/javascript" src="/fusiello/include/thirdparty/js/shiv/html5shiv.js"></script>
+<script type="text/javascript" src="/fusiello/include/thirdparty/js/respond.min.js"></script><![endif]-->
+	</head>
+
+
+	<body>
+
+	    <!-- Wrap all page content here -->
+	    <div id="wrap">
+			<div class="navbar navbar-default navbar-fixed-top gp-fixed-adjust">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a href="../index.html" class="navbar-brand" title="Andrea Fusiello">Andrea Fusiello</a>					</div>
+					<div class="collapse navbar-collapse">
+						<div class="gpArea_Menu GPAREA"><ul class="nav navbar-nav"><li><a href="../../index.html" title="Home">Home</a></li><li><a href="../Research.html" title="Research">Research</a></li><li><a href="../Teaching.html" title="Teaching">Teaching</a></li><li><a href="../About_me.html" title="About me">About me</a></li><li><a href="../More.html" title="More">More</a></li></ul></div>
+												<form class="navbar-form navbar-right" action="http://www.diegm.uniud.it/fusiello/index.php/Search" method="get">
+							<div class="form-group">
+								<input name="q" type="text" class="form-control" value="" placeholder="Search">
+							</div>
+						</form>
+
+					</div><!--/.nav-collapse -->
+				</div>
+			</div>
+
+
+			<!-- Begin page content -->
+			<div class="container">
+				<div id="gpx_content" class="filenum-15 gp_page_display cf"><div class="GPAREA filetype-text"><h1>Fondamenti di Informatica</h1>
+
+<h3>Corso di Laurea in Ingegneria Meccanica /&nbsp;Ingegneria Civile</h3>
+
+<h3><span style="font-size: 15px; line-height: 1.42857143; color: inherit;"><strong>Modalità d&#39;esame</strong>: prova scritta sull&#39;intero programma. La prova si compone di due parti:</span></h3>
+
+<ul class="gray">
+	<li>Una prima parte a domande chiuse.</li>
+	<li>Seconda parte (facoltativa) con domande aperte.</li>
+</ul>
+
+<p>Il superamento della prima parte dà diritto ad un punteggio fino a 22/30 e dà accesso alla seconda parte, con la quale si può incrementare il punteggio fino a 30/30 e L.</p>
+
+<p><span style="line-height: 21.4285717010498px;">Nota:<u> sono ammessi all&#39;esame solo gli studenti regolarmente iscritti su Esse3</u>.</span></p>
+
+<p><a href="../../data/_uploaded/file/Istruzioni.pdf"><strong><span style="text-decoration: underline;">Modalità&nbsp;&nbsp;dettagliate.</span></strong>&nbsp;</a></p>
+
+<p><strong>Testo:</strong></p>
+
+<ol class="gray">
+	<li>Dispensa (disponibile su <a href="https://elearning.uniud.it" target="_blank">Moodle</a>)</li>
+</ol>
+
+<p><strong>Programma:</strong></p>
+
+<ul>
+	<li>Introduzione [3h]
+	<ul>
+		<li>Storia dell&#39;evoluzione dei calcolatori</li>
+		<li>Calcolatori meccanici, a valvole, a transistor</li>
+		<li>Integrazione su&nbsp;larga scala</li>
+	</ul>
+	</li>
+	<li>Rappresentazione dell&#39;informazione [6h]
+	<ul>
+		<li>Il concetto di informazione</li>
+		<li>Dati digitali ed analogici</li>
+		<li>La codifica binaria dei numeri</li>
+		<li>Limitazioni dell&#39;aritmetica finita</li>
+		<li>La codifica binaria dei dati non numerici</li>
+		<li>Rappresentazione del testo</li>
+		<li>Digitalizzazione di audio e video</li>
+	</ul>
+	</li>
+	<li>Reti logiche [5h]
+	<ul>
+		<li>Operazioni logiche</li>
+		<li>Espressioni booleane e funzioni</li>
+		<li>Reti logiche combinatorie</li>
+		<li>Codificatori/Decodificatori</li>
+		<li>Selettori</li>
+		<li>Addizionatore</li>
+		<li>La funzione di memoria</li>
+		<li>Segnali a livelli e a impulsi</li>
+		<li>Flip-flop e registri</li>
+		<li>Reti sequenziali sincrone</li>
+		<li>Reti autonome e contatori</li>
+		<li>La memoria ad accesso diretto</li>
+	</ul>
+	</li>
+	<li>Architettura del calcolatore [5h]
+	<ul>
+		<li>Architettura di Von Neumann</li>
+		<li>L&rsquo;unità centrale di elaborazione</li>
+		<li>Istruzioni macchina</li>
+		<li>Il ciclo macchina</li>
+		<li>Memoria centrale</li>
+		<li>Memoria secondaria</li>
+		<li>Dischi magnetici e ottici</li>
+		<li>Gerarchia di memorie</li>
+		<li>Dispositivi di ingresso/uscita</li>
+		<li>Il controllore</li>
+		<li>Istruzioni di I/O</li>
+		<li>Accesso diretto alla memoria</li>
+		<li>Parallelismo a livello di istruzione /processore</li>
+		<li>Un linguaggio macchina di esempio (Brookshear)</li>
+	</ul>
+	</li>
+	<li>Sistemi operativi [6h]
+	<ul>
+		<li>Le funzioni del sistema operativo</li>
+		<li>Interrupt, modalità operative, chiamate di sistema</li>
+		<li>Multiprogrammazione, gestione dei processi</li>
+		<li>Schedulazione dei processi</li>
+		<li>Il timer e la commutazione di contesto</li>
+		<li>Gestione della memoria</li>
+		<li>Paginazione e memoria virtuale</li>
+		<li>Gestione della memoria di massa</li>
+		<li>Allocazione dei blocchi del disco</li>
+		<li>La gestione delle periferiche</li>
+		<li>Comunicazione e sincronizzazione</li>
+		<li>Corsa critica e mutua esclusione</li>
+		<li>Semafori</li>
+		<li>Caratterizzazione e prevenzione dello stallo</li>
+	</ul>
+	</li>
+	<li>Reti di calcolatori [8h]
+	<ul>
+		<li>Mezzi di trasmissione</li>
+		<li>Reti locali, geografiche, internetwork</li>
+		<li>Commutazione di circuito / di pacchetto</li>
+		<li>Architettura del software di rete</li>
+		<li>Gerarchie dei protocolli</li>
+		<li>Servizi di comunicazione</li>
+		<li>Il modello di riferimento</li>
+		<li>Apparati di commutazione</li>
+		<li>Sistemi distribuiti (client/server e peer-to-peer)</li>
+		<li>Internet ed il modello di riferimento TCP/IP</li>
+		<li>Applicazioni: DNS, WWW, e-mail</li>
+	</ul>
+	</li>
+	<li>Programmazione [5h]
+	<ul>
+		<li>I linguaggi di programmazione di basso e alto livello</li>
+		<li>Interprete e compilatore</li>
+		<li>Programmazione imperativo-procedurale</li>
+		<li>Programmazione strutturata, teorema di Boehm-Jacopini</li>
+		<li>Tipi di dato</li>
+		<li>I sottoprogrammi e le funzioni</li>
+		<li>Il passaggio dei parametri per valore / indirizzo</li>
+		<li>Variabili globali</li>
+		<li>Introduzione alla programmazione ricorsiva</li>
+		<li>Pila di attivazione e ricorsione</li>
+	</ul>
+	</li>
+	<li>Algoritmi [4h]
+	<ul>
+		<li>Alcuni esempi di problemi computazionali</li>
+		<li>Il problema dell&#39;ordinamento</li>
+		<li>Ordinamento per inserimento</li>
+		<li>Invarianti di ciclo e correttezza dell&#39;ordinamento per inserimento</li>
+		<li>Ordinamento per selezione</li>
+		<li>Analisi della complessità degli algoritmi</li>
+		<li>Analisi di insertion sort</li>
+		<li>Progetto degli algoritmi: il metodo divide et impera</li>
+		<li>Ordinamento per fusione / partizione</li>
+		<li>Analisi dell&#39;ordinamento per fusione</li>
+		<li>NP-Completezza</li>
+		<li>Cenni alle strutture dati</li>
+	</ul>
+	</li>
+	<li>Codifica e cifratura dell&#39;informazione [6h]
+	<ul>
+		<li>Entropia ed informazione secondo Shannon</li>
+		<li>Modello di un sistema di trasmissione</li>
+		<li>Codice di Shannon-Fano e di Huffman</li>
+		<li>Codice LZW</li>
+		<li>Codice run-length</li>
+		<li>Codifica relativa</li>
+		<li>Compressione dei dati audiovisivi</li>
+		<li>Codici&nbsp;di correzione degli errori</li>
+		<li>Crittografia e cifrari</li>
+		<li>Crittografia a chiave simmetrica / asimmetrica</li>
+		<li>Autenticazione e firma digitale</li>
+		<li>Hashing, MD5</li>
+		<li>Certificazione delle chiavi</li>
+		<li>Protocolli crittografici di Internet</li>
+	</ul>
+	</li>
+</ul>
+
+<hr />
+<p><strong>Legacy:</strong></p>
+
+<p>Integrazioni del docente al testo (Brookshear, &nbsp;Informatica - Una panoramica generale&nbsp;. 12ed&nbsp;)&nbsp;[<a href="../../data/_uploaded/file/commentilibro12.pdf">PDF</a>] &nbsp;(&nbsp;password comunicata a lezione)</p>
+
+<p>Integrazioni del docente al testo (Brookshear, &nbsp;Informatica - Una panoramica generale&nbsp;. 11ed&nbsp;) &nbsp;[<a href="../../data/_uploaded/file/commentilibro11.pdf" target="_blank">PDF</a>] &nbsp;(password comunicata a lezione)</p>
+<div class="gpclear"></div></div></div><div id="gpAfterContent"><div class="gpArea_ GPAREA"></div></div>			</div>
+		</div><!--/.wrap -->
+
+
+
+		<div id="footer">
+			<div class="container">
+				<p class="text-muted credit">
+				 <span class="sitemap_link"><a href="../Site_Map.html" title="Site Map">Site Map</a></span> <span class="login_link"><a href="../Admin%3Ffile=Fondamenti_di_Informatica.html" rel="nofollow" data-cmd="login" title="Login">Login</a></span>
+
+				</p>
+			</div>
+		</div>
+
+	
+
+<script type="text/javascript" src="../../data/_cache/combined_kbm3aqliz762uikzr5g5s.js"></script>
+</body>
+</html>
+

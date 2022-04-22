@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>
+			J-linkage: Robust fitting of multiple models
+		</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="multiple model fitting structure J-linkage T-linkage">
+		<link rel="stylesheet" href="../../../~fusiello/demo/demo.css">
+	</head>
+	<body>
+		<h1>
+			Robust fitting of multiple models with J-linkage and T-linkage
+		</h1>
+		<p class="center">
+	      with R. Toldo and L. Magri
+		</p>
+		<hr width="100%">
+		<h2>
+			J-linkage
+		</h2>
+		<p>
+			<img src="img/bannerJ.png" width="100%">
+		</p>
+		<p>
+			J-linkage [1] is a method for fitting <b>multiple instances</b> of a model to data corrupted by noise and outliers. RANSAC, for comparison, fits a <b>single instance</b> of a model to data corrupted by noise and outliers. The proposed solution is based on random sampling (as RANSAC) and <b>conceptual data representation</b>. Each point is represented with the characteristic function of its <b>preference set</b>, i.e., the set of models that fitthe point within a tolerance. Points belonging to the same model will have similar preference sets, in other words, they will cluster in the conceptual space. A tailored linkage clustering based on <a href="http://en.wikipedia.org/wiki/Jaccard_index">Jaccard distance</a> is then qused to group points belonging to the same model. A real-time version of J-linkage have been proposed in [3] [<a href="mov/3DPVT2010-RTJL.mov">Video</a>].
+		</p>
+		<p>
+			In <a href="../scan2bim.html">this</a> work we improve the efficiency of J-Linkage with an efficient <b> min-hash </b> scheme that approximates the Jaccard distance and allows to tackle large dataset, such as laser scans of entire buildings (Scan2BIM).
+		</p>
+		<p>
+			<img src="img/bannerP.jpg" width="100%">
+		</p>
+		<p>
+			In [4,5] we included image consistency constraints into J-linkage with the aim of fitting planar patches coresponding to actual surfaces instead of planes to 3D data. [<a href="mov/eccv2010-Trisha.mov">Video 2010</a>] [<a href="mov/patches.mov">Video 2013</a>]
+		</p>
+		<hr width="100%">
+		<h2>
+			T-linkage
+		</h2>
+		<p>
+			<img src="img/bannerT.jpg" width="100%">
+		</p>
+		<p>
+			In T-Linkage [2] the binary preference analysis implemented by J-linkage is replaced by a continuous (soft, or fuzzy) generalization, and the Tanimoto Jaccard distance takes the place of Jaccard. The benefits of working with <b>continuous values</b> rather than operating with hard thresholding is that we are allowed to integrate more specific information on residual for depicting points preferences (this parallels the difference between RANSAC and MSAC). Consequently the soft threshold parameter adopted by T-Linkage is a more educated guess compared to the J-Linkage hard inlier threshold. T-linkage also takes advantage of the more expressive representation of points both in term of misclassification error and robustness to outliers.
+		</p>
+		<p>
+			T-Linkage have been extended <a href="http://www.dpia.uniud.it/fusiello/demo/mct/">here</a> to cope with <b>multiple heterogeneous models</b> (i.e., multiple istances of multiple classes of models).
+		</p>
+		<p>
+			Other methods for robust fitting of multiple models we proposed are <a href="../rpa.html">RPA</a> and <a href="../cov.html">RansaCov.</a>
+		</p>
+		<hr width="100%">
+		<h3>
+			Code
+		</h3>
+		<ul>
+			<li>J-linkage <a href="JLinkage.zip">[MATLAB]</a> <a href="JLinkageCPP.zip">[C++]</a>
+			</li>
+			<li>T-linkage <a href="Tlinkage.zip">[MATLAB]</a>
+			</li>
+		</ul>
+		<hr width="100%">
+		<h3>
+			Reference papers
+		</h3>
+		<ol class="biblio">
+			<li>Toldo, R. and Fusiello, A. Robust Multiple Structures Estimation with J-Linkage. In Proceedings of the European Conference on Computer Vision (ECCV), pages 537-547, Springer, Marseille, FR, Lecture Notes in Computer Science 5302, 2008. <a href="../../papers/eccv08.pdf">PDF</a>
+			</li>
+			<li>Magri, L. and Fusiello, A. T-Linkage: A Continuous Relaxation of J-Linkage for Multi-Model Fitting. In The IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2014. <a href="../../papers/cvpr14.pdf">PDF</a>
+			</li>
+			<li>Toldo, R. and Fusiello, A. Real-time Incremental J-Linkage for Robust Multiple Structures Estimation. In Proceedings of the International Symposium on 3D Data Processing, Visualization and Transmission (3DPVT), 2010. <a href="../../papers/eccv10j.pdf">PDF</a>
+			</li>
+			<li>Toldo, R. and Fusiello, A. Photo-consistent Planar Patches from Unstructured Cloud of Points. In Proceedings of the European Conference on Computer Vision (ECCV), pages 589-602, Springer, Lecture Notes in Computer Science , 2010. <a href="../../papers/3dpvt10.pdf">PDF</a>
+			</li>
+			<li>Toldo, R. and Fusiello, A. Image-consistent patches from unstructured points with J-linkage. In Image and Vision Computing, 31 (10): 756-770, 2013. <a href="../../papers/ivc13.pdf">PDF</a>
+			</li>
+		</ol>
+	</body>
+</html>

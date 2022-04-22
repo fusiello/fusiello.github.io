@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="247">
+<style>text{font-family:'Arial';font-weight:normal;font-style:normal;}</style>
+<text transform="translate(165,221) rotate(-90)" font-size="40" style="fill:rgb(33, 47, 62)">Image</text>
+<text transform="translate(280,189) rotate(-90)" font-size="37" style="fill:rgb(30, 178, 138)">Robust</text>
+<text transform="translate(347,114)" font-size="37" style="fill:rgb(33, 47, 62)">Multiple</text>
+<text transform="translate(251,52)" font-size="37" style="fill:rgb(23, 174, 248)">3D</text>
+<text transform="translate(306,154)" font-size="34" style="fill:rgb(30, 178, 138)">Model</text>
+<text transform="translate(314,74)" font-size="33" style="fill:rgb(33, 47, 62)">Uncalibrated</text>
+<text transform="translate(342,180)" font-size="31" style="fill:rgb(33, 47, 62)">Stereo</text>
+<text transform="translate(304,204)" font-size="31" style="fill:rgb(33, 47, 62)">Reconstruction</text>
+<text transform="translate(434,173)" font-size="30" style="fill:rgb(33, 47, 62)">Based</text>
+<text transform="translate(67,80)" font-size="29" style="fill:rgb(33, 47, 62)">Motion</text>
+<text transform="translate(190,228)" font-size="29" style="fill:rgb(33, 47, 62)">Automatic</text>
+<text transform="translate(39,134)" font-size="29" style="fill:rgb(33, 47, 62)">Video</text>
+<text transform="translate(475,135)" font-size="28" style="fill:rgb(33, 47, 62)">Tracking</text>
+<text transform="translate(213,203) rotate(-90)" font-size="28" style="fill:rgb(30, 178, 138)">View Synthesis</text>
+<text transform="translate(482,105)" font-size="27" style="fill:rgb(30, 178, 138)">View</text>
+<text transform="translate(283,116)" font-size="27" style="fill:rgb(23, 174, 248)">Data</text>
+<text transform="translate(234,87) rotate(-90)" font-size="27" style="fill:rgb(23, 174, 248)">Object</text>
+<text transform="translate(134,207) rotate(-90)" font-size="27" style="fill:rgb(23, 174, 248)">Camera</text>
+<text transform="translate(317,32)" font-size="26" style="fill:rgb(33, 47, 62)">Using</text>
+<text transform="translate(23,155)" font-size="26" style="fill:rgb(30, 178, 138)">Linkage</text>
+<text transform="translate(28,99)" font-size="25" style="fill:rgb(23, 174, 248)">Registration</text>
+<text transform="translate(184,125) rotate(-90)" font-size="25" style="fill:rgb(33, 47, 62)">Acoustic</text>
+<text transform="translate(326,219)" font-size="18" style="fill:rgb(23, 174, 248)">Synchronization</text>
+<text transform="translate(49,175)" font-size="18" style="fill:rgb(30, 178, 138)">Point</text>
+<text transform="translate(295,185) rotate(-90)" font-size="18" style="fill:rgb(33, 47, 62)">Fitting</text>
+<text transform="translate(241,201) rotate(-90)" font-size="18" style="fill:rgb(23, 174, 248)">Estimation</text>
+<text transform="translate(382,44)" font-size="14" style="fill:rgb(33, 47, 62)">Multiple Structure</text>
+<text transform="translate(399,144)" font-size="13" style="fill:rgb(30, 178, 138)">Segmentation</text>
+<text transform="translate(236,16)" font-size="13" style="fill:rgb(23, 174, 248)">Mosaicing</text>
+<text transform="translate(76,197)" font-size="13" style="fill:rgb(30, 178, 138)">Multi</text>
+<text transform="translate(526,159)" font-size="13" style="fill:rgb(23, 174, 248)">Efficient</text>
+<text transform="translate(318,230)" font-size="11" style="fill:rgb(30, 178, 138)">Structure Recovery</text>
+<text transform="translate(254,198)" font-size="10" style="fill:rgb(23, 174, 248)">Analysis</text>
+<text transform="translate(215,99)" font-size="10" style="fill:rgb(33, 47, 62)">Network</text>
+<text transform="translate(113,40)" font-size="10" style="fill:rgb(23, 174, 248)">Approach</text>
+<text transform="translate(312,80) rotate(-90)" font-size="10" style="fill:rgb(23, 174, 248)">Underwater</text>
+<text transform="translate(77,53)" font-size="10" style="fill:rgb(30, 178, 138)">Algorithm</text>
+<text transform="translate(307,90)" font-size="10" style="fill:rgb(23, 174, 248)">Feature</text>
+<text transform="translate(192,177) rotate(-90)" font-size="10" style="fill:rgb(33, 47, 62)">Matching</text>
+<text transform="translate(299,239)" font-size="10" style="fill:rgb(33, 47, 62)">Localization</text>
+<text transform="translate(479,148)" font-size="10" style="fill:rgb(23, 174, 248)">Reality</text>
+<text transform="translate(301,123)" font-size="9" style="fill:rgb(23, 174, 248)">Matrix Decomposition</text>
+<text transform="translate(420,81)" font-size="8" style="fill:rgb(30, 178, 138)">Virtual</text>
+<text transform="translate(20,131) rotate(-90)" font-size="8" style="fill:rgb(30, 178, 138)">Anisotropic</text>
+<text transform="translate(235,237)" font-size="8" style="fill:rgb(30, 178, 138)">Adjustment</text>
+<text transform="translate(342,50)" font-size="8" style="fill:rgb(23, 174, 248)">Hierarchical</text>
+<text transform="translate(237,64)" font-size="8" style="fill:rgb(30, 178, 138)">Rectification</text>
+<text transform="translate(412,127)" font-size="8" style="fill:rgb(30, 178, 138)">Background</text>
+<text transform="translate(525,202) rotate(-90)" font-size="8" style="fill:rgb(30, 178, 138)">Retrieval</text>
+<text transform="translate(120,50)" font-size="8" style="fill:rgb(23, 174, 248)">Modeling</text>
+<text transform="translate(550,101) rotate(-90)" font-size="8" style="fill:rgb(30, 178, 138)">Geometric</text>
+<text transform="translate(454,81)" font-size="8" style="fill:rgb(30, 178, 138)">Autocalibration</text>
+<text transform="translate(504,69)" font-size="8" style="fill:rgb(23, 174, 248)">Augmented</text>
+<text transform="translate(165,200)" font-size="8" style="fill:rgb(30, 178, 138)">Sensor</text>
+<text transform="translate(420,227)" font-size="8" style="fill:rgb(30, 178, 138)">Fast</text>
+<text transform="translate(397,156)" font-size="8" style="fill:rgb(30, 178, 138)">Parallax</text>
+<text transform="translate(556,109) rotate(-90)" font-size="8" style="fill:rgb(33, 47, 62)">Environment</text>
+<text transform="translate(83,106)" font-size="8" style="fill:rgb(30, 178, 138)">Procrustes Analysis</text>
+<text transform="translate(493,114)" font-size="8" style="fill:rgb(23, 174, 248)">Low Rank</text>
+<text transform="translate(221,206) rotate(-90)" font-size="8" style="fill:rgb(33, 47, 62)">Constraints Propagation</text>
+<text transform="translate(57,182)" font-size="8" style="fill:rgb(30, 178, 138)">Real Time</text>
+<text transform="translate(553,165)" font-size="7" style="fill:rgb(23, 174, 248)">Bundle</text>
+<text transform="translate(43,182) rotate(-90)" font-size="7" style="fill:rgb(23, 174, 248)">Field</text>
+<text transform="translate(531,144)" font-size="7" style="fill:rgb(23, 174, 248)">Euclidean</text>
+<text transform="translate(408,23)" font-size="7" style="fill:rgb(33, 47, 62)">Epipolar</text>
+<text transform="translate(526,171)" font-size="7" style="fill:rgb(33, 47, 62)">Initialization</text>
+<text transform="translate(31,123) rotate(-90)" font-size="7" style="fill:rgb(23, 174, 248)">Line</text>
+<text transform="translate(588,137) rotate(-90)" font-size="7" style="fill:rgb(30, 178, 138)">Modelling</text>
+<text transform="translate(301,170)" font-size="7" style="fill:rgb(33, 47, 62)">Computing</text>
+<text transform="translate(478,179)" font-size="7" style="fill:rgb(30, 178, 138)">Rigorous</text>
+<text transform="translate(380,83)" font-size="7" style="fill:rgb(30, 178, 138)">Calibrated</text>
+<text transform="translate(568,111) rotate(-90)" font-size="7" style="fill:rgb(23, 174, 248)">Interval</text>
+<text transform="translate(421,51)" font-size="7" style="fill:rgb(30, 178, 138)">Scene</text>
+<text transform="translate(245,206)" font-size="7" style="fill:rgb(23, 174, 248)">Visualization</text>
+<text transform="translate(299,160)" font-size="7" style="fill:rgb(23, 174, 248)">Optical</text>
+<text transform="translate(223,107)" font-size="7" style="fill:rgb(23, 174, 248)">Integration</text>
+<text transform="translate(459,209)" font-size="7" style="fill:rgb(23, 174, 248)">Range</text>
+<text transform="translate(248,53) rotate(-90)" font-size="7" style="fill:rgb(23, 174, 248)">Symmetric</text>
+<text transform="translate(295,84) rotate(-90)" font-size="7" style="fill:rgb(33, 47, 62)">Improving</text>
+<text transform="translate(499,57)" font-size="7" style="fill:rgb(30, 178, 138)">Applications</text>
+<text transform="translate(96,210)" font-size="7" style="fill:rgb(23, 174, 248)">Cloud</text>
+<text transform="translate(518,82)" font-size="7" style="fill:rgb(23, 174, 248)">Global</text>
+<text transform="translate(313,39)" font-size="7" style="fill:rgb(33, 47, 62)">Clustering</text>
+<text transform="translate(250,164) rotate(-90)" font-size="7" style="fill:rgb(23, 174, 248)">Orientation</text>
+<text transform="translate(165,38) rotate(-90)" font-size="7" style="fill:rgb(33, 47, 62)">Area</text>
+<text transform="translate(175,231) rotate(-90)" font-size="7" style="fill:rgb(23, 174, 248)">Dynamic</text>
+<text transform="translate(386,30)" font-size="7" style="fill:rgb(33, 47, 62)">Surface</text>
+<text transform="translate(460,50)" font-size="7" style="fill:rgb(23, 174, 248)">Pipeline</text>
+<text transform="translate(121,57)" font-size="7" style="fill:rgb(33, 47, 62)">Unsupervised</text>
+<text transform="translate(296,177)" font-size="7" style="fill:rgb(23, 174, 248)">Sequences</text>
+<text transform="translate(173,168) rotate(-90)" font-size="7" style="fill:rgb(30, 178, 138)">Map</text>
+<text transform="translate(426,29)" font-size="6" style="fill:rgb(30, 178, 138)">Computer Vision</text>
+<text transform="translate(310,9)" font-size="6" style="fill:rgb(33, 47, 62)">Sparse Matrix</text>
+<text transform="translate(139,175) rotate(-90)" font-size="6" style="fill:rgb(30, 178, 138)">Orthogonal Procrustes</text>
+<text transform="translate(108,214)" font-size="5" style="fill:rgb(33, 47, 62)">Airborne</text>
+<text transform="translate(583,153) rotate(-90)" font-size="5" style="fill:rgb(33, 47, 62)">Lidar</text>
+<text transform="translate(27,159)" font-size="5" style="fill:rgb(33, 47, 62)">Classification</text>
+<text transform="translate(140,207) rotate(-90)" font-size="5" style="fill:rgb(30, 178, 138)">Convolutional</text>
+<text transform="translate(178,187) rotate(-90)" font-size="5" style="fill:rgb(33, 47, 62)">Coverage</text>
+<text transform="translate(109,190) rotate(-90)" font-size="5" style="fill:rgb(30, 178, 138)">Preference</text>
+</svg>

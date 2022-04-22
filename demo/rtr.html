@@ -1,0 +1,206 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.76 [en] (X11; U; SunOS 5.6 sun4u) [Netscape]">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Robust Feature Tracking</title>
+</head>
+<body bgcolor="#FFFFFF">
+<!C-  <BODY">
+<center>
+<h1>
+<font face="Arial,Helvetica"><font color="#0000FF"><font size=+2>Robust
+Feature Tracking</font></font></font></h1></center>
+
+<center><table COLS=2 WIDTH="682" >
+<tr>
+<td ALIGN=CENTER><i><font face="Arial,Helvetica"><font color="#000000">T.
+Tommasini, A. Fusiello,and V. Roberto</font></font></i></td>
+
+<td ALIGN=CENTER><i><font face="Arial,Helvetica"><font color="#000000">E.
+Trucco</font></font></i></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER VALIGN=CENTER NOWRAP>
+<center><font face="Arial,Helvetica">Dipartimento di Matematica e Informatica</font></center>
+<font face="Arial,Helvetica">Universit&agrave; di Udine - Italy</font></td>
+
+<td ALIGN=CENTER VALIGN=CENTER>
+<center><font face="Arial,Helvetica">Department of Computing and Electrical
+Engineering</font>
+<br><font face="Arial,Helvetica">Heriot-Watt University - United Kingdom</font></center>
+</td>
+</tr>
+</table></center>
+
+<h3>
+<font face="Arial,Helvetica"><font size=+0>Overview</font></font></h3>
+<font face="Arial,Helvetica">This work addresses robust feature tracking
+. We extend the well-known Shi-Tomasi-Kanade tracker by introducing an
+automatic scheme for rejecting spurious features. We employ a simple and
+efficient outlier rejection rule, called X84. Experiments with real and
+synthetic images confirm that our algorithm makes good features to track
+better.</font>
+<center>
+<hr WIDTH="100%"></center>
+
+<h3>
+<font face="Arial,Helvetica"><font size=+0>Method</font></font></h3>
+
+<ul>
+<li>
+<b><font face="Arial,Helvetica">Extraction.</font></b></li>
+
+<br><font face="Arial,Helvetica">Good features are located in the first
+frame of sequence by examining the minimum eigenvalue of each 2 by 2 autocorrelation
+matrix.</font>
+<li>
+<font face="Arial,Helvetica"><b>Registration</b>.</font></li>
+
+<br><font face="Arial,Helvetica">Features are tracked by minimizing the
+difference between the two corrispondig windows in two consecutive frames,
+using a Newton-Raphson method.</font>
+<li>
+<font face="Arial,Helvetica"><b>Robust Rejection</b>.</font></li>
+
+<br><font face="Arial,Helvetica">The residuals between the first and the
+current frame is taken as the measure of the feature's quality. We use
+an automatic scheme for rejecting spurious features, employing a simple,
+efficient, model-free outlier rejection rule, called X84.</font></ul>
+
+<center>
+<hr WIDTH="100%"></center>
+
+<h3>
+<font face="Arial,Helvetica"><font size=+0>Results</font></font></h3>
+
+<table BORDER CELLSPACING=3 WIDTH="89%" NOSAVE >
+<tr NOSAVE>
+<td NOSAVE><font face="Arial,Helvetica"><b>sequence&nbsp;</b>&nbsp;</font>
+<br><font face="Arial,Helvetica">(MPEG, I-frames only)</font></td>
+
+<td><b><font face="Arial,Helvetica">size</font></b></td>
+
+<td><b><font face="Arial,Helvetica">parametrs</font></b></td>
+
+<td><b><font face="Arial,Helvetica">source</font></b></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><a href="rtr/artit.mpg">Artichoke</a></font></td>
+
+<td><font face="Arial,Helvetica">480x512x99</font></td>
+
+<td><font face="Arial,Helvetica">rtrack -monitor</font></td>
+
+<td><font face="Arial,Helvetica"> CMU-VASC &nbsp;&nbsp;
+image database</font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><a href="rtr/hotelt.mpg">Hotel</a></font></td>
+
+<td><font face="Arial,Helvetica">480x512x59</font></td>
+
+<td><font face="Arial,Helvetica">rtrack -monitor</font></td>
+
+<td><font face="Arial,Helvetica">CMU-VASC &nbsp;&nbsp;
+image database</font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><a href="rtr/data3filtt.mpg">Stairs</a></font></td>
+
+<td><font face="Arial,Helvetica">512x768x60</font></td>
+
+<td><font face="Arial,Helvetica">rtrack -monitor</font></td>
+
+<td><font face="Arial,Helvetica">courtesy of&nbsp; F. Isgro,&nbsp; CEE
+- Heriot-Watt University (UK)</font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><a href="rtr/piatt-sgi_s.out.mpg">Platform</a></font></td>
+
+<td><font face="Arial,Helvetica">256x256x20</font></td>
+
+<td><font face="Arial,Helvetica">rtrack -monitor -w&nbsp; 9 -t&nbsp; 0.3</font></td>
+
+<td><font face="Arial,Helvetica">SOFA test
+sequences</font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><a href="rtr/hyball_60-90_rs.out.mpg">Hyball</a></font></td>
+
+<td><font face="Arial,Helvetica">170x256x31</font></td>
+
+<td><font face="Arial,Helvetica">rtrack -monitor -w&nbsp; 9</font></td>
+
+<td><font face="Arial,Helvetica">courtesy of&nbsp; C. Plakas,&nbsp; OSL
+- Heriot-Watt University (UK)</font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><a href="rtr/scale.out.mpg">Scale</a></font></td>
+
+<td><font face="Arial,Helvetica">255x384x21</font></td>
+
+<td><font face="Arial,Helvetica">rtrack -monitor -w 13</font></td>
+
+<td><font face="Arial,Helvetica">courtesy of&nbsp; C. Plakas,&nbsp; OSL
+- Heriot-Watt University (UK)</font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><a href="rtr/smallrock_01_s.out.mpg">Smallrock</a></font></td>
+
+<td><font face="Arial,Helvetica">170x256x25</font></td>
+
+<td><font face="Arial,Helvetica">rtrack -monitor -w&nbsp; 9</font></td>
+
+<td><font face="Arial,Helvetica">courtesy of&nbsp; Chris Smith IMBC, Crete
+(GR)</font></td>
+</tr>
+
+<tr NOSAVE>
+<td><font face="Arial,Helvetica"><a href="rtr/box-small.out.mpg">Box</a></font></td>
+
+<td NOSAVE><font face="Arial,Helvetica">240x320x25</font></td>
+
+<td><font face="Arial,Helvetica">rtrack -monitor -w&nbsp; 9 -t&nbsp; 0.08&nbsp;</font></td>
+
+<td><font face="Arial,Helvetica">courtesy of&nbsp; A. Benedetti,
+<a href="http://www.vision.caltech.edu">Vision
+Group</a>, CALTECH (CA)</font></td>
+</tr>
+</table>
+
+<center>
+<p>
+<hr WIDTH="100%"></center>
+
+<h3>
+<font face="Arial,Helvetica"><font size=+0>Reference paper</font></font></h3>
+<font face="Arial,Helvetica">T.Tommasini, A.Fusiello, E.Trucco and V.Roberto,
+<a href="../papers/cvpr98.pdf">Making
+Good features Track Better</a>, in "1998 IEEE Conference on Computer Vision
+and Pattern Recognition" , S. Barbara (CA).</font>
+<h3>
+
+<hr WIDTH="100%"></h3>
+
+<h3>
+<font face="Arial,Helvetica"><font color="#FF0000"><font size=+0>Code available</font></font></font></h3>
+<font face="Arial,Helvetica">An implementation in C of the Robust Tracker
+is <a href="rtr/rtrack.tar.gz">available
+</a>from
+our web site.</font>
+<center>
+<hr WIDTH="100%"></center>
+
+<br>&nbsp;
+</body>
+</html>

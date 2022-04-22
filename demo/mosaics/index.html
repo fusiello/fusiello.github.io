@@ -1,0 +1,324 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+   
+  <meta name="GENERATOR"
+ content="Mozilla/4.61 [en] (X11; I; SunOS 5.6 sun4u) [Netscape]">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mosaicing and layered representation of a video shot </title>
+</head>
+<body bgcolor="#ffffff">
+<!--C-  <BODY BACKGROUND="Texture_lt_blue_020.jpg" tppabs="http://www.cee.hw.ac.uk/~franci/mosaic_demo/Texture_lt_blue_020.jpg"-->
+<blockquote>
+  <center><img src="affresco.gif"
+ tppabs="http://www.cee.hw.ac.uk/~franci/mosaic_demo/affresco.gif"
+ height="162" width="405"></center>
+</blockquote>
+<center>
+<h1><font face="Arial,Helvetica"><font color="#0000ff"><font size="+2">
+Mosaicing and layered representation of a video shot 
+</font></font></font></h1>
+</center>
+<center>
+<table cols="1" width="682" nosave="">
+  <tbody>
+    <tr nosave="">
+      <td align="center" nosave=""><i><font face="Arial,Helvetica"><font
+ color="#000000">Francesca Odone and Andrea Fusiello</font></font></i></td>
+    </tr>
+    <tr nosave="">
+      <td align="center" valign="CENTER" nosave="">
+      <center><font face="Arial,Helvetica">Department of Computing and Electrical
+Engineering</font><br>
+      <font face="Arial,Helvetica">Heriot-Watt University, Edinburgh - Scotland</font></center>
+      </td>
+    </tr>
+  </tbody><caption align="bottom">&nbsp;<br>
+  </caption>
+</table>
+</center>
+<h3><font face="Arial,Helvetica"><font size="+0">Overview</font></font></h3>
+<font face="Arial,Helvetica">This work describes mosaic-based motion segmentation,
+coding and editing.</font><br>
+<font face="Arial,Helvetica">If we consider scenes consisting of a static
+background and one or more moving object(s) in the foreground.</font><br>
+<font face="Arial,Helvetica">The aim is to</font><br>
+<font face="Arial,Helvetica">&nbsp;&nbsp;&nbsp; i) build mosaic out of a
+video sequence in spite of the moving objects,</font><br>
+<font face="Arial,Helvetica">&nbsp;&nbsp;&nbsp; ii) segment the moving objects
+and paste them again into the mosaic.</font><br>
+<font face="Arial,Helvetica">At this point we have the ingredients to perform
+coding (MPEG4-like) or various kinds of editing.</font>
+<center>
+<p></p>
+<hr width="100%"></center>
+<h3><font face="Arial,Helvetica"><font size="+0">Method to compute the mosaic</font></font></h3>
+<ul>
+  <li><font face="Arial,Helvetica"><b>Tracking</b>.</font></li>
+  <br>
+  <font face="Arial,Helvetica">Features (corner points) are tracked by minimizing
+the difference between the two correspondig windows in two consecutive frames,
+using a Newton-Raphson method.</font><li><b><font face="Arial,Helvetica">Homography
+computation.</font></b></li>
+  <br>
+  <font face="Arial,Helvetica">The homographies between consecutive frames
+are computed using the Least Median of Squares technique, which extract the
+dominant homography, i.e., the homography given by the majority of the tracked
+points. If the sequence contains moving objects and if they are not too big,
+this correspond to the homography of the background.</font><li><font
+ face="Arial,Helvetica"><b>Blending</b>.</font></li>
+  <br>
+  <font face="Arial,Helvetica">Warped frames are stacked and the pixel values
+in the mosaic are computed by taking the median of all the contributing pixels.
+In this way if there are moving objects, they are removed, provided that
+the majority of the pixels have the value of the background.</font>
+</ul>
+<b><font face="Arial,Helvetica">Stabilization of Sequences</font></b><br>
+<font face="Arial,Helvetica">If one wants to eliminate oscillations from
+a sequence of images, a similar technique can be used. Once the homographies
+bettween the first frame of the sequence and all the other frames are known,
+every framed can be transformed in the reference frame of the first one, producing
+a stabilized sequence.</font>
+<p><b><font face="Arial,Helvetica">Segmentation of moving objects.</font></b>
+<br>
+<font face="Arial,Helvetica">Moving objects are segmented out from the original
+sequence by residual motion analysis, after camera motion compensation.</font>
+<br>
+<font face="Arial,Helvetica">A mosaic video can be constructed by pasting
+the moving objects of each original frame onto the mosaic .</font><br>
+<font face="Arial,Helvetica">Or else a sequence containing the foreground
+objects, described in the mosaic reference frame, can be useful to perform
+video coding or video editing.</font></p>
+<p><b><font face="Arial,Helvetica">Video Coding</font></b><br>
+<font face="Arial,Helvetica">From the video coding point of view, the previously
+described technique of building the mosaic of the backgound and the sequence
+of foregrounds,</font><br>
+<font face="Arial,Helvetica">corrensponds to an encoding operation, in the
+<i>contest-based coding</i> sense.</font><br>
+<font face="Arial,Helvetica">The large panoramic mosaic of the background
+is sent to the receiver once, together with the sequence of foregrounds.</font>
+<br>
+<font face="Arial,Helvetica">Since they are described in the same reference
+frame, they can be easily pasted together, at the receiver end, to obtain
+a video of mosaics.</font><br>
+<font face="Arial,Helvetica">If one wants to obtain the original sequence,
+the homographies between the mosaic (i.e., its reference frame) and all the
+image frames have to be sent as well.</font><br>
+<font face="Arial,Helvetica">By appying a mosaic to frame registration to
+every frame of the video of mosaics, the original sequence is obtained.</font>
+</p>
+<p><b><font face="Arial,Helvetica">Video Editing</font></b><br>
+<font face="Arial,Helvetica">The segmented representation can be exploited
+to insert synthetic objects into the background, such as advertising posters.</font>
+<br>
+<font face="Arial,Helvetica">First of all a part of the original scene where
+we want to ``stick'' the poster has to be chosen. Walls or hedges are suitable.</font>
+<br>
+<font face="Arial,Helvetica">To slant correctly the sign, the background mosaic
+is projected onto the plane of the chosen object (the wall, for instance).</font>
+<br>
+<font face="Arial,Helvetica">This technique is known as <i>metric rectification.</i></font>
+<br>
+<font face="Arial,Helvetica">The insertion of the synthetic sign is done
+on the rectified mosaic and the result is warped back with the inverse transformation.</font>
+<br>
+<font face="Arial,Helvetica">This new synthetic background can be used to
+build a new modified sequence, as described above.</font></p>
+<center>
+<p></p>
+<hr width="100%"></center>
+<h3><font face="Arial,Helvetica"><font size="+0">Mosaic contruction and sequence
+stabilization results</font></font></h3>
+<table border="1" cellspacing="2" width="89%" nosave="">
+  <tbody>
+    <tr align="center" valign="top" nosave="">
+      <td nosave=""><b><font face="Arial,Helvetica">sequence</font></b><br>
+      <font face="Arial,Helvetica">(MPEG, I-frames only)</font></td>
+      <td><b><font face="Arial,Helvetica">mosaic</font></b><br>
+      <font face="Arial,Helvetica">(GIF)</font></td>
+      <td><b><font face="Arial,Helvetica">stabilized sequence</font></b></td>
+      <td><b><font face="Arial,Helvetica">notes</font></b></td>
+    </tr>
+    <tr align="center" nosave="">
+      <td nosave=""><font face="Arial,Helvetica"><a
+ href="clio.mpg"
+ tppabs="http://www.cee.hw.ac.uk/~franci/mosaic_demo/clio.mpg">Clio</a></font></td>
+      <td><font face="Arial,Helvetica"><a
+ href="clio.gif"
+ tppabs="http://www.cee.hw.ac.uk/~franci/mosaic_demo/clio.gif">X</a></font></td>
+      <td><font face="Arial,Helvetica"><a
+ href="clio.stabilized.mpg"
+ tppabs="http://www.cee.hw.ac.uk/~franci/mosaic_demo/clio.stabilized.mpg">X</a></font></td>
+      <td align="left" nosave=""><font face="Arial,Helvetica">Camera fixating
+at&nbsp; the car with oscillations.&nbsp;</font></td>
+    </tr>
+    <tr align="center" nosave="">
+      <td nosave=""><font face="Arial,Helvetica"><a
+ href="facade.mpg"
+ tppabs="http://www.cee.hw.ac.uk/~franci/mosaic_demo/facade.mpg">Facade</a></font></td>
+      <td><font face="Arial,Helvetica"><a
+ href="facade.gif"
+ tppabs="http://www.cee.hw.ac.uk/~franci/mosaic_demo/facade.gif">X</a></font></td>
+      <td>&nbsp;</td>
+      <td align="left" nosave=""><font face="Arial,Helvetica">The effect
+of radial distorsion is noticeable.&nbsp;</font></td>
+    </tr>
+    <tr align="center" nosave="">
+      <td nosave=""><font face="Arial,Helvetica"><a
+ href="panG78-1.mpg"
+ tppabs="http://www.cee.hw.ac.uk/~franci/mosaic_demo/panG78-1.mpg">Lab G78
+(1)</a></font></td>
+      <td><font face="Arial,Helvetica"><a
+ href="panG78-1.gif"
+ tppabs="http://www.cee.hw.ac.uk/~franci/mosaic_demo/panG78-1.gif">X</a></font></td>
+      <td>&nbsp;</td>
+      <td>.&nbsp;</td>
+    </tr>
+    <tr align="center" nosave="">
+      <td nosave=""><font face="Arial,Helvetica"><a
+ href="panG78-2.mpg"
+ tppabs="http://www.cee.hw.ac.uk/~franci/mosaic_demo/panG78-2.mpg">Lab G78
+(2)</a></font></td>
+      <td><font face="Arial,Helvetica"><a
+ href="panG78-2.gif"
+ tppabs="http://www.cee.hw.ac.uk/~franci/mosaic_demo/panG78-2.gif">X</a></font></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr align="center" nosave="">
+      <td nosave=""><font face="Arial,Helvetica"><a
+ href="panG78-3.mpg"
+ tppabs="http://www.cee.hw.ac.uk/~franci/mosaic_demo/panG78-3.mpg">Lab G78
+(3)</a></font></td>
+      <td><font face="Arial,Helvetica"><a
+ href="panG78-3.gif"
+ tppabs="http://www.cee.hw.ac.uk/~franci/mosaic_demo/panG78-3.gif">1</a></font>
+      <br>
+      <font face="Arial,Helvetica"><a
+ href="panG78-3first.gif"
+ tppabs="http://www.cee.hw.ac.uk/~franci/mosaic_demo/panG78-3first.gif">2</a></font>
+      <br>
+      <font face="Arial,Helvetica"><a
+ href="panG78-3last.gif"
+ tppabs="http://www.cee.hw.ac.uk/~franci/mosaic_demo/panG78-3last.gif">3</a></font></td>
+      <td>&nbsp;</td>
+      <td align="left" nosave=""><font face="Arial,Helvetica">1: Blending
+by averaging</font><br>
+      <font face="Arial,Helvetica">2: For every frame only the new pixel are
+added</font><br>
+      <font face="Arial,Helvetica">3: The latest image is put onto the mosaic</font></td>
+    </tr>
+  </tbody>
+</table>
+<h3><font face="Arial,Helvetica"><font size="+0">Motion segmentation, coding
+and editing results</font></font></h3>
+<table border="1" cellspacing="3" width="89%" nosave="">
+  <tbody>
+    <tr align="center" valign="top" nosave="">
+      <td nosave=""><b><font face="Arial,Helvetica">sequence</font></b><br>
+      <font face="Arial,Helvetica">(MPEG, I-frames only)</font></td>
+      <td><b><font face="Arial,Helvetica">mosaic</font></b><br>
+      <font face="Arial,Helvetica">(GIF)</font></td>
+      <td nosave=""><b><font face="Arial,Helvetica">encoded/decoded</font></b>
+      <br>
+      <font face="Arial,Helvetica">(MPEG, I-frames only)</font></td>
+      <td><b><font face="Arial,Helvetica">video of mosaics</font></b><br>
+      <font face="Arial,Helvetica">&nbsp;&nbsp; (MPEG,I-frames )</font></td>
+      <td><b><font face="Arial,Helvetica">synthetic advertisement</font></b></td>
+      <td><b><font face="Arial,Helvetica">notes</font></b></td>
+    </tr>
+    <tr align="center" nosave="">
+      <td nosave=""><font face="Arial,Helvetica">Alberto</font></td>
+      <td><font face="Arial,Helvetica"><a
+ href="berto.gif"
+ tppabs="http://www.cee.hw.ac.uk/~franci/mosaic_demo/berto.gif">X</a></font></td>
+      <td><font face="Arial,Helvetica">&nbsp;&nbsp;</font></td>
+      <td><font face="Arial,Helvetica">&nbsp;</font></td>
+      <td><font face="Arial,Helvetica">&nbsp;&nbsp;</font></td>
+      <td align="left" nosave=""><font face="Arial,Helvetica">There are artifacts
+(on the steps) due to the moving person.&nbsp;</font></td>
+    </tr>
+    <tr align="center" nosave="">
+      <td nosave=""><font face="Arial,Helvetica"><a
+ href="fra_walking.mpg"
+ tppabs="http://www.cee.hw.ac.uk/~franci/mosaic_demo/fra_walking.mpg">Francesca</a></font></td>
+      <td><font face="Arial,Helvetica"><a
+ href="fra.gif"
+ tppabs="http://www.cee.hw.ac.uk/~franci/mosaic_demo/fra.gif">X</a></font></td>
+      <td><font face="Arial,Helvetica"><a
+ href="fra.seq.mpg"
+ tppabs="http://www.cee.hw.ac.uk/~franci/mosaic_demo/fra.seq.mpg">X</a></font></td>
+      <td><font face="Arial,Helvetica"><a
+ href="fra.video.mpg"
+ tppabs="http://www.cee.hw.ac.uk/~franci/mosaic_demo/fra.video.mpg">X</a></font></td>
+      <td><font face="Arial,Helvetica">&nbsp;</font></td>
+      <td><font face="Arial,Helvetica">&nbsp;</font></td>
+    </tr>
+    <tr align="center" nosave="">
+      <td nosave=""><font face="Arial,Helvetica"><a
+ href="manuel.mpg"
+ tppabs="http://www.cee.hw.ac.uk/~franci/mosaic_demo/manuel.mpg">Manuel</a></font></td>
+      <td><font face="Arial,Helvetica"><a
+ href="manuel.gif"
+ tppabs="http://www.cee.hw.ac.uk/~franci/mosaic_demo/manuel.gif">X</a></font></td>
+      <td nosave=""><font face="Arial,Helvetica"><a
+ href="manu.seq.mpg"
+ tppabs="http://www.cee.hw.ac.uk/~franci/mosaic_demo/manu.seq.mpg">X</a></font></td>
+      <td><font face="Arial,Helvetica"><a
+ href="manu.video.mpg"
+ tppabs="http://www.cee.hw.ac.uk/~franci/mosaic_demo/manu.video.mpg">X</a></font></td>
+      <td><font face="Arial,Helvetica">&nbsp;</font></td>
+      <td><font face="Arial,Helvetica">&nbsp;</font></td>
+    </tr>
+    <tr align="center" nosave="">
+      <td nosave=""><font face="Arial,Helvetica"><a
+ href="unobianca.mpg"
+ tppabs="http://www.cee.hw.ac.uk/~franci/mosaic_demo/unobianca.mpg">Super5</a></font></td>
+      <td><font face="Arial,Helvetica"><a
+ href="uno.gif"
+ tppabs="http://www.cee.hw.ac.uk/~franci/mosaic_demo/uno.gif">X</a></font></td>
+      <td nosave=""><font face="Arial,Helvetica"><a
+ href="ub.seq.mpg"
+ tppabs="http://www.cee.hw.ac.uk/~franci/mosaic_demo/ub.seq.mpg">X</a></font></td>
+      <td><font face="Arial,Helvetica"><a
+ href="s5.video.mpg"
+ tppabs="http://www.cee.hw.ac.uk/~franci/mosaic_demo/s5.video.mpg">X</a></font></td>
+      <td><font face="Arial,Helvetica"><a
+ href="ub.seq-hw.mpg"
+ tppabs="http://www.cee.hw.ac.uk/~franci/mosaic_demo/ub.seq-hw.mpg">X</a></font></td>
+      <td nosave=""><font face="Arial,Helvetica"><a
+ href="unodritta.gif"
+ tppabs="http://www.cee.hw.ac.uk/~franci/mosaic_demo/unodritta.gif">metric
+rectified mosaic</a></font></td>
+    </tr>
+  </tbody>
+</table>
+<center>
+<p></p>
+<hr width="100%"></center>
+<p><br>
+</p>
+<h3><font face="Arial,Helvetica"><font size="+0">References</font></font></h3>
+<ul>
+  <li><font face="Arial,Helvetica"><font size="+0">F.Odone and A. Fusiello
+    <i><a
+ href="../../papers/RM-99-15.pdf" > Applications
+of 2D Image Registration</a>, </i>Research Memorandum RM/99/15, Heriot-Watt
+University.</font></font></li>
+  <li><font face="Helvetica, Arial, sans-serif">F.Odone, A. Fusiello and
+E. Trucco <a
+ href="../../papers/riao00.pdf"
+ tppabs="http://www.cee.hw.ac.uk/~franci/mosaic_demo/riao.pdf">Robust motion
+segmentation for content-based video coding</a> In 6th RIAO (Recherche d'Informations
+Assist&eacute;e par Ordinateur) International Conference. Paris, April 2000.</font></li>
+</ul>
+<p><br>
+</p>
+<hr width="100%"><br>
+....<a
+ href="behind.html" Behind the scenes </a>.....<br> &nbsp;<br> 
+</body>
+</html>
