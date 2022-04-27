@@ -1,5 +1,7 @@
 #!/bin/csh
 
+# run this script to update publications and thesis
+
 updateBiblio > Publications.html
 updateThesis > Thesis_supervised.html
 
