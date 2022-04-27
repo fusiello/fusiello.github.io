@@ -1,0 +1,27 @@
+#!/usr/local/bin/php
+<?php
+
+require_once('bibtex2html.php');  
+
+
+$static_content = file_get_contents('Publications_static.html');
+$pos = strpos($static_content, "<!-- insert-here -->");
+$static_content_before = substr($static_content, 0, $pos);
+$static_content_after  = substr($static_content, $pos);
+
+echo $static_content_before;
+
+$to_be_shown =   array('article' => 'Journals', 'book' => 'Books', 'proceedings' => 'Editorships', 'incollection' => 'Book chapters', 'inproceedings' => 	'Conference proceedings', 'mastersthesis' => 'Thesis', 'unpublished' => 'Unpublished');                   
+echo  "<style>.title {font-weight: bold;} </style> " ;               
+echo @bibfile2html('./personal.bib', $to_be_shown, true, false, NULL, 'Fusiello', NULL, 'year');  
+
+echo $static_content_after;
+
+?>
+
+
+
+	
+	
+
+	

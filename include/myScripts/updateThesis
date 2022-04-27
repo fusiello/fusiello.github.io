@@ -1,0 +1,89 @@
+#!/usr/local/bin/php
+<?php
+
+
+function getThesis() {
+			
+	$handle = fopen("laureati.csv", "r");
+	$ret=""; 
+	if($handle !== FALSE){
+		
+		$ret="<h2> Tesi di Dottorato di Ricerca </h2>";
+		$ret.="<ol>"; 
+		while (($data = fgetcsv($handle, 50000, ";")) !== FALSE) {
+			if ( $data[3] == "Dottorato") {
+				$ret.= "<li>";
+
+				$ret.= "<span class=\"autore\"> $data[5] $data[4].</span> "; // Autore
+				$ret.= "<span class=\"titolo\"> $data[11].</span> "; // Titolo
+				$ret.= " Tesi di Dottorato di Ricerca in $data[2], Universit&agrave; degli Studi di $data[0], ";// CCS
+				$ret.= "$data[8].";  // Anno
+				if ($data[10] != "Relatore" )
+					$ret.= " $data[10]."; 			   
+				$ret.= "</li>";
+			}
+		}
+		
+		$ret.= "</ol>"; 
+		
+		rewind($handle);
+		
+		$ret.="<h2> Tesi di Laurea Magistrale<sup>*</sup> </h2>";
+		$ret.="<ol>"; 
+		while (($data = fgetcsv($handle, 50000, ";")) !== FALSE) {
+			if ($data[3] != "Triennale" && $data[3] != "Dottorato") {
+				$ret.= "<li>";
+
+				$ret.= "<span class=\"autore\"> $data[5] $data[4].</span> "; // Autore
+				$ret.= "<span class=\"titolo\"> $data[11].</span> "; // Titolo
+				$ret.= " Tesi di Laurea in $data[2], Universit&agrave; degli Studi di $data[0], ";// CCS
+				$ret.= "$data[8].";  // Anno
+				if ($data[10] != "Relatore" )
+					$ret.= " $data[10]."; 			   
+				$ret.= "</li>";
+			}
+		}
+		
+		$ret.= "</ol>"; 
+
+		rewind($handle);
+
+		$ret.= "<h2> Tesi di Laurea (triennale) </h2>";
+		$ret.= "<ol>"; 
+  
+		while (($data = fgetcsv($handle, 50000, ";")) !== FALSE) {
+			if ($data[3] == "Triennale" ) {
+				$ret.= "<li>";
+
+				$ret.= "<span class=\"autore\"> $data[5] $data[4].</span> "; // Autore
+				$ret.= "<span class=\"titolo\"> $data[11].</span> "; // Titolo
+				$ret.= " Tesi di Laurea in $data[2], Universit&agrave; degli Studi di $data[0], ";// CCS
+				$ret.= "$data[8].";  // Anno
+    			
+				$ret.= "</li>";
+			}
+		}
+
+		$ret.= "</ol>"; 
+	}         
+	return   $ret;    	               
+}
+ 
+ 
+$static_content = file_get_contents('Thesis_supervised_static.html');
+$pos = strpos($static_content, "<!-- insert-here -->");
+$static_content_before = substr($static_content, 0, $pos);
+$static_content_after  = substr($static_content, $pos);
+
+echo $static_content_before;
+
+echo "<style> .autore { font-weight: bold;}  .titolo {font-style: italic;} </style>";
+echo getThesis();
+echo "<hr/> <small> (*) ovvero Specialistica, Laurea ante D.M. 509/99 (5 anni) o vecchio ordinamento (4 anni) </small>";
+
+echo $static_content_after; 
+
+
+?>
+
+

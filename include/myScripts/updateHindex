@@ -1,0 +1,13 @@
+#!/usr/local/bin/php
+<?php
+
+
+require_once('./hindex.php');  
+echo "<ul><li>";
+echo hindex();
+echo ". More <a href=\"./Bibliometrica\">bibliometrics</a>";
+echo "</li>";
+	
+
+?>	
+	
