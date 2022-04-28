@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en"><html><head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+   <meta name="GENERATOR" content="Microsoft FrontPage 4.0"></head>
+
+<body text="#000000" bgcolor="#ffffff" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+<center><table border="1" cellspacing="0" cols="2"  height="797">
+<tbody>
+
+<tr bgcolor="#acccff">
+<td  align="left">
+<p align="center"><font color="#660000">
+Initially, only consecutive frames in the
+sequence are connected (blue edges). Nodes position is
+given by the centroid of the corresponding frame in the mosaic
+reference frame.
+</p></td>
+<td >
+<p align="center"><font color="#660000">
+Then edges will be added incrementally,
+linking frames that i) have a significant
+overlap, and ii) creates a material shortcut between two vertices
+(black edges).
+</p></td>
+</tr>
+<tr >
+<td width="20" >
+<center><img src="data/graph_temp_teodorico.gif"  width=350></center>
+</td>
+<td width="20" >
+<center><img src="data/graph_spat_teodorico.gif"  width=350></center>
+</td>
+</tr>
+
+<tr bgcolor="#acccff">
+<td  align="left">
+<p align="center"><font color="#660000">
+The final graph is the spanning tree composed by all shortest paths from each node to the root (yellow node)
+</p></td>
+<td >
+<p align="center"><font color="#660000">
+Value of EL for different solutions. From left to right:
+frame-to-frame, bundle adjustment starting from frame-to-frame using
+"Sawhney", "Szeliski" and our cost functions, MST, bundle adjustment starting from MST using
+"Sawhney", "Szeliski" and our cost functions.
+</p></td>
+</tr>
+<tr >
+<td width="20" >
+<center><img src="data/tree_teodorico.gif"  width=350></center>
+</td>
+<td width="20" >
+<center><img src="data/hist_lap_teodorico.gif"  width=350></center>
+</td>
+</tr>
+
+<tr bgcolor="#acccff">
+<td  align="left">
+<p align="center"><font color="#660000">
+Alignment errors on mosaic grid-points before bundle adjustment.
+</p></td>
+<td >
+<p align="center"><font color="#660000">
+Alignment errors on mosaic grid-points
+after bundle adjustment (please note that scale on
+the vertical axes are different).
+</p></td>
+</tr>
+<tr >
+<td width="20" >
+<center><img src="data/res_grid_teo1.gif"  width=350></center>
+</td>
+<td width="20" >
+<center><img src="data/res_grid_teo2.gif"  width=350></center>
+</td>
+</tr>
+
+<tr bgcolor="#acccff">
+<td align="left">
+<p align="center"><font color="#660000">
+Value of EL vs iteration number in bundle adjustment starting from frame-to-frame using
+three cost function.
+</p></td>
+<td>
+<p align="center"><font color="#660000">
+Value of EL vs iteration number in bundle adjustment starting from MST using
+three cost function.
+</p></td>
+<tr >
+<td width="20" >
+<center><img src="data/lap_teo_temp.gif"  width=350></center>
+</td>
+<td width="20" >
+<center><img src="data/lap_teo_spat.gif"  width=350></center>
+</td>
+</tr>
+
+
+</tbody></table></center>
+
+</body></html>

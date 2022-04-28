@@ -1,0 +1,355 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.02 [en] (Win95; I) [Netscape]">
+</HEAD>
+<BODY>
+<B>&nbsp;<FONT FACE="Arial,Helvetica">Frame # synth3</FONT></B>
+<BR>&nbsp;
+<CENTER><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 COLS=8 WIDTH="680" >
+<TR>
+<TD ALIGN=LEFT></TD>
+
+<TD ALIGN=CENTER VALIGN=CENTER HEIGHT="63" BGCOLOR="#FFFFCC"><B><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>Echoscope</FONT></FONT></B></TD>
+
+<TD></TD>
+
+<TD ALIGN=CENTER VALIGN=CENTER WIDTH="85" BGCOLOR="#FFFFCC"><B><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>Video
+camera</FONT></FONT></B></TD>
+
+<TD ALIGN=RIGHT></TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD></TD>
+</TR>
+
+<TR>
+<TD></TD>
+
+<TD><IMG SRC="arrow.gif" HEIGHT=32 WIDTH=85></TD>
+
+<TD></TD>
+
+<TD><IMG SRC="arrow.gif" HEIGHT=32 WIDTH=85></TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD></TD>
+</TR>
+
+<TR>
+<TD><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>synthetic data</FONT></FONT></TD>
+
+<TD><A HREF="giunto3f.wrl" target="vrml"><IMG SRC="giunto3f.jpg" HEIGHT=64 WIDTH=85></A></TD>
+
+<TD></TD>
+
+<TD><A HREF="giunto3.jpg" target="img"><IMG SRC="giunto3.jpg" HEIGHT=64 WIDTH=64></A></TD>
+
+<TD ALIGN=RIGHT><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>&nbsp;&nbsp;
+synthetic image</FONT></FONT></TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD></TD>
+</TR>
+
+<TR>
+<TD></TD>
+
+<TD><IMG SRC="arrow.gif" HEIGHT=32 WIDTH=85></TD>
+
+<TD></TD>
+
+<TD><IMG SRC="arrow.gif" HEIGHT=32 WIDTH=85></TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD></TD>
+</TR>
+
+<TR>
+<TD><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>skeleton</FONT></FONT></TD>
+
+<TD><A HREF="giunto3fsc.wrl" target="vrml"><IMG SRC="giunto3sc.jpg" HEIGHT=64 WIDTH=85></A></TD>
+
+<TD></TD>
+
+<TD><A HREF="giunto3b.jpg" target="img"><IMG SRC="giunto3b.jpg" HEIGHT=64 WIDTH=64></A></TD>
+
+<TD ALIGN=RIGHT><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>segments</FONT></FONT></TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD></TD>
+</TR>
+
+<TR>
+<TD></TD>
+
+<TD><IMG SRC="arrow.gif" HEIGHT=32 WIDTH=85></TD>
+
+<TD></TD>
+
+<TD><IMG SRC="arrow.gif" HEIGHT=32 WIDTH=85></TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD></TD>
+</TR>
+
+<TR>
+<TD><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>segmented data</FONT></FONT></TD>
+
+<TD><A HREF="giunto3se.wrl" target="vrml"><IMG SRC="giunto3se.jpg" HEIGHT=64 WIDTH=85></A></TD>
+
+<TD></TD>
+
+<TD BGCOLOR="#CCFFFF"><B><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>Recognition</FONT></FONT></B></TD>
+
+<TD ALIGN=RIGHT></TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD></TD>
+</TR>
+
+<TR>
+<TD></TD>
+
+<TD><IMG SRC="arrow.gif" HEIGHT=32 WIDTH=85></TD>
+
+<TD></TD>
+
+<TD><IMG SRC="arrow.gif" HEIGHT=32 WIDTH=85></TD>
+</TR>
+
+<TR>
+<TD><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>geometrical reconstruction</FONT></FONT></TD>
+
+<TD><A HREF="giunto3g.wrl" target="vrml"><IMG SRC="giunto3g.jpg" HEIGHT=64 WIDTH=85></A></TD>
+
+<TD></TD>
+
+<TD><A HREF="giunto3fig1.jpg" target="img"><IMG SRC="giunto3fig1.jpg" HEIGHT=64 WIDTH=64></A></TD>
+
+<TD ALIGN=RIGHT><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>matched</FONT></FONT>&nbsp;
+<BR><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>segments</FONT></FONT>&nbsp;
+<BR>&nbsp;</TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD></TD>
+</TR>
+
+<TR>
+<TD></TD>
+
+<TD><IMG SRC="arrow.gif" HEIGHT=32 WIDTH=85></TD>
+
+<TD></TD>
+
+<TD><IMG SRC="arrow.gif" HEIGHT=32 WIDTH=85></TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD></TD>
+</TR>
+
+<TR>
+<TD><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>data aligned with model</FONT></FONT>&nbsp;
+<BR><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>(recognition)</FONT></FONT></TD>
+
+<TD><A HREF="giunto3v.wrl" target="vrml"><IMG SRC="giunto3v.jpg" HEIGHT=64 WIDTH=85></A></TD>
+
+<TD></TD>
+
+<TD><A HREF="giunto3fig2.jpg" target="img"><IMG SRC="giunto3fig2.jpg" HEIGHT=64 WIDTH=64></A></TD>
+
+<TD ALIGN=RIGHT><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>alignment&nbsp;
+with model</FONT></FONT></TD>
+
+<TD></TD>
+
+<TD></TD>
+</TR>
+
+<TR>
+<TD></TD>
+
+<TD><IMG SRC="right.gif" HEIGHT=32 WIDTH=85></TD>
+
+<TD><IMG SRC="down.gif" HEIGHT=32 WIDTH=85></TD>
+
+<TD><IMG SRC="left.gif" HEIGHT=32 WIDTH=85></TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD></TD>
+</TR>
+
+<TR>
+<TD></TD>
+
+<TD></TD>
+
+<TD>
+<CENTER><A HREF="giunto3fig3.jpg" target="img"><IMG SRC="giunto3fig3.jpg" HEIGHT=64 WIDTH=64></A></CENTER>
+</TD>
+
+<TD ALIGN=RIGHT><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>projection of
+acoustic points</FONT></FONT></TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD></TD>
+</TR>
+
+<TR>
+<TD></TD>
+
+<TD></TD>
+
+<TD><IMG SRC="arrow.gif" HEIGHT=32 WIDTH=85></TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD></TD>
+</TR>
+
+<TR>
+<TD></TD>
+
+<TD></TD>
+
+<TD ALIGN=CENTER VALIGN=CENTER><A HREF="giunto3fig4.jpg" target="img"><IMG SRC="giunto3fig4.jpg" HEIGHT=54 WIDTH=64></A></TD>
+
+<TD ALIGN=RIGHT><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>registered depth
+map</FONT></FONT></TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD></TD>
+</TR>
+
+<TR>
+<TD></TD>
+
+<TD></TD>
+
+<TD><IMG SRC="arrow.gif" HEIGHT=32 WIDTH=85></TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD></TD>
+</TR>
+
+<TR>
+<TD></TD>
+
+<TD></TD>
+
+<TD><A HREF="giunto3fig5.jpg" target="img"><IMG SRC="giunto3fig5.jpg" HEIGHT=64 WIDTH=85></A></TD>
+
+<TD ALIGN=RIGHT><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>3D shape&nbsp;</FONT></FONT></TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD></TD>
+</TR>
+
+<TR>
+<TD></TD>
+
+<TD></TD>
+
+<TD><IMG SRC="arrow.gif" HEIGHT=32 WIDTH=85></TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD></TD>
+</TR>
+
+<TR>
+<TD></TD>
+
+<TD></TD>
+
+<TD ALIGN=CENTER VALIGN=CENTER HEIGHT="64" BGCOLOR="#99FF99"><B><FONT FACE="Arial,Helvetica"><FONT SIZE=-1><A HREF="giunto3map.wrl" target="vrml">Display</A></FONT></FONT></B></TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD></TD>
+
+<TD></TD>
+</TR>
+</TABLE></CENTER>
+&nbsp;
+<HR WIDTH="100%">
+<BR><FONT FACE="Arial,Helvetica"><FONT SIZE=-1><A HREF="../indice-finale.html" target="_top">VENICE&nbsp;
+Demo</A></FONT></FONT>
+</BODY>
+</HTML>
