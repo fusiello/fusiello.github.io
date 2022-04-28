@@ -5,5 +5,5 @@
 updateBiblio > Publications.html
 updateThesis > Thesis_supervised.html
 
-#cp Publications.html ../../index.php/.
-#cp Thesis_supervised.html ../../index.php/.
+cp Publications.html ../../index.php/.
+cp Thesis_supervised.html ../../index.php/.
