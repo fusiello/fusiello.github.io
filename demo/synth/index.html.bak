@@ -1,0 +1,159 @@
+<!DOCTYPE doctype>
+<html>
+	<head>
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="View synthesis, Image based rendering, IBR">
+		<title>
+			View Synthesis from Uncalibrated Images
+		</title>
+		<link rel="stylesheet" href="../demo.css">
+	</head>
+	<body>
+		<h1>
+			View Synthesis from Uncalibrated Images using Parallax
+		</h1>
+		<p class="center">
+			with L. Irsara
+		</p>
+		<h3>
+			Overview
+		</h3>
+		<p>
+			View synthesis starts from some real sample images and generate snapshots of a scene taken from a “virtual” viewpoint different from all the viewpoints of the real views. We start from uncalibrated reference images and recover a proxy for the geometry of the scene (the relative affine structure). This information is used to render novel views from viewpoints that can be easily controlled by the user.
+		</p>
+		<hr width="100%">
+		<h3>
+			Method
+		</h3>
+		<ul>
+			<li>the uncalibrated rectification yield an approximation of the plane at infinity, that is used as the reference plane for the relative affine structure.
+			</li>
+			<li>a techinque based on linear combination of dispacements in the log space is used to generate parametric trajectories for the novel camera.
+			</li>
+		</ul>
+		<figure>
+			<center>
+				<img src="vs_overview.png" alt="overview" style="width:80%" class="centerImage">
+			</center>
+		</figure>
+		<hr width="100%">
+		<h3>
+			Results
+		</h3>
+		<table>
+			<tbody>
+				<tr>
+					<th colspan="3">
+						Reference views
+					</th>
+					<th rowspan="2">
+						Synthetic movie<br>
+					</th>
+				</tr>
+				<tr>
+					<th>
+						Left
+					</th>
+					<th>
+						Right
+					</th>
+					<th>
+						Up
+					</th>
+				</tr>
+				<tr>
+					<td>
+						<a href="porta/portaCividaleL.png"><img src="thumbs/tportaCividaleL.png" border="0"></a>
+					</td>
+					<td>
+						<a href="porta/portaCividaleR.png"><img src="thumbs/tportaCividaleR.png" border="0"></a>
+					</td>
+					<td>
+						<img src="thumbs/gray_but.jpg" border="0">
+					</td>
+					<td>
+						<a href="videoPorta.avi"><img src="thumbs/tporta_synth.png" border="0"></a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="pista/pistaB.png"><img src="thumbs/tpistaB.png" border="0"></a>
+					</td>
+					<td>
+						<a href="pista/pistaR.png"><img src="thumbs/tpistaR.png" border="0"></a>
+					</td>
+					<td>
+						<a href="pista/pistaLT.png"><img src="thumbs/tpistaLT.png" border="0"></a>
+					</td>
+					<td>
+						<a href="videoPista.avi"><img src="thumbs/tpista_synth.png" border="0"></a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="naturaMorta/naturaMortaL.png"><img src="thumbs/tnaturaMortaT.png" border="0"></a>
+					</td>
+					<td>
+						<a href="naturaMorta/naturaMortaRB.png"><img src="thumbs/tnaturaMortaRB.png" border="0"></a>
+					</td>
+					<td>
+						<a href="naturaMorta/naturaMortaT.png"><img src="thumbs/tnaturaMortaT.png" border="0"></a>
+					</td>
+					<td>
+						<a href="videoNaturaMorta.avi"><img src="thumbs/tnaturaMorta_synth.png" border="0"></a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<table>
+			<tbody>
+				<tr>
+					<th colspan="1">
+						1
+					</th>
+					<th colspan="1">
+						2
+					</th>
+					<th colspan="1">
+						3
+					</th>
+				</tr>
+				<tr>
+					<td>
+						<a href="two_horizontal.avi"><img src="thumbs/movie-3.gif" width="50" border="0"></a>
+					</td>
+					<td>
+						<a href="three_line_2.avi"><img src="thumbs/movie-3.gif" width="50" border="0"></a>
+					</td>
+					<td>
+						<a href="three_circle.avi"><img src="thumbs/movie-3.gif" width="50" border="0"></a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr width="100%">
+		<h3>
+			Code
+		</h3>
+		<div style="margin-left: 2em">
+			MATLAB <a href="ViewSynthesis.zip">code</a> used to generate the synthetic examples above.<br>
+		</div>
+		<hr width="100%">
+		<h3>
+			Reference papers
+		</h3>
+		<ol class="biblio">
+			<li>
+				<span class="authors"><span class="highlight">Fusiello, A.</span></span> <span class="title">Specifying Virtual Cameras in Uncalibrated View Synthesis</span>. <span class="in">In IEEE Transactions on Circuits and Systems for Video Technology</span>, 17 (5): 604-611, 2007. <span class="links"><span class="webpdf"><a href="../../papers/tcsvt07.pdf">pdf</a></span>&nbsp; <span class="doi"><a href="http://dx.doi.org/10.1109/TCSVT.2007.894049" target="_blank">doi</a></span>&nbsp;</span>
+			</li>
+			<li>
+				<span class="authors"><span class="highlight">Fusiello, A.</span> and Irsara, L.</span> <span class="title">An Uncalibrated View-Synthesis Pipeline</span>. <span class="in">In <a href="http://dx.doi.org/10.1109/ICIAP.2007.4362844" target="_blank">Proceedings of the International Conference on Image Analysis and Processing (ICIAP)</a></span>, pages 609-614, <span class="publisher">IEEE Computer Society</span>, Modena, IT, 2007. <span class="links"><span class="webpdf"><a href="../../papers/iciap07i.pdf">pdf</a></span>&nbsp;</span>
+			</li>
+		</ol>
+		<hr width="100%">
+		<p>
+			<a href="legacy.html">Previous work</a>
+		</p>
+	</body>
+</html>

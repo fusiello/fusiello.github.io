@@ -1,0 +1,279 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html><head>
+
+  
+  
+  <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background Initialization</title>
+  <link rel="stylesheet" href="../demo.css" type="text/css">
+
+<body>
+
+<center>
+    <h1>     Patch-based  Background Initialization    </h1>
+
+
+	
+<authors> A. Colombari, A. Fusiello, and V. Murino </authors>
+
+<affiliation> Department of Computer Science<br>
+              University of Verona, Verona - Italy </affiliation>
+
+</center>
+
+<h3>            Overview   
+ </h3>
+
+
+In this paper we propose a patch-based technique for robust background
+  initialization (PBI) that exploits both spatial and temporal
+  consistency of the static background. The proposed technique is able
+  to cope with heavy clutter, i.e, foreground objects that stand still
+  for a considerable portion of time. It can process sequences
+  acquired with either a stationary camera or a moving camera,
+  provided that one can compensate for camera motion with respect to
+  the background, as in the case of mosaicing.  First the sequence is
+  subdivided in patches that are clustered along the time-line in
+  order to narrow down the number of background candidates. Then, a
+  tessellation is grown incrementally by selecting at each step the
+  best continuation of the current background.  The method rests on
+  sound principles in all its stages, and only few, intelligible
+  parameters are needed.  <center> <p></p>
+
+<hr width="100%"></center>
+
+<h3>PBI  algorithm</h3>
+
+<ol>
+
+<li> In the case of moving camera, compute the projective transformations 
+between frames and compensate for the camera motion.</li>
+
+<li> Estimate the image noise as the (robust) sample variance of
+frames difference.</li>
+
+<li> Subdivide the spatial domain into overlapping windows
+(footprints).</li>
+
+<li> On each footprint, cluster image patches along the timeline using
+single linkage agglomerative clustering, using SSD as the distance and
+a cutoff based on the Chi-square test.</li>
+
+<li> Compute cluster representative by averaging.</li>
+
+<li> Select the clusters of maximal length, insert their
+representatives in the background B.</li>
+
+<li> Select a patch in B, select a neighbouring footprint which is not
+represented in B.</li>
+
+<li> For each cluster representative in the selected footprint
+  evaluate the degree of overlap with B (using SSD) and select
+  candidate patches for insertion in B.</li>
+
+<li> The candidate patches enter a round robin tournament, where the
+  comparison between two of them is done according to cost of the cut
+  defined by their binarized difference. The higher cost wins. The
+  winner of the tournament in inserted in B.</li>
+
+<li> Repeat from step 7 until the background image is complete. </li>
+
+</ol>
+
+<hr width="100%">
+<h3>
+    Results 
+</h3>
+<h4>
+    Two images case 
+</h4>
+
+<table nosave="" border="1" cellspacing="2">
+
+    <tbody>
+
+        <tr nosave="" align="center" valign="top">
+            <th colspan="2">Starting images</th>
+            <th>Median background</th>
+            <th>PBI result</th>
+            <th colspan="2">Extracted object</th>
+            <th>Background growing</th>
+        </tr>
+
+        <tr nosave="" align="center" valign="top">
+            <td align="center"> <a href="results/ca_vignal_image1.jpg"><img src="thumbnails/ca_vignal_image1.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/ca_vignal_image2.jpg"><img src="thumbnails/ca_vignal_image2.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/ca_vignal_bg_median_from2images.jpg"><img src="thumbnails/ca_vignal_bg_median_from2images.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/ca_vignal_bg_img_from2images.jpg"><img src="thumbnails/ca_vignal_bg_img_from2images.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/ca_vignal_fg1.jpg"><img src="thumbnails/ca_vignal_fg1.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/ca_vignal_fg2.jpg"><img src="thumbnails/ca_vignal_fg2.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/ca_vignal_growing_from2images.avi"><img src="thumbnails/ca_vignal_growing_from2images.jpg" border="0"></a></td>
+        </tr>
+  </tbody>
+</table>
+
+
+<hr width="100%">
+<h4>
+    Stationary camera case 
+</h4>
+
+<table nosave="" border="1" cellspacing="2">
+
+    <tbody>
+
+        <tr nosave="" align="center" valign="center">
+            <th>Original sequence</th>
+            <th>Median background</th>
+            <th>PBI result</th>
+            <th>Moving objects</th>
+            <th>Background growing</th>
+        </tr>
+
+ <tr nosave="" align="center" valign="top">
+            <td align="center"> <a href="results/video11.avi"><img src="thumbnails/video11.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/video11_bg_median.png"><img src="thumbnails/video11_bg_median.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/video11_bg_pbi.png"><img src="thumbnails/video11_bg_pbi.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/video11_foreground.avi"><img src="thumbnails/video11_foreground.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/video11_growing.avi"><img src="thumbnails/video11_growing.jpg" border="0"></a></td>
+        </tr>
+
+        <tr nosave="" align="center" valign="top">
+            <td align="center"> <a href="results/foliage.avi"><img src="thumbnails/foliage.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/foliage_bg_median.jpg"><img src="thumbnails/foliage_bg_median.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/foliage_bg_img.jpg"><img src="thumbnails/foliage_bg_img.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/foliage_foreground.avi"><img src="thumbnails/foliage_foreground.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/foliage_growing.avi"><img src="thumbnails/foliage_growing.jpg" border="0"></a></td>
+        </tr>
+
+        <tr nosave="" align="center" valign="top">
+            <td align="center"> <a href="results/board.avi"><img src="thumbnails/board.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/board_bg_median.jpg"><img src="thumbnails/board_bg_median.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/board_bg_img.jpg"><img src="thumbnails/board_bg_img.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/board_foreground.avi"><img src="thumbnails/board_foreground.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/board_growing.avi"><img src="thumbnails/board_growing.jpg" border="0"></a></td>
+        </tr>
+
+        <tr nosave="" align="center" valign="top">
+            <td align="center"> <a href="results/granguardia.avi"><img src="thumbnails/granguardia.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/granguardia_bg_median.jpg"><img src="thumbnails/granguardia_bg_median.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/granguardia_bg_img.jpg"><img src="thumbnails/granguardia_bg_img.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/granguardia_foreground.avi"><img src="thumbnails/granguardia_foreground.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/granguardia_growing.avi"><img src="thumbnails/granguardia_growing.jpg" border="0"></a></td>
+        </tr>
+
+        <tr nosave="" align="center" valign="top">
+            <td align="center"> <a href="results/ca_vignal.avi"><img src="thumbnails/ca_vignal.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/ca_vignal_bg_median.jpg"><img src="thumbnails/ca_vignal_bg_median.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/ca_vignal_bg_img.jpg"><img src="thumbnails/ca_vignal_bg_img.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/ca_vignal_foreground.avi"><img src="thumbnails/ca_vignal_foreground.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/ca_vignal_growing.avi"><img src="thumbnails/ca_vignal_growing.jpg" border="0"></a></td>
+        </tr>
+
+        <tr nosave="" align="center" valign="top">
+            <td align="center"> <a href="results/Snellen.avi"><img src="thumbnails/Snellen.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/Snellen_bg_median.jpg"><img src="thumbnails/Snellen_bg_median.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/Snellen_bg_img.jpg"><img src="thumbnails/Snellen_bg_img.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/Snellen_foreground.avi"><img src="thumbnails/Snellen_foreground.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/Snellen_growing.avi"><img src="thumbnails/Snellen_growing.jpg" border="0"></a></td>
+        </tr>
+  
+  </tbody>
+</table>
+
+
+<hr width="100%">
+<h4>
+    Moving camera case 
+</h4>
+<table nosave="" border="1" cellspacing="2">
+
+    <tbody>
+
+        <tr nosave="" align="center" valign="center">
+            <th>Original sequence</th>
+            <th>Compensated sequence</th>
+            <th>Median background</th>
+            <th>PBI result</th>
+            <th>Moving objects</th>
+            <th>Background growing</th>
+        </tr>
+
+        <tr nosave="" align="center" valign="center">
+            <td align="center"> <a href="results/road-sign.avi"><img src="thumbnails/road-sign.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/road-sign_compensated.avi"><img src="thumbnails/road-sign_compensated.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/road-sign_bg_median.jpg"><img src="thumbnails/road-sign_bg_median.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/road-sign_bg_img.jpg"><img src="thumbnails/road-sign_bg_img.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/road-sign_foreground.avi"><img src="thumbnails/road-sign_foreground.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/road-sign_growing.avi"><img src="thumbnails/road-sign_growing.jpg" border="0"></a></td>
+        </tr>
+  
+
+        <tr nosave="" align="center" valign="top">
+            <td align="center"> <a href="results/dado.avi"><img src="thumbnails/dado.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/dado_compensated.avi"><img src="thumbnails/dado_compensated.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/dado_bg_median.jpg"><img src="thumbnails/dado_bg_median.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/dado_bg_img.jpg"><img src="thumbnails/dado_bg_img.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/dado_foreground.avi"><img src="thumbnails/dado_foreground.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/dado_growing.avi"><img src="thumbnails/dado_growing.jpg" border="0"></a></td>
+        </tr>
+
+        <tr nosave="" align="center" valign="top">
+            <td align="center"> <a href="results/yard.avi"><img src="thumbnails/yard.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/yard_compensated.avi"><img src="thumbnails/yard_compensated.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/yard_bg_median.jpg"><img src="thumbnails/yard_bg_median.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/yard_bg_img.jpg"><img src="thumbnails/yard_bg_img.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/yard_foreground.avi"><img src="thumbnails/yard_foreground.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/yard_growing.avi"><img src="thumbnails/yard_growing.jpg" border="0"></a></td>
+        </tr>
+
+        <tr nosave="" align="center" valign="top">
+            <td align="center"> <a href="results/crossing.avi"><img src="thumbnails/crossing.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/crossing_compensated.avi"><img src="thumbnails/crossing_compensated.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/crossing_bg_median.jpg"><img src="thumbnails/crossing_bg_median.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/crossing_bg_img.jpg"><img src="thumbnails/crossing_bg_img.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/crossing_foreground.avi"><img src="thumbnails/crossing_foreground.jpg" border="0"></a></td>
+            <td align="center"> <a href="results/crossing_growing.avi"><img src="thumbnails/crossing_growing.jpg" border="0"></a></td>
+        </tr>
+  
+  </tbody>
+</table>
+
+
+<center>
+<p></p>
+
+<hr width="100%"></center>
+
+<p><br>
+
+</p>
+
+<h3>Papers</h3>
+<UL>
+
+<li><a name="ColFusMur06">A</a>.&nbsp;Colombari,
+  A.&nbsp;Fusiello, and V.&nbsp;Murino.
+Background initialization in cluttered sequences.
+In <cite>5th Workshop on Perceptual Organization in Computer Vision</cite>,
+  CVPR 2006 Workshops, pages 197&ndash;202, New York, NY, 17 - 22 June 2006. IEEE
+  Computer Society.
+(<a href="../../papers/pocv06.pdf">PDF</a>)
+(<a href="http://dx.doi.org/10.1109/CVPRW.2006.40">doi:10.1109/CVPRW.2006.40</a>)</li>
+
+
+<li><a name="FusColMurICIAP07">Andrea</a>
+  Colombari, Andrea Fusiello, and Vittorio Murino.
+Video objects segmentation by robust background modeling.
+In <cite>International Conference on Image Analysis and Processing (ICIAP
+  2007)</cite>, pages 155&ndash;164, Modena, Italy, 10-14 September 2007. IEEE
+  Computer Society.
+(<a href="../../papers/iciap07c.pdf">PDF</a>)
+(<a href="http://dx.doi.org/10.1109/ICIAP.2007.4362773">doi:10.1109/ICIAP.2007.4362773</a>)</li>
+
+</UL>
+
+</p>
+
+</body></html> 

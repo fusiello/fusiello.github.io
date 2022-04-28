@@ -1,0 +1,628 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-15">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="ProgId" content="Word.Document">
+   <meta name="Generator" content="Microsoft Word 10">
+   <meta name="Originator" content="Microsoft Word 10">
+   <meta name="GENERATOR" content="Mozilla/4.77 [en] (X11; U; Linux 2.2.19-7.0.1 i686) [Netscape]">
+   <title> </title>
+<link rel=File-List href="results_file/filelist.xml">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>marzotto</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>marzotto</o:LastAuthor>
+  <o:Revision>6</o:Revision>
+  <o:TotalTime>247</o:TotalTime>
+  <o:Created>2002-03-20T12:46:00Z</o:Created>
+  <o:LastSaved>2002-04-02T14:32:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>892</o:Words>
+  <o:Characters>5091</o:Characters>
+  <o:Company>v.i.p.s</o:Company>
+  <o:Lines>42</o:Lines>
+  <o:Paragraphs>11</o:Paragraphs>
+  <o:CharactersWithSpaces>5972</o:CharactersWithSpaces>
+  <o:Version>10.2625</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:HyphenationZone>14</w:HyphenationZone>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+h1
+	{mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:24.0pt;
+	font-family:"Times New Roman";
+	color:black;
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:#0000EE;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#551A8B;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:70.85pt 2.0cm 2.0cm 2.0cm;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	border-top:outset;
+	border-left:outset;
+	border-bottom:inset;
+	border-right:inset;
+	border-width:1.0pt;
+	mso-border-top-alt:outset;
+	mso-border-left-alt:outset;
+	mso-border-bottom-alt:inset;
+	mso-border-right-alt:inset;
+	mso-border-color-alt:windowtext;
+	mso-border-width-alt:.75pt;
+	padding:24.0pt 24.0pt 24.0pt 24.0pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Tabella normale";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+table.MsoTableGrid
+	{mso-style-name:"Griglia tabella";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+</style>
+<![endif]-->
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="12290">
+  <o:colormenu v:ext="edit" fillcolor="none"/>
+ </o:shapedefaults></xml><![endif]-->
+<!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#0000EE" vlink="#551A8B" alink="#0000EE" lang="IT" style="tab-interval:35.4pt">
+
+<div class=Section1>&nbsp;
+<center>
+<p><a href="Relazione.pdf">Download detailed description (pdf)</a>
+<p><a href="presentation.ppt">Dowload presantation (powerpoint)</a>
+</center>
+
+<p><br>
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<center><table BORDER CELLPADDING=0 WIDTH="82%" class="MsoNormalTable" style="width:82.32%;mso-cellspacing:1.5pt;background:#FFFF99;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt;background-attachment:scroll" >
+<tr style="mso-yfti-irow:0;height:1.0pt">
+<td COLSPAN="7" WIDTH="99%" style="width:99.6%;background:yellow;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:1.0pt;background-attachment:scroll">
+<center><b><u>VIDEO-SHOTS</u></b></center>
+</td>
+</tr>
+
+<tr style="mso-yfti-irow:1;height:1.0pt">
+<td WIDTH="38%" style="width:38.36%;background:yellow;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:1.0pt">
+<center><b>Description</b></center>
+</td>
+
+<td WIDTH="9%" style="width:9.74%;background:yellow;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:1.0pt;background-attachment:scroll">
+<center><b>mosaic</b>
+<br><b>background</b></center>
+</td>
+
+<td WIDTH="7%" NOSAVE style="width:7.88%;background:yellow;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:1.0pt;background-attachment:scroll">
+<center><b>original</b>
+<br><b>sequenze</b></center>
+</td>
+
+<td WIDTH="8%" style="width:8.0%;background:yellow;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:1.0pt;background-attachment:scroll">
+<center><b>tracking</b>
+<br><b>sequence</b></center>
+</td>
+
+<td WIDTH="11%" style="width:11.08%;background:yellow;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:1.0pt;background-attachment:scroll">
+<center><b>foreground</b>
+<br><b>sequence</b></center>
+</td>
+
+<td WIDTH="8%" style="width:8.14%;background:yellow;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:1.0pt;background-attachment:scroll">
+<center><b>encoded /decoded</b>
+<br><b>sequence</b></center>
+</td>
+
+<td VALIGN=TOP WIDTH="15%" style="width:15.24%;background:yellow;padding:
+  1.4pt 1.4pt 1.4pt 1.4pt;height:1.0pt;background-attachment:scroll">
+<center><b>video</b>
+<br><b>of mosaic</b></center>
+</td>
+</tr>
+
+<tr style="mso-yfti-irow:2;height:8.05pt">
+<td WIDTH="38%" style="width:38.36%;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:8.05pt">
+<div class="MsoNormal">Passaggio Arosa dietro palo</div>
+</td>
+
+<td WIDTH="9%" style="width:9.74%;padding:1.4pt 1.4pt 1.4pt 1.4pt;height:
+  8.05pt">
+<center><a href="videos/arosa_palo/mos_img_arosa_palo.jpg">m</a></center>
+</td>
+
+<td WIDTH="7%" style="width:7.88%;padding:1.4pt 1.4pt 1.4pt 1.4pt;height:
+  8.05pt">
+<center><a href="videos/arosa_palo/film_orig_arosa_palo.avi">os</a></center>
+</td>
+
+<td WIDTH="8%" style="width:8.0%;padding:1.4pt 1.4pt 1.4pt 1.4pt;height:8.05pt">
+<center><a href="videos/arosa_palo/film_mark_arosa_palo.avi">ts</a></center>
+</td>
+
+<td WIDTH="11%" style="width:11.08%;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:8.05pt">
+<center><a href="videos/arosa_palo/film_fore_arosa_palo.avi">fs</a></center>
+</td>
+
+<td WIDTH="8%" style="width:8.14%;padding:1.4pt 1.4pt 1.4pt 1.4pt;height:
+  8.05pt">
+<center><a href="videos/arosa_palo/film_rec_arosa_palo.avi">eds</a></center>
+</td>
+
+<td VALIGN=TOP WIDTH="15%" style="width:15.24%;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:8.05pt">
+<center><a href="videos/arosa_palo/film_st_rec_arosa_palo.avi">ss</a></center>
+</td>
+</tr>
+
+<tr NOSAVE style="mso-yfti-irow:3;height:8.05pt">
+<td WIDTH="38%" NOSAVE style="width:38.36%;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:8.05pt">
+<div class="MsoNormal">Incrocio di Signore davanti Arena</div>
+</td>
+
+<td WIDTH="9%" style="width:9.74%;padding:1.4pt 1.4pt 1.4pt 1.4pt;height:
+  8.05pt">
+<center><a href="videos/incrocio_arena/mos_img_incrocio_arena.jpg">m</a></center>
+</td>
+
+<td WIDTH="7%" style="width:7.88%;padding:1.4pt 1.4pt 1.4pt 1.4pt;height:
+  8.05pt">
+<center><a href="videos/incrocio_arena/film_orig_incrocio_arena.avi">os</a></center>
+</td>
+
+<td WIDTH="8%" style="width:8.0%;padding:1.4pt 1.4pt 1.4pt 1.4pt;height:8.05pt">
+<center><a href="videos/incrocio_arena/film_mark_incrocio_arena.avi">ts</a></center>
+</td>
+
+<td WIDTH="11%" style="width:11.08%;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:8.05pt">
+<center><a href="videos/incrocio_arena/film_fore_incrocio_arena.avi">fs</a></center>
+</td>
+
+<td WIDTH="8%" style="width:8.14%;padding:1.4pt 1.4pt 1.4pt 1.4pt;height:
+  8.05pt">
+<center><a href="videos/incrocio_arena/film_rec_incrocio_arena.avi">eds</a></center>
+</td>
+
+<td VALIGN=TOP WIDTH="15%" style="width:15.24%;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:8.05pt">
+<center><a href="videos/incrocio_arena/film_st_rec_incrocio_arena.avi">ss</a></center>
+</td>
+</tr>
+
+<tr style="mso-yfti-irow:4;height:8.05pt">
+<td WIDTH="38%" style="width:38.36%;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:8.05pt">
+<div class="MsoNormal">Michele e Lorena a S.Zeno</div>
+</td>
+
+<td WIDTH="9%" style="width:9.74%;padding:1.4pt 1.4pt 1.4pt 1.4pt;height:
+  8.05pt">
+<center><a href="videos/scala_eprol_lori/mos_img_scala_eprol_lori.jpg">m</a></center>
+</td>
+
+<td WIDTH="7%" style="width:7.88%;padding:1.4pt 1.4pt 1.4pt 1.4pt;height:
+  8.05pt">
+<center><a href="videos/scala_eprol_lori/film_orig_scala_eprol_lori.avi">os</a></center>
+</td>
+
+<td WIDTH="8%" style="width:8.0%;padding:1.4pt 1.4pt 1.4pt 1.4pt;height:8.05pt">
+<center><a href="videos/scala_eprol_lori/film_mark_scala_eprol_lori.avi">ts</a></center>
+</td>
+
+<td WIDTH="11%" style="width:11.08%;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:8.05pt">
+<center><a href="videos/scala_eprol_lori/film_fore_scala_eprol_lori.avi">fs</a></center>
+</td>
+
+<td WIDTH="8%" style="width:8.14%;padding:1.4pt 1.4pt 1.4pt 1.4pt;height:
+  8.05pt">
+<center><a href="videos/scala_eprol_lori/film_rec_scala_eprol_lori.avi">eds</a></center>
+</td>
+
+<td VALIGN=TOP WIDTH="15%" style="width:15.24%;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:8.05pt">
+<center><a href="videos/scala_eprol_lori/film_st_rec_scala_eprol_lori.avi">ss</a></center>
+</td>
+</tr>
+
+<tr style="mso-yfti-irow:5;height:8.05pt">
+<td WIDTH="38%" style="width:38.36%;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:8.05pt">
+<div class="MsoNormal">Abbraccio Roberto Federica</div>
+</td>
+
+<td WIDTH="9%" style="width:9.74%;padding:1.4pt 1.4pt 1.4pt 1.4pt;height:
+  8.05pt">
+<center><a href="videos/abbraccio_tf/mos_img_abbraccio_tf.jpg">m</a></center>
+</td>
+
+<td WIDTH="7%" style="width:7.88%;padding:1.4pt 1.4pt 1.4pt 1.4pt;height:
+  8.05pt">
+<center><a href="videos/abbraccio_tf/film_orig_abbraccio_tf.avi">os</a></center>
+</td>
+
+<td WIDTH="8%" style="width:8.0%;padding:1.4pt 1.4pt 1.4pt 1.4pt;height:8.05pt">
+<center><a href="videos/abbraccio_tf/film_mark_abbraccio_tf.avi">ts</a></center>
+</td>
+
+<td WIDTH="11%" style="width:11.08%;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:8.05pt">
+<center><a href="videos/abbraccio_tf/film_fore_abbraccio_tf.avi">fs</a></center>
+</td>
+
+<td WIDTH="8%" style="width:8.14%;padding:1.4pt 1.4pt 1.4pt 1.4pt;height:
+  8.05pt">
+<center><a href="videos/abbraccio_tf/film_rec_abbraccio_tf.avi">eds</a></center>
+</td>
+
+<td VALIGN=TOP WIDTH="15%" style="width:15.24%;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:8.05pt">
+<center><a href="videos/abbraccio_tf/film_st_rec_abbraccio_tf.avi">ss</a></center>
+</td>
+</tr>
+
+<tr style="mso-yfti-irow:6;height:8.05pt">
+<td WIDTH="38%" style="width:38.36%;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:8.05pt">
+<div class="MsoNormal">Roberto dietro Federica</div>
+</td>
+
+<td WIDTH="9%" style="width:9.74%;padding:1.4pt 1.4pt 1.4pt 1.4pt;height:
+  8.05pt">
+<center><a href="videos/todo_dietro_fede/mos_img_todo_dietro_fede.jpg">m</a></center>
+</td>
+
+<td WIDTH="7%" style="width:7.88%;padding:1.4pt 1.4pt 1.4pt 1.4pt;height:
+  8.05pt">
+<center><a href="videos/todo_dietro_fede/film_orig_todo_dietro_fede.avi">os</a></center>
+</td>
+
+<td WIDTH="8%" style="width:8.0%;padding:1.4pt 1.4pt 1.4pt 1.4pt;height:8.05pt">
+<center><a href="videos/todo_dietro_fede/film_mark_todo_dietro_fede.avi">ts</a></center>
+</td>
+
+<td WIDTH="11%" style="width:11.08%;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:8.05pt">
+<center><a href="videos/todo_dietro_fede/film_fore_todo_dietro_fede.avi">fs</a></center>
+</td>
+
+<td WIDTH="8%" style="width:8.14%;padding:1.4pt 1.4pt 1.4pt 1.4pt;height:
+  8.05pt">
+<center><a href="videos/todo_dietro_fede/film_rec_todo_dietro_fede.avi">eds</a></center>
+</td>
+
+<td VALIGN=TOP WIDTH="15%" style="width:15.24%;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:8.05pt">
+<center><a href="videos/todo_dietro_fede/film_st_rec_todo_dietro_fede.avi">ss</a></center>
+</td>
+</tr>
+
+<tr style="mso-yfti-irow:7;height:8.05pt">
+<td WIDTH="38%" style="width:38.36%;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:8.05pt">
+<div class="MsoNormal">Manuel</div>
+</td>
+
+<td WIDTH="9%" style="width:9.74%;padding:1.4pt 1.4pt 1.4pt 1.4pt;height:
+  8.05pt">
+<center><a href="videos/manuel/mos_img_manuel.jpg">m</a></center>
+</td>
+
+<td WIDTH="7%" style="width:7.88%;padding:1.4pt 1.4pt 1.4pt 1.4pt;height:
+  8.05pt">
+<center><a href="videos/manuel/film_orig_manuel.avi">os</a></center>
+</td>
+
+<td WIDTH="8%" style="width:8.0%;padding:1.4pt 1.4pt 1.4pt 1.4pt;height:8.05pt">
+<center><a href="videos/manuel/film_mark_manuel.avi">ts</a></center>
+</td>
+
+<td WIDTH="11%" style="width:11.08%;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:8.05pt">
+<center><a href="videos/manuel/film_fore_manuel.avi">fs</a></center>
+</td>
+
+<td WIDTH="8%" style="width:8.14%;padding:1.4pt 1.4pt 1.4pt 1.4pt;height:
+  8.05pt">
+<center><a href="videos/manuel/film_rec_manuel.avi">eds</a></center>
+</td>
+
+<td VALIGN=TOP WIDTH="15%" style="width:15.24%;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:8.05pt">
+<center><a href="videos/manuel/film_st_rec_manuel.avi">ss</a></center>
+</td>
+</tr>
+
+<tr style="mso-yfti-irow:8;height:8.05pt">
+<td WIDTH="38%" style="width:38.36%;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:8.05pt">
+<div class="MsoNormal">Super 5</div>
+</td>
+
+<td WIDTH="9%" style="width:9.74%;padding:1.4pt 1.4pt 1.4pt 1.4pt;height:
+  8.05pt">
+<center><a href="videos/unobianca/mos_img_unobianca.jpg">m</a></center>
+</td>
+
+<td WIDTH="7%" style="width:7.88%;padding:1.4pt 1.4pt 1.4pt 1.4pt;height:
+  8.05pt">
+<center><a href="videos/unobianca/film_orig_unobianca.avi">os</a></center>
+</td>
+
+<td WIDTH="8%" style="width:8.0%;padding:1.4pt 1.4pt 1.4pt 1.4pt;height:8.05pt">
+<center><a href="videos/unobianca/film_mark_unobianca.avi">ts</a></center>
+</td>
+
+<td WIDTH="11%" style="width:11.08%;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:8.05pt">
+<center><a href="videos/unobianca/film_fore_unobianca.avi">fs</a></center>
+</td>
+
+<td WIDTH="8%" style="width:8.14%;padding:1.4pt 1.4pt 1.4pt 1.4pt;height:
+  8.05pt">
+<center><a href="videos/unobianca/film_rec_unobianca.avi">eds</a></center>
+</td>
+
+<td VALIGN=TOP WIDTH="15%" style="width:15.24%;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:8.05pt">
+<center><a href="videos/unobianca/film_st_rec_unobianca.avi">ss</a></center>
+</td>
+</tr>
+
+<tr style="mso-yfti-irow:9;height:8.05pt">
+<td COLSPAN="7" WIDTH="99%" style="width:99.6%;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:8.05pt">&nbsp;</td>
+</tr>
+
+<tr style="mso-yfti-irow:10;height:8.05pt">
+<td COLSPAN="7" WIDTH="99%" style="width:99.6%;background:yellow;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:8.05pt">
+<center><b><u>VIDEO EDITING</u></b></center>
+</td>
+</tr>
+
+<tr style="mso-yfti-irow:11;height:8.05pt">
+<td WIDTH="38%" style="width:38.36%;background:yellow;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:8.05pt">
+<center><b>Description</b></center>
+</td>
+
+<td WIDTH="9%" style="width:9.74%;background:yellow;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:8.05pt">
+<center><b>Points for rettification</b></center>
+</td>
+
+<td COLSPAN="3" WIDTH="27%" style="width:27.34%;background:yellow;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:8.05pt">
+<center><b>Rettification and application</b></center>
+</td>
+
+<td COLSPAN="2" WIDTH="23%" style="width:23.56%;background:yellow;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:8.05pt">
+<center><b>Video withediting</b></center>
+</td>
+</tr>
+
+<tr style="mso-yfti-irow:12;height:8.05pt">
+<td WIDTH="38%" style="width:38.36%;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:8.05pt">
+<div class="MsoNormal">Passaggio Arosa dietro palo</div>
+</td>
+
+<td WIDTH="9%" style="width:9.74%;padding:1.4pt 1.4pt 1.4pt 1.4pt;height:
+  8.05pt">
+<center><a href="images/mosaico_originale.jpg">r</a></center>
+</td>
+
+<td COLSPAN="3" WIDTH="27%" style="width:27.34%;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:8.05pt">
+<center><a href="images/mosaico_rosso_edit.jpg">ra</a></center>
+</td>
+
+<td COLSPAN="2" WIDTH="23%" style="width:23.56%;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:8.05pt">
+<center><a href="videos/arosa_palo/film_rec_arosa_palo_edit.avi">se</a></center>
+</td>
+</tr>
+
+<tr style="mso-yfti-irow:13;mso-yfti-lastrow:yes;height:8.05pt">
+<td COLSPAN="7" WIDTH="99%" style="width:99.6%;padding:1.4pt 1.4pt 1.4pt 1.4pt;
+  height:8.05pt">
+<div class="MsoNormal">These AVI sequences are compressed with DivX.</div>
+</td>
+</tr>
+</table></center>
+
+<center><table BORDER CELLSPACING=3 CELLPADDING=0 WIDTH="35%" class="MsoTableGrid" style="width:35.0%;mso-cellspacing:2.2pt;border:solid #000039 1.0pt;
+ mso-padding-alt:0cm 5.4pt 0cm 5.4pt;mso-border-insideh:.5pt solid windowtext;
+ mso-border-insidev:.5pt solid windowtext" >
+<tr style="mso-yfti-irow:0;height:45.0pt">
+<td COLSPAN="2" WIDTH="430" style="width:322.5pt;background:yellow;padding:0cm 5.4pt 0cm 5.4pt;
+  height:45.0pt;background-attachment:scroll">
+<center><b><u>MOSAICS OF VERONA</u></b></center>
+</td>
+</tr>
+
+<tr style="mso-yfti-irow:1;height:5.0pt">
+<td WIDTH="261" style="width:195.75pt;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;
+  height:5.0pt;background-attachment:scroll">
+<div class="MsoNormal"><a href="images/Arena.jpg">Vista frontale del'Arena</a></div>
+</td>
+
+<td VALIGN=TOP WIDTH="166" style="width:124.5pt;background:#FFFF99;padding:
+  0cm 5.4pt 0cm 5.4pt;height:5.0pt;background-attachment:scroll">
+<center><img SRC="image003.jpg" BORDER=0 v:shapes="_x0000_i1025" height=45 width=109></center>
+</td>
+</tr>
+
+<tr style="mso-yfti-irow:2;height:5.0pt">
+<td WIDTH="261" style="width:195.75pt;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;
+  height:5.0pt;background-attachment:scroll">
+<div class="MsoNormal"><a href="images/AlaArenaIntera.jpg">Ala dell'Arena</a></div>
+</td>
+
+<td VALIGN=TOP WIDTH="166" style="width:124.5pt;background:#FFFF99;padding:
+  0cm 5.4pt 0cm 5.4pt;height:5.0pt;background-attachment:scroll">
+<center><img SRC="image005.jpg" BORDER=0 v:shapes="_x0000_i1026" height=76 width=43></center>
+</td>
+</tr>
+
+<tr style="mso-yfti-irow:3;height:5.0pt">
+<td WIDTH="261" style="width:195.75pt;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;
+  height:5.0pt;background-attachment:scroll">
+<div class="MsoNormal"><a href="images/PontePietra.jpg">Ponte Pietra</a></div>
+</td>
+
+<td VALIGN=TOP WIDTH="166" style="width:124.5pt;background:#FFFF99;padding:
+  0cm 5.4pt 0cm 5.4pt;height:5.0pt;background-attachment:scroll">
+<center><img SRC="image007.jpg" BORDER=0 v:shapes="_x0000_i1027" height=42 width=110></center>
+</td>
+</tr>
+
+<tr style="mso-yfti-irow:4;height:5.0pt">
+<td WIDTH="261" style="width:195.75pt;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;
+  height:5.0pt;background-attachment:scroll">
+<div class="MsoNormal"><a href="images/SanZenoCentrale.jpg">Facciata di
+San Zeno</a></div>
+</td>
+
+<td VALIGN=TOP WIDTH="166" style="width:124.5pt;background:#FFFF99;padding:
+  0cm 5.4pt 0cm 5.4pt;height:5.0pt;background-attachment:scroll">
+<center><img SRC="image009.jpg" BORDER=0 v:shapes="_x0000_i1028" height=76 width=41></center>
+</td>
+</tr>
+
+<tr style="mso-yfti-irow:5;mso-yfti-lastrow:yes;height:5.0pt">
+<td WIDTH="261" style="width:195.75pt;background:#FFFF99;padding:0cm 5.4pt 0cm 5.4pt;
+  height:5.0pt;background-attachment:scroll">
+<div class="MsoNormal"><a href="images/PonteCastelVecchio.jpg">Ponte Castel
+Vecchio</a></div>
+</td>
+
+<td VALIGN=TOP WIDTH="166" style="width:124.5pt;background:#FFFF99;padding:
+  0cm 5.4pt 0cm 5.4pt;height:5.0pt;background-attachment:scroll">
+<center><img SRC="image011.jpg" BORDER=0 v:shapes="_x0000_i1029" height=52 width=112></center>
+</td>
+</tr>
+</table></center>
+
+<center><table BORDER=0 CELLSPACING=0 CELLPADDING=0 class="MsoTableGrid" style="border-collapse:collapse;mso-padding-alt:0cm 5.4pt 0cm 5.4pt" >
+<tr style="mso-yfti-irow:0">
+<td VALIGN=TOP WIDTH="326" style="width:244.5pt;border:solid #000039 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+<center><a href="mailto:michele.aprile@students.univr.it">michele.aprile@students.univr.it</a></center>
+</td>
+</tr>
+
+<tr style="mso-yfti-irow:1;mso-yfti-lastrow:yes">
+<td VALIGN=TOP WIDTH="326" style="width:244.5pt;border:solid #000039 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt">
+<center><a href="mailto:roberto.marzotto@students.univr.it">roberto.marzotto@students.univr.it</a></center>
+</td>
+</tr>
+</table></center>
+</div>
+
+</body>
+</html>

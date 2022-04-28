@@ -1,0 +1,438 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>  
+  <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Mosaic and Motion Segmentation </title>
+  <link rel="stylesheet" href="../demo.css" type="text/css">
+</head>
+<body>
+
+<center>
+<h2>      Global Mosaic and Motion Segmentation  </h2>
+	
+<authors> M. Aprile, A. Colombari, A. Fusiello, R. Marzotto, and V. Murino </authors>
+
+<affiliation> Department of Computer Science<br>
+              University of Verona, Verona - Italy </affiliation>
+
+</center>
+
+<h3>  Overview    </h3>
+
+
+This work present
+an application which takes a video shot as input and produces a compact
+representation composed by a background layer and segmented moving objects.
+We deal, in particular, with the problems of global registration, superesolution
+mosaicing, objects segmentation and tracking. Global registration is achieved
+with a graph-based technique that exploits situations when the frames have
+been captured using a 2D scanning of the scene rather then 1D scan as is&nbsp;
+commonly done. Objects segmentation is based on motion analysis using a
+robust statistical model of the background. Tracking is based on graph
+representation of motion and blob matching. Specific techniques are used
+to cope with crossing and occlusions. We also propose a new measure for
+mosaic quality estimation.
+
+<h3> Videocoding results </h3>
+
+<table width="90%">
+
+  <tbody>
+  
+    <tr>
+      <th colspan="2">
+      Original sequence
+      </th>
+
+      <th>
+      <center>Mosaic of background</center>
+      </th>
+
+      <th>
+      <center>Foreground sequence</center>
+      </th>
+
+      <th>
+      <center>encoded/decoded sequence</center>
+      </th>
+
+      <th colspan="2">
+      <center>Video editing examples</center>
+      </th>
+
+    </tr>
+
+
+    <tr >
+
+      <td  rowspan="2" nosave="" align="center"> Walking down S.Zeno
+      </td>
+
+      <td rowspan="2" align="center">
+      <p align="center"><a href="http://vips.sci.univr.it/movies/MOV/lorena/film_origlorena16.mov"><img src="images/movie-3.gif" alt="S.Zeno sequence" nosave="" border="0" height="40"></a></p>
+      </td>
+
+      <td rowspan="2" align="center">
+      <p align="center"><a href="http://vips.sci.univr.it/images/S.Zeno.jpg"><img src="images/lore_mini.jpg" alt="S.Zeno background" nosave="" align="middle" border="0" height="90"></a></p>
+      </td>
+
+      <td rowspan="2" align="center">
+      <p align="center"><a href="http://vips.sci.univr.it/movies/MOV/lorena/film_forelorena16.mov"><img src="images/movie-3.gif" alt="S.Zeno foreground" nosave="" border="0" height="40" ></a></p>
+      </td>
+
+      <td rowspan="2" align="center" valign="middle">
+      <p align="center"><a href="http://vips.sci.univr.it/movies/MOV/lorena/film_recalllorena16.mov"><img src="images/movie-3.gif" alt="S.Zeno enc-dec" nosave="" border="0" height="40" ></a></p>
+      </td>
+
+      <td align="center" valign="middle">
+      <p align="center">
+      <a href="http://vips.sci.univr.it/movies/MOV/lorena/film_fliplorena16.mov"><img src="images/movie-3.gif" alt="flip background" nosave="" border="0" height="40" ></a></p>
+      </td>
+
+      <td align="center" valign="middle">
+flip background
+      </td>
+
+    </tr>
+
+    <tr nosave="">
+
+      <td nosave="" align="center" valign="middle">
+      <p align="center">
+      <a href="http://vips.sci.univr.it/movies/MOV/lorena/film_lunalorena16.mov"><img src="images/movie-3.gif" alt="on the moon" nosave="" border="0" height="40" ></a></p>
+
+      </td>
+
+      <td nosave="" align="center" valign="middle">
+on the moon
+      </td>
+
+    </tr>
+
+    <tr>
+
+      <td rowspan="2" align="center">
+Children in<br>
+P.za Dante
+      </td>
+
+
+      <td rowspan="2" align="center">
+      <p align="center"><a href="http://vips.sci.univr.it/movies/MOV/bambini/film_pd3originale62.mov"><img src="images/movie-3.gif" alt="children sequence" nosave="" border="0" height="40" ></a></p>
+
+      </td>
+
+
+      <td rowspan="2" align="center">
+      <p align="center"><a href="http://vips.sci.univr.it/images/Bambini.jpg"><img src="images/bamb_mini.jpg" alt="Children background" nosave="" align="middle" border="0" height="90"></a></p>
+
+      </td>
+
+
+      <td rowspan="2" align="center">
+      <p align="center"><a href="http://vips.sci.univr.it/movies/MOV/bambini/film_allobjs6.mov"><img src="images/movie-3.gif" alt="Children foreground" nosave="" border="0" height="40" ></a></p>
+
+      </td>
+
+
+      <td rowspan="2" align="center" valign="middle">
+      <p align="center"><a href="http://vips.sci.univr.it/movies/MOV/bambini/film_recallobjs6.mov"><img src="images/movie-3.gif" alt="Children enc-dec" nosave="" border="0" height="40" ></a></p>
+
+      </td>
+
+
+      <td align="center" valign="middle">
+      <p align="center"><a href="http://vips.sci.univr.it/movies/MOV/bambini/film_recallobjscolgri62.mov"><img src="images/movie-3.gif" alt="change color" nosave="" border="0" height="40" ></a></p>
+
+      </td>
+
+
+      <td align="center" valign="middle">
+change color
+      </td>
+
+    </tr>
+
+
+    <tr>
+
+      <td align="center" valign="middle">
+      <p align="center"><a href="http://vips.sci.univr.it/movies/MOV/bambini/film_recbimborosso6.mov"><img src="images/movie-3.gif" alt="remove object" nosave="" border="0" height="40" ></a></p>
+
+      </td>
+
+      <td align="center" valign="middle">
+remove object
+      </td>
+
+    </tr>
+
+
+    <tr nosave="">
+
+      <td nosave="" align="center">
+      <p align="center">Bicycle in<br>
+
+P.za Dante</p>
+
+      </td>
+
+
+      <td nosave="" align="center">
+      <p align="center"><a href="http://vips.sci.univr.it/movies/MOV/bimbobici/film_origbimbobici6.mov"><img src="images/movie-3.gif" alt="Bicycle sequence" nosave="" border="0" height="40" ></a></p>
+
+      </td>
+
+
+      <td align="center">
+      <p align="center" ><img src="images/gray_but.jpg" nosave="" height="18" ></p>
+
+      </td>
+
+
+      <td nosave="" align="center">
+  
+      <p align="center"><img src="images/gray_but.jpg" nosave="" height="18" ></p>
+
+      </td>
+
+
+      <td align="center" valign="middle">
+  
+      <p align="center"><img src="images/gray_but.jpg" nosave="" height="18" ></p>
+
+      </td>
+
+
+      <td nosave="" align="center" valign="middle">
+      <p align="center">
+      <a href="http://vips.sci.univr.it/movies/MOV/bimbobici/film_angolodiverso6.mov"><img src="images/movie-3.gif" alt="new scenarious" nosave="" border="0" height="40" ></a></p>
+
+      </td>
+
+
+      <td nosave="" align="center" valign="middle">
+new scenarious
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+
+
+<h3> Mosaicing results </h3>
+
+
+<table width="70%">
+
+  <tbody>
+   
+
+    <tr>
+
+
+      <th colspan="2">
+      <center>Original sequence</center>
+
+      </th>
+
+
+      <th>
+      <center>Mosaic
+before and after global alignment</center>
+
+      </th>
+
+
+      <th>
+      <center>Super
+resolution</center>
+
+      </th>
+
+    </tr>
+
+
+    <tr nosave="">
+
+
+      <td nosave="" align="center" valign="CENTER" >
+Panoramic mosaic of
+Basilica di S. Zeno in Verona
+      </td>
+
+
+      <td nosave="" align="center" valign="CENTER">
+      <a href="http://vips.sci.univr.it/movies/MOV/mosaici/szeno1.mov"><img src="images/movie-3.gif" nosave="" alt="S.Zeno sequence" border="0" height="40" ></a>
+      </td>
+
+
+      <td>
+      <center><a href="http://vips.sci.univr.it/szeno.html"><img src="images/szeno_min.jpg" alt="S.Zeno mosaic" nosave="" border="0" height="90" ></a></center>
+
+      </td>
+
+
+      <td>
+      <center><img src="images/gray_but.jpg" nosave="" height="18" ></center>
+
+      </td>
+
+    </tr>
+
+
+    <tr nosave="">
+
+      <td nosave="" align="center" valign="CENTER" >
+Panoramic mosaic of Verona
+from Castel S. Pietro
+      </td>
+
+
+      <td nosave="" align="center" valign="CENTER">
+      <a href="http://vips.sci.univr.it/movies/MOV/mosaici/teodorico1.mov"><img src="images/movie-3.gif" nosave="" alt="Verona 1 sequence" border="0" height="40" ></a>
+      </td>
+
+
+
+      <td>
+      <center><a href="http://vips.sci.univr.it/teo1.html"><img src="images/teo1_min.jpg" alt="verona 1 mosaic" nosave="" border="0" height="90" ></a></center>
+
+      </td>
+
+
+      <td>
+      <center><img src="images/gray_but.jpg" nosave="" height="18" ></center>
+
+      </td>
+
+    </tr>
+
+
+    <tr nosave="">
+
+      <td nosave="" align="center" valign="CENTER" >
+Another panoramic mosaic
+      <br>
+of Verona
+      <br>
+from Castel S. Pietro
+      </td>
+
+
+      <td nosave="" align="center" valign="CENTER">
+      <a href="http://vips.sci.univr.it/movies/MOV/mosaici/teodorico2.mov"><img src="images/movie-3.gif" nosave="" alt="Verona 2 sequence" border="0" height="40" ></a>
+      </td>
+
+
+      <td>
+      <center><a href="http://vips.sci.univr.it/teo2.html"><img src="images/teo2_min.jpg" alt="verona 2 mosaic" nosave="" border="0" height="90" ></a></center>
+
+      </td>
+
+
+      <td>
+      <center><img src="images/gray_but.jpg" nosave="" height="18" ></center>
+
+      </td>
+
+    </tr>
+
+
+    <tr nosave="">
+
+      <td nosave="" align="center" valign="CENTER" >
+Planar mosaic
+      <br>
+of a paper
+      </td>
+
+
+      <td nosave="" align="center" valign="CENTER">
+      <a href="http://vips.sci.univr.it/movies/MOV/mosaici/spartito_new1.mov"><img src="images/movie-3.gif" nosave="" alt="Paper sequence" border="0" height="40" ></a>
+      </td>
+
+
+      <td>
+      <center><a href="http://vips.sci.univr.it/spart.html"><img src="images/riv_min.jpg" alt="paper mosaic" nosave="" border="0" height="90" ></a></center>
+
+      </td>
+
+
+      <td>
+  
+      <p align="center"><a href="http://vips.sci.univr.it/super.html"><img src="images/mag-10.jpg" alt="super resolution" nosave="" border="0" height="30" ></a></p>
+
+      </td>
+
+    </tr>
+
+
+    <tr>
+
+      
+      <td align="center" >
+Panoramic mosaic
+      <br>
+of Torre dei Lamberti
+      <br>
+in Verona
+      </td>
+
+<td align="center">
+      <a href="http://vips.sci.univr.it/movies/MOV/mosaici/lamberti_scala.mov"><img src="images/movie-3.gif" nosave="" alt="Lamberti sequence" border="0" height="40" ></a>
+      </td>
+
+
+
+      <td>
+      <center><a href="http://vips.sci.univr.it/lamberti.html"><img src="images/lamberti_min.jpg" alt="lamberti mosaic" nosave="" border="0" height="90" ></a></center>
+
+      </td>
+
+
+      <td>
+      <center><img src="images/gray_but.jpg" nosave="" height="18"></center>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+
+<div align="left">
+<p align="left">&nbsp;<a href="previous_work/index.html">[Older results]</a></p>
+</div>
+
+<hr width="100%">
+
+
+<h3>    Reference papers </h3>
+
+<ul>
+
+
+<LI><A NAME="AprColFusMur04">M</A>.&nbsp;Aprile,
+  A.&nbsp;Colombari,  A. Fusiello, and V.&nbsp;Murino.
+Segmentation and tracking of multiple objects in video sequences.
+In <CITE>5th International Workshop on Image Analysis for Multimedia
+  Interactive Services (WIAMIS 2004)</CITE>, Lisboa, Portugal, 21-23 April
+  2004.
+(<A HREF="../../papers/wiamis04.pdf">PDF</A>)<p /></dd>
+
+<!-- Authors:  A Fusiello and M Aprile and R Marzotto and V Murino -->
+<LI><A NAME="FusAprMarMur03"></A> A.
+  Fusiello, M.&nbsp;Aprile, R.&nbsp;Marzotto, and V.&nbsp;Murino.
+Mosaic of a video shot with multiple moving objects.
+In <CITE>IEEE International Conference on Image Processing</CITE>, volume&nbsp;II,
+  pages 307-310, Barcelona, Spain, September 2003. IEEE.
+(<A HREF="../../papers/icip03.pdf">PDF</A>)<p /></dd>
+</ul>
+
+</body>
+</html>

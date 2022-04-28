@@ -1,0 +1,207 @@
+<!DOCTYPE doctype>
+<html>
+	<head>
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="structure from motion">
+		<title>
+			Global camera network orientation
+		</title>
+		<link rel="stylesheet" href="../demo.css" type="text/css">
+	</head>
+	<body>
+		<h1>
+			Global camera network orientation
+		</h1>
+		<h2>
+			Global {camera|image|sensor|frame} network {orientation|motion}
+		</h2>
+		<p class="center">
+			with F. Arrigoni, B. Rossi et al.
+		</p>
+		<h3>
+			Overview
+		</h3>
+		<p class="indent">
+			Consider a graph or <strong>network</strong> whose nodes can be <strong>cameras</strong> (or <strong>images</strong>, in Photogrammetry) or generic <strong>sensors</strong>. More abstractly, what matters is that a 3D reference <strong>frame</strong> (3 orthogonal axes with an origin) is attached to the node that represents its position and angular attitude. These two properties are collectively referred to as <strong>orientation</strong> in Photogrammetry or <strong>motion</strong> in Computer Vision or <strong>pose</strong> (customarily in Robotics). Mathematically, they are elements of the group of <strong>direct isometries</strong>, SE(3) (a.k.a. special Euclidean group). The links of this network (or edges of the graph) are <strong>relative measures</strong> of one node with respect to (some of) the others. The goal is to recover location and/or attitude of the nodes of the network (therefore we talk about ”<strong>network orientation</strong>” [<a href="index.html#XFraser05">Fraser</a>,&nbsp;<a href="index.html#XFraser05">2005</a>]). The ”<strong>global</strong>” adjective means that we are interested in solutions that consider all the measurements at once, as opposed to ”incremental” approaches that grow a solution by adding pieces iteratively (such as resection-intersection in the context of structure-from-motion, or frame-to-mosaic registration).
+		</p>
+		<h3>
+			<a id="x1-20001"></a>Related problems
+		</h3>
+		<p class="indent">
+			When concentrating on the <strong>location</strong> part of the orientation, the problem is known as <strong>Sensor Network Localization</strong> (SNL), and in this context typically measures are either distances (TOA) or angles (AOA), also known as <strong>bearings</strong>. Correspondingly, we have a distance-based SNL or a bearing-only SNL.&nbsp; Localization can be seen also as a <strong>graph embedding problem</strong>, where the sought cameras|images|sensors locations correspond to an embedding in the 3D euclidean space of the network|graph.
+		</p>
+		<p class="indent">
+			When considering the <strong>attitude</strong> part of orientation described by a <strong>rotation</strong> (an element of SO(3)) the problem is also known as <strong>rotation averaging</strong> [<a href="index.html#XHartleyTrumpfAl13">Hartley et&nbsp;al.</a>,&nbsp;<a href="index.html#XHartleyTrumpfAl13">2013</a>] or <strong>registration</strong> [<a href="index.html#XMartinecPajdla07">Martinec and Pajdla</a>,&nbsp;<a href="index.html#XMartinecPajdla07">2007</a>].
+		</p>
+		<p class="indent">
+			This ”averaging” problem can be generalized to any group, giving rise to the <strong>group synchronization</strong> problem (”synchronization” is used in the acceptation of [<a href="index.html#XGiridharKumar06">Giridhar and Kumar</a>,&nbsp;<a href="index.html#XGiridharKumar06">2006</a>]), which can be stated as follows: given a graph where edge labels corresponds to noisy measures of the ratio of the unknown labels of adjacent vertices, find the vertex labels. According to the chosen group we have the following instances:
+		</p>
+		<ul class="itemize1">
+			<li class="itemize">
+				<span class="msbm-10x-x-120">ℤ</span><sub><span class="cmr-8">2</span></sub> sign synchronization [<a href="index.html#XCucuringuMihai15">Cucuringu</a>,&nbsp;<a href="index.html#XCucuringuMihai15">2015</a>];
+			</li>
+			<li class="itemize">
+				<span class="msbm-10x-x-120">ℝ</span> time synchronization [<a href="index.html#XKarpElsonAl03">Karp et&nbsp;al.</a>,&nbsp;<a href="index.html#XKarpElsonAl03">2003</a>,&nbsp;<a href="index.html#XGiridharKumar06">Giridhar and Kumar</a>,&nbsp;<a href="index.html#XGiridharKumar06">2006</a>] (from which the term synchronization originates);
+			</li>
+			<li class="itemize">
+				<span class="msbm-10x-x-120">ℝ</span><sup><span class="cmmi-8">d</span></sup> state / translation synchronization [<a href="index.html#XRusselKleinAl11">Russel et&nbsp;al.</a>,&nbsp;<a href="index.html#XRusselKleinAl11">2011</a>,&nbsp;<a href="index.html#XTronCarloneAl15">Tron et&nbsp;al.</a>,&nbsp;<a href="index.html#XTronCarloneAl15">2015</a>];
+			</li>
+			<li class="itemize">
+				<span class="cmmi-12">SO</span>(<span class="cmmi-12">d</span>) rotation synchronization (a.k.a. rotation averaging or registration) [<a href="index.html#XMartinecPajdla07">Martinec and Pajdla</a>,&nbsp;<a href="index.html#XMartinecPajdla07">2007</a>,&nbsp;<a href="index.html#XSinger11">Singer</a>,&nbsp;<a href="index.html#XSinger11">2011</a>,&nbsp;<a href="index.html#XHartleyTrumpfAl13">Hartley et&nbsp;al.</a>,&nbsp;<a href="index.html#XHartleyTrumpfAl13">2013</a>,&nbsp;<a href="index.html#XChatterjeeGovindu13">Chatterjee and Govindu</a>,&nbsp;<a href="index.html#XChatterjeeGovindu13">2013</a>,&nbsp;<a href="index.html#XWangSinger13">Wang and Singer</a>,&nbsp;<a href="index.html#XWangSinger13">2013</a>];
+			</li>
+			<li class="itemize">
+				<span class="cmmi-12">SE</span>(<span class="cmmi-12">d</span>) rigid-motion synchronization (a.k.a. motion averaging or registration) [<a href="index.html#XGovindu04">Govindu</a>,&nbsp;<a href="index.html#XGovindu04">2004</a>,&nbsp;<a href="index.html#XAgrawal06">Agrawal</a>,&nbsp;<a href="index.html#XAgrawal06">2006</a>,&nbsp;<a href="index.html#XTorselloRodolaAl11">Torsello et&nbsp;al.</a>,&nbsp;<a href="index.html#XTorselloRodolaAl11">2011</a>,&nbsp;<a href="index.html#XTronVidal14">Tron and Vidal</a>,&nbsp;<a href="index.html#XTronVidal14">2014</a>];
+			</li>
+			<li class="itemize">
+				<span class="cmmi-12">SL</span>(<span class="cmmi-12">d</span>) homography synchronization [<a href="index.html#XSchroederBartoliAl11">Schroeder et&nbsp;al.</a>,&nbsp;<a href="index.html#XSchroederBartoliAl11">2011</a>];
+			</li>
+			<li class="itemize">
+				<span class="msbm-10x-x-120">S</span><sub><span class="cmmi-8">d</span></sub> permutation synchronization [<a href="index.html#XPachauriKondorAl13">Pachauri et&nbsp;al.</a>,&nbsp;<a href="index.html#XPachauriKondorAl13">2013</a>]
+			</li>
+		</ul>
+		<p class="indent">
+			(rigid-)<strong>Motion synchronization</strong> (Fig.&nbsp;1), can be regarded as a solution technique for <strong>network orientation</strong> where only relative transformations are used in the computation (no points, cfr. ”structureless bundle adjustment” [<a href="index.html#XCefaluHaalaAl16">Cefalu et&nbsp;al.</a>,&nbsp;<a href="index.html#XCefaluHaalaAl16">2016</a>]). It is the central stage of a structure-from-motion pipeline that starting from the <strong>epipolar graph</strong> (edges represent epipolar geometries or <strong>relative orientations</strong>) find globally consistent absolute orientations|motions for the cameras|images.
+		</p>
+		<p class="indent"></p>
+		<hr class="figure">
+		<div class="figure">
+			<p class="noindent">
+				<img style="width: 679px; height: 392px;" src="figures/motion_synch.png" alt="PIC"><br>
+			</p>
+			<div class="caption">
+				<span class="id">Figure&nbsp;1:</span> <span class="content">Motion synchronization.</span>
+			</div>
+			<p class="indent"></p>
+		</div>
+		<hr class="endfigure">
+		<p class="indent">
+			There are many interesting connections with: computer vision, sensor networks, automatic controls, robotics, graph theory (parallel rigidity), topography/surveying.
+		</p>
+		<p class="noindent"></p>
+		<h3 class="likesubsectionHead">
+			<a id="x1-30001"></a>Our contributions
+		</h3>
+		<p class="indent">
+			The first contribution of ours in this area dates back to [<a href="index.html#XFusielloCastellaniAl02">Fusiello et&nbsp;al.</a>,&nbsp;<a href="index.html#XFusielloCastellaniAl02">2002</a>] where we solved globally a registration problem in the context of the <strong>alignment of 3D sonar scans</strong> by minimization of a consistency cost function. That approach was inspired by an earlier paper [<a href="index.html#XDavis98">Davis</a>,&nbsp;<a href="index.html#XDavis98">1998</a>] that solved a registration problem for affine transforms in the context of image mosaiking.
+		</p>
+		<p class="indent">
+			Some 15 year later, we faced the same problem again, motivated this time by the <strong>structure-from-motion problem</strong>. In [<a href="index.html#XArrigoniMagriAl14">Arrigoni et&nbsp;al.</a>&nbsp;<a href="index.html#XArrigoniMagriAl14">2014</a>] we cast the <strong>rotation synchronization</strong> problem as a <strong>low-rank and sparse</strong> (LRS) decomposition.
+		</p>
+		<p class="indent">
+			The LRS approach have been applied to the synchronization of rigid motions in [<a href="index.html#XArrigoniFusielloAl16">Arrigoni et&nbsp;al.</a>,&nbsp;<a href="index.html#XArrigoniFusielloAl16eccv">2016c</a>], which goes back to the roots as it deals with the alignment of 3D scans
+		</p>
+		<p class="indent">
+			As an alternative to the customary two step (rotation - translation) synchronization, in [<a href="index.html#XArrigoniFusielloAl15siims">Arrigoni et&nbsp;al.</a>,&nbsp;<a href="index.html#XArrigoniFusielloAl15siims">2016a</a>] we proposed a <strong>direct solution for the synchronization in SE(3)</strong> based on eigen-decomposition, which extends [<a href="index.html#XSinger11">Singer</a>,&nbsp;<a href="index.html#XSinger11">2011</a>] that works in SO(3).
+		</p>
+		<p class="indent">
+			A crucial step in the localization problem is <strong>computing the epipolar scales</strong>, that are unknown due to the <strong>depth-speed ambiguity</strong>. Without knowing these scales the localization cannot be tackle as an instance of group synchronization (because relative translations are not fully specified) and must be solved as a bearing-only SNL. A pipeline that exploits our LRS rotation synchronization and&nbsp; [<a href="index.html#XBrandAntoneAl04">Brand et&nbsp;al.</a>&nbsp;<a href="index.html#XBrandAntoneAl04">2004</a>] for localization is described in [<a href="index.html#XArrigoniRossiAl15">Arrigoni et&nbsp;al.</a>,&nbsp;<a href="index.html#XArrigoniRossiAl15">2015a</a>].
+		</p>
+		<p class="indent">
+			A solution for computing the <strong>epipolar scales</strong> was given in [<a href="index.html#XArrigoniFusielloAl15">Arrigoni et&nbsp;al.</a>,&nbsp;<a href="index.html#XArrigoniFusielloAl15">2015b</a>], concurrently to [<a href="index.html#XTronCarloneAl15">Tron et&nbsp;al.</a>,&nbsp;<a href="index.html#XTronCarloneAl15">2015</a>] who interestingly arrived at the same conclusions starting from a different framework. See also the article's <a href="esc/index.html">web page</a>.
+		</p>
+		<p class="indent">
+			Building on that result, a <strong>complete structure-from-motion pipeline based on group synchronization</strong> has been presented in [<a href="index.html#XArrigoniFusielloAl163dv">Arrigoni et&nbsp;al.</a>,&nbsp;<a href="index.html#XArrigoniFusielloAl163dv">2016b</a>]. &nbsp;
+		</p>
+		<h3 class="likesectionHead">
+			Our papers
+		</h3>
+		<p class="noindent"></p>
+		<div class="thebibliography">
+			<p class="bibitem">
+				<span class="bibsp">Arrigoni, F. and Fusiello, A. <strong>Bearing-based Network Localizability: A Unifying View.</strong> In IEEE Transactions on Pattern Analysis and Machine Intelligence, 2018.</span>
+			</p>
+			<p class="bibitem">
+				<span class="bibsp"><span class="bibsp">Arrigoni, F.; Rossi, B.; Fragneto, P. and Fusiello, <strong>A. Robust Synchronization in SO(3) and SE(3) via Low-rank and Sparse Matrix Decomposition.</strong> In Computer Vision and Image Understanding, 2018.</span></span>
+			</p>
+			<p class="bibitem">
+				<span class="bibsp"><span class="biblabel"><a id="XFusielloCastellaniAl02"></a></span> <span class="bibsp">&nbsp;&nbsp;&nbsp;</span>A.&nbsp;Fusiello, U.&nbsp;Castellani, L.&nbsp;Ronchetti, and V.&nbsp;Murino. <strong>Model acquisition by registration of multiple acoustic range views.</strong> In <span class="cmti-12">Proceedings</span> <span class="cmti-12">of the European Conference on Computer Vision</span> (ECCV), pages 805–819, 2002.[<a href="../../../papers/eccv02.pdf">PDF</a>]</span>
+			</p>
+			<p class="bibitem">
+				<span class="biblabel"><a id="XArrigoniMagriAl14"></a> <span class="bibsp">&nbsp;&nbsp;&nbsp;</span></span>F.&nbsp;Arrigoni, L.&nbsp;Magri, B.&nbsp;Rossi, P.&nbsp;Fragneto, and A.&nbsp;Fusiello. <strong>Robust absolute rotation estimation via low-rank and sparse matrix decomposition.</strong> In <span class="cmti-12">Proceedings of the International Conference on</span> <span class="cmti-12">3D Vision (3DV)</span>, pages 491–498, 2014. doi: 10.1109/3DV.2014.48.[<a href="../../../papers/3dv14.pdf">PDF</a>] [<a href="RGoDec-code.zip">Code</a>]
+			</p>
+			<p class="bibitem">
+				<span class="biblabel"><a id="XArrigoniRossiAl15"></a> <span class="bibsp">&nbsp;&nbsp;&nbsp;</span></span>F.&nbsp;Arrigoni, B.&nbsp;Rossi, and A.&nbsp;Fusiello. <strong>Robust and efficient camera motion synchronization via matrix decomposition.</strong> In <span class="cmti-12">Proceedings of</span> <span class="cmti-12">the International Conference on Image Analysis and Processing (ICIAP)</span>, volume 9279 of <span class="cmti-12">Lecture Notes in Computer Science</span>, pages 444–455. Springer International Publishing, 2015a. [<a href="../../../papers/iciap15a.pdf">PDF</a>]
+			</p>
+			<p class="bibitem">
+				<span class="biblabel"><a id="XArrigoniFusielloAl15siims"></a><span class="bibsp">&nbsp;&nbsp;&nbsp;</span></span>F.&nbsp;Arrigoni, B.&nbsp;Rossi, and A.&nbsp;Fusiello. <strong>Spectral synchronization of multiple views in SE(3).</strong> <span class="cmti-12">SIAM Journal on Imaging Sciences</span>, 2016a. To appear.[<a href="http://arxiv.org/abs/1506.08765">PDF</a>] [<a href="EIG-SE3-code.zip">Code</a>]
+			</p>
+			<p class="bibitem">
+				<span class="biblabel"><a id="XArrigoniFusielloAl15"></a> <span class="bibsp">&nbsp;&nbsp;&nbsp;</span></span>Federica Arrigoni, Andrea Fusiello, and Beatrice Rossi. <strong>On computing the translations norm in the epipolar graph.</strong> In <span class="cmti-12">Proceedings of the International</span> <span class="cmti-12">Conference on 3D Vision (3DV)</span>, 2015b. [<a href="../../../papers/3dv15b.pdf">PDF</a>] [<a href="esc/ESC-code.zip">Code</a>] [<a href="esc/index.html">WWW</a>]
+			</p>
+			<p class="bibitem">
+				<span class="biblabel"><a id="XArrigoniFusielloAl163dv"></a> <span class="bibsp">&nbsp;&nbsp;&nbsp;</span></span>Federica Arrigoni, Andrea Fusiello, and Beatrice Rossi. <strong>Camera motion from group synchronization.</strong> In <span class="cmti-12">Proceedings of the International Conference</span> <span class="cmti-12">on 3D Vision (3DV)</span>. IEEE, 2016b.[<a href="../../../papers/3dv16.pdf">PDF</a>] [<a href="synch-patch-code.zip">Code</a>]
+			</p>
+			<p class="bibitem">
+				<span class="biblabel"><a id="XArrigoniFusielloAl16eccv"></a> <span class="bibsp">&nbsp;&nbsp;&nbsp;</span></span>Federica Arrigoni, Andrea Fusiello, and Beatrice Rossi. <strong>Global registration of 3d point sets via LRS decomposition.</strong> In <span class="cmti-12">Proceedings of the</span> <span class="cmti-12">14th European Conference on Computer Vision (ECCV)</span>, 2016c. [<a href="../../../papers/eccv16.pdf">PDF</a>]&nbsp;[<a href="LRS-code.zip">Code</a>]
+			</p>
+		</div>
+		<hr>
+		<h3 class="likesectionHead">
+			<a id="x1-40001"></a>References
+		</h3>
+		<p class="noindent"></p>
+		<div class="thebibliography">
+			<p class="bibitem">
+				<span class="biblabel"><a id="XAgrawal06"></a><span class="bibsp">&nbsp;&nbsp;&nbsp;</span></span>M.&nbsp;Agrawal. A lie-algebraic approach for consistent pose registration for general euclidean motion. In <span class="cmti-12">IEEE/RSJ International Conference on</span> <span class="cmti-12">Intelligent Robots and Systems, pages 1891–1897, 2006.</span>
+			</p>
+			<p class="bibitem">
+				<span class="biblabel"><a id="XBrandAntoneAl04"></a><span class="bibsp">&nbsp;&nbsp;&nbsp;</span></span>M.&nbsp;Brand, M.&nbsp;Antone, and S.&nbsp;Teller. Spectral solution of large-scale extrinsic camera calibration as a graph embedding problem. In <span class="cmti-12">Proceedings</span> <span class="cmti-12">of the European Conference on Computer Vision</span>, 2004.
+			</p>
+			<p class="bibitem">
+				<span class="biblabel"><a id="XCefaluHaalaAl16"></a><span class="bibsp">&nbsp;&nbsp;&nbsp;</span></span>A.&nbsp;Cefalu, N.&nbsp;Haala, and D.&nbsp;Fritsch. Structureless bundle adjustment with self-calibration using accumulated constraints. <span class="cmti-12">ISPRS Annals of</span> <span class="cmti-12">Photogrammetry, Remote Sensing and Spatial Information Sciences</span>, III-3:3–9, 2016. doi: 10.5194/isprs-annals-III-3-3-2016.
+			</p>
+			<p class="bibitem">
+				<span class="biblabel"><a id="XChatterjeeGovindu13"></a><span class="bibsp">&nbsp;&nbsp;&nbsp;</span></span>A.&nbsp;Chatterjee and V.&nbsp;M. Govindu. Efficient and robust large-scale rotation averaging. In <span class="cmti-12">Proceedings of the International Conference on</span> <span class="cmti-12">Computer Vision</span>, 2013.
+			</p>
+			<p class="bibitem">
+				<span class="biblabel"><a id="XCucuringuMihai15"></a><span class="bibsp">&nbsp;&nbsp;&nbsp;</span></span>Mihai Cucuringu. Synchronization over <span class="cmmi-12">Z</span><sub><span class="cmr-8">2</span></sub> and community detection in signed multiplex networks with constraints. <span class="cmti-12">Journal of Complex Networks</span>, 3(3):469–506, 2015.
+			</p>
+			<p class="bibitem">
+				<span class="biblabel"><a id="XDavis98"></a><span class="bibsp">&nbsp;&nbsp;&nbsp;</span></span>James Davis. Mosaics of scenes with moving objects. In <span class="cmti-12">Proceedings of</span> <span class="cmti-12">the IEEE Conference on Computer Vision and Pattern Recognition</span>, pages 354–360, 1998.
+			</p>
+			<p class="bibitem">
+				<span class="biblabel"><a id="XFraser05"></a><span class="bibsp">&nbsp;&nbsp;&nbsp;</span></span>Clive Fraser. Network orientation models for image-based 3d measurement. <span class="cmti-12">ISPRS Archives</span>, XXXVI-5/W17, 2005.
+			</p>
+			<p class="bibitem">
+				<span class="biblabel"><a id="XGiridharKumar06"></a><span class="bibsp">&nbsp;&nbsp;&nbsp;</span></span>A.&nbsp;Giridhar and P.R. Kumar. Distributed clock synchronization over wireless networks: Algorithms and analysis. <span class="cmti-12">Proceedings of the IEEE</span> <span class="cmti-12">Conference on Decision and Control</span>, pages 4915–4920, 2006.
+			</p>
+			<p class="bibitem">
+				<span class="biblabel"><a id="XGovindu04"></a><span class="bibsp">&nbsp;&nbsp;&nbsp;</span></span>V.&nbsp;M. Govindu. Lie-algebraic averaging for globally consistent motion estimation. In <span class="cmti-12">Proceedings of the IEEE Conference on Computer Vision</span> <span class="cmti-12">and Pattern Recognition</span>, pages 684–691, 2004.
+			</p>
+			<p class="bibitem">
+				<span class="biblabel"><a id="XHartleyTrumpfAl13"></a><span class="bibsp">&nbsp;&nbsp;&nbsp;</span></span>R.I. Hartley, J.&nbsp;Trumpf, Y.&nbsp;Dai, and H.&nbsp;Li. Rotation averaging. <span class="cmti-12">International Journal of Computer Vision</span>, 2013.
+			</p>
+			<p class="bibitem">
+				<span class="biblabel"><a id="XKarpElsonAl03"></a><span class="bibsp">&nbsp;&nbsp;&nbsp;</span></span>Richard Karp, Jeremy Elson, Deborah Estrin, and Scott Shenker. Optimal and global time synchronization in sensor nets. Technical report, Center for Embedded Networked Sensing: University of California, Los Angeles, 2003.
+			</p>
+			<p class="bibitem">
+				<span class="biblabel"><a id="XMartinecPajdla07"></a><span class="bibsp">&nbsp;&nbsp;&nbsp;</span></span>D.&nbsp;Martinec and T.&nbsp;Pajdla. Robust rotation and translation estimation in multiview reconstruction. In <span class="cmti-12">Proceedings of the IEEE Conference on</span> <span class="cmti-12">Computer Vision and Pattern Recognition</span>, 2007.
+			</p>
+			<p class="bibitem">
+				<span class="biblabel"><a id="XPachauriKondorAl13"></a><span class="bibsp">&nbsp;&nbsp;&nbsp;</span></span>Deepti Pachauri, Risi Kondor, and Vikas Singh. Solving the multi-way matching problem by permutation synchronization. In C.&nbsp;J.&nbsp;C. Burges, L.&nbsp;Bottou, M.&nbsp;Welling, Z.&nbsp;Ghahramani, and K.&nbsp;Q. Weinberger, editors, <span class="cmti-12">Advances in Neural Information Processing Systems 26</span>, pages 1860–1868. Curran Associates, Inc., 2013.
+			</p>
+			<p class="bibitem">
+				<span class="biblabel"><a id="XRusselKleinAl11"></a><span class="bibsp">&nbsp;&nbsp;&nbsp;</span></span>W.J. Russel, D.J. Klein, and J.P. Hespanha. Optimal estimation on the graph cycle space. <span class="cmti-12">IEEE Transactions on Signal Processing</span>, 59(6):2834 – 2846, 2011.
+			</p>
+			<p class="bibitem">
+				<span class="biblabel"><a id="XSchroederBartoliAl11"></a><span class="bibsp">&nbsp;&nbsp;&nbsp;</span></span>P.&nbsp;Schroeder, A.&nbsp;Bartoli, P.&nbsp;Georgel, and N.&nbsp;Navab. Closed-form solutions to multiple-view homography estimation. In <span class="cmti-12">Applications of</span> <span class="cmti-12">Computer Vision (WACV), 2011 IEEE Workshop on</span>, pages 650–657, Jan 2011.
+			</p>
+			<p class="bibitem">
+				<span class="biblabel"><a id="XSinger11"></a><span class="bibsp">&nbsp;&nbsp;&nbsp;</span></span>A.&nbsp;Singer. Angular synchronization by eigenvectors and semidefinite programming. <span class="cmti-12">Applied and Computational Harmonic Analysis</span>, 30(1):20 – 36, 2011.
+			</p>
+			<p class="bibitem">
+				<span class="biblabel"><a id="XTorselloRodolaAl11"></a><span class="bibsp">&nbsp;&nbsp;&nbsp;</span></span>A.&nbsp;Torsello, E.&nbsp;Rodola, and A.&nbsp;Albarelli. Multiview registration via graph diffusion of dual quaternions. In <span class="cmti-12">Proceedings of the IEEE Conference</span> <span class="cmti-12">on Computer Vision and Pattern Recognition</span>, pages 2441 – 2448, 2011.
+			</p>
+			<p class="bibitem">
+				<span class="biblabel"><a id="XTronVidal14"></a><span class="bibsp">&nbsp;&nbsp;&nbsp;</span></span>R.&nbsp;Tron and R.&nbsp;Vidal. Distributed 3-D localization of camera sensor networks from 2-D image measurements. <span class="cmti-12">IEEE Transactions on Automatic</span> <span class="cmti-12">Control</span>, 59(12):3325–3340, 2014.
+			</p>
+			<p class="bibitem">
+				<span class="biblabel"><a id="XTronCarloneAl15"></a><span class="bibsp">&nbsp;&nbsp;&nbsp;</span></span>R.&nbsp;Tron, L.&nbsp;Carlone, F.&nbsp;Dellaert, and K.&nbsp;Daniilidis. Rigid components identification and rigidity enforcement in bearing-only localization using the graph cycle basis. In <span class="cmti-12">IEEE American Control Conference</span>, 2015.
+			</p>
+			<p class="bibitem">
+				<span class="biblabel"><a id="XWangSinger13"></a><span class="bibsp">&nbsp;&nbsp;&nbsp;</span></span>L.&nbsp;Wang and A.&nbsp;Singer. Exact and stable recovery of rotations for robust synchronization. <span class="cmti-12">Information and Inference: a Journal of the IMA</span>, 2(2): 145–193, 2013.
+			</p>
+		</div>
+	</body>
+</html>

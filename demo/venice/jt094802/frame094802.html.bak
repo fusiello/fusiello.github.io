@@ -1,0 +1,24 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Andrea Fusiello">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.02 [en] (Win95; I) [Netscape]">
+   <TITLE>Frame # 094802</TITLE>
+</HEAD>
+
+<FRAMESET cols="314,1*  ">
+    <FRAMESET rows="234, 1* ">
+        <FRAME src="jt094802.jpg" name="img" noresize scrolling=no marginwidth=1 marginheight=1>
+        <FRAME src="jt094802r.wrl" name="vrml">
+    </FRAMESET>
+    <FRAME src="jt094802.html">
+    <NOFRAMES>
+        <P>This frameset document contains:
+        <UL>
+	<LI><IMG src="frame094802.html" alt="Image">
+	   <LI><A href="jt094802r.wrl">VRML model</A>
+           <LI><A href="jt094802.html">Main frame</A>
+        </UL>
+    </NOFRAMES>
+  </FRAMESET>
+  </HTML>

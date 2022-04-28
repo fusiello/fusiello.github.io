@@ -1,0 +1,105 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="GENERATOR" content="Mozilla/4.76 [en] (X11; U; SunOS 5.6 sun4u) [Netscape]">
+   <title>Image stabilization</title>
+   <link rel="stylesheet" href="../demo.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF">
+
+<center>
+<h1>
+Image
+stabilization and mosaic construction</h1></center>
+
+<authors> A.Censi,
+A. Fusiello and V.Roberto </authors>
+
+
+<br>&nbsp;
+<h4>
+<font face="Arial,Helvetica"><font size=+0>Overview</font></font></h4>
+<font face="Arial,Helvetica">This paper describes a technique for image
+stabilization in video sequences. The warping that compensates for camera's
+motion is computed from tracked features in the images. In order to cope
+with moving objects, a robust technique is used to compute homographies.
+Moreover, the tracking is made more reliable by using the computed warping
+to help predicting the features' positions. The effectiveness of the motion
+compensation is demonstrated by constructing mosaic images from the stabilized
+sequence and by computing the RMS error. An effort has been made to keep
+the computational cost low and to reduce the frame rate needed for tracking,
+with the aim to make a real-time implementation viable.</font>
+<center>
+<p>
+<hr WIDTH="100%"></center>
+
+<h4>
+<font face="Arial,Helvetica"><font size=+0>Results</font></font></h4>
+
+<table BORDER CELLSPACING=3 WIDTH="89%" NOSAVE >
+<tr ALIGN=CENTER NOSAVE>
+<td NOSAVE><b><font face="Arial,Helvetica">original sequences</font></b></td>
+
+<td><b><font face="Arial,Helvetica">tracked videos</font></b></td>
+
+<td><b><font face="Arial,Helvetica">stabilized images</font></b></td>
+
+<td><b><font face="Arial,Helvetica">mosaics</font></b></td>
+</tr>
+
+<tr ALIGN=CENTER NOSAVE>
+<td NOSAVE><font face="Arial,Helvetica"><a href="file4.mpg">Town</a></font></td>
+
+<td><font face="Arial,Helvetica"><a href="file4track.mpg">X</a></font></td>
+
+<td><font face="Arial,Helvetica"><a href="file4stab.mpg">X</a></font></td>
+
+<td>&nbsp;<font face="Arial,Helvetica"><a href="file4mos.mpg">X</a></font></td>
+</tr>
+
+<tr ALIGN=CENTER NOSAVE>
+<td NOSAVE><font face="Arial,Helvetica"><a href="file3.mpg">Park</a></font></td>
+
+<td><font face="Arial,Helvetica"><a href="file3track.mpg">X</a></font></td>
+
+<td><font face="Arial,Helvetica"><a href="file3stab.mpg">X</a></font></td>
+
+<td>&nbsp;<font face="Arial,Helvetica"><a href="file3mos.mpg">X</a></font></td>
+</tr>
+
+<tr>
+<td>
+<center><font face="Arial,Helvetica"><a href="file5.mpg">Book</a></font></center>
+</td>
+
+<td>
+<center><font face="Arial,Helvetica"><a href="file5track.mpg">X</a></font></center>
+</td>
+
+<td>
+<center><font face="Arial,Helvetica"><a href="file5stab.mpg">X</a></font></center>
+</td>
+
+<td>
+<center><font face="Arial,Helvetica"><a href="file5mos.mpg">X</a></font></center>
+</td>
+</tr>
+</table>
+
+<h4>
+
+<hr WIDTH="100%"></h4>
+
+<h4>
+<font face="Arial,Helvetica"><font size=+0>Reference paper</font></font></h4>
+A. Censi, A. Fusiello and V. Roberto, <a href="../../../papers/iciap99.pdf">Image
+Stabilization by Features Tracking</a>, In "10th International Conference
+on Image Analysis and Processing", 1999, Venice, Italy.
+<h4>
+
+<hr WIDTH="100%"></h4>
+
+</body>
+</html>

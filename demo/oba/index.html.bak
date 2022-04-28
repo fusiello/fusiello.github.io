@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>
+			Bundle Block Adjustment With Constrained Relative Orientation
+		</title>
+		<meta name="keywords" content="multi-model fitting">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../demo.css">
+	</head>
+	<body>
+		<h1>
+			Bundle Block Adjustment With Constrained Relative Orientation
+		</h1>
+		<p class="center">
+			with E. Maset, L. Magri, I. Toschi
+		</p>
+		<hr width="100%">
+		<h3>
+			Overview
+		</h3>
+		<p>
+			This paper deals with bundle adjustment with constrained cameras, i.e. where the orientation of certain cameras is expressed relatively to others, and these relative orientations are part of the unknowns. We provide experimental evidence that indeed these constraints improve the accuracy of the results, while reducing the computational load as well.
+		</p>
+		<p class="center"></p>
+		<div class="vid-border">
+			<video width="100%" controls=""><source src="PresentazioneBA.mp4" type="video/mp4"></video>
+		</div>
+		<hr width="100%">
+		<h3>
+			Code
+		</h3>
+		<p>
+			MATLAB <a href="cro-bba-code.zip">code.</a><br>
+		</p>
+		<hr width="100%">
+		<h3>
+			Reference papers
+		</h3>
+		<ol class="biblio">
+			<li>Maset, E; Magri, L; Toschi, I; Fusiello, A.  &nbsp;  Bundle Block Adjustment With Constrained Relative Orientation. <cite> ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences;</cite> Vol. V-2-2020, (2020): 49-55. (<a href="../../../papers/isprs20a.pdf">PDF</a>)
+			</li>
+		</ol>
+	</body>
+</html>
