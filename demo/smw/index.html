@@ -7,7 +7,7 @@
 		</title>
 		<meta name="keywords" content="stereo block matching algorithm">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="demo.css">
+		<link rel="stylesheet" href="../demo.css">
 	</head>
 	<body>
 		<h1>
@@ -27,7 +27,7 @@
 			SMW is a block matching algorithm that implements a simple winner-take-all strategy, therefore in the subsequent 20 years it has been overtaken by scanline and global methods, not to mention that  SSD as a matching cost had been outrun by Census transform. Yet, in those years SMW was at the state of the art: it achieved zero-error on noiseless random-dot stereograms (RDSs). No ground truth was available for real images, so the evaluation on the few available datasets (e.g. the one from CMU-CIL) was typically visual; to obtain quantitative data, RDSs were used. A few years later the first dataset with ground truth appeared, created by Y. Otha at the University of Tsukuba, and we had been able to include quantitative results in the journal version [1]. Overall the two papers received more than 500 citation (as of 03/2020).
 		</p>
 		<p>
-			The original C-code implementation of SMW is available <a href="smw.tar.gz">on-line</a>, but it used the <a href="https://www.cns.nyu.edu/~msl/hipsdescr.html">HIPS</a> image library and format, so it is unusable nowadays. A Matlab version of SMW based on the <a href="toolkit.html">Computer Vision Toolkit</a> is available <a href="StereoDemo.zip">here</a>.
+			The legacy C-code implementation of SMW is available <a href="smw.tar.gz">on-line</a>, but it used the <a href="https://www.cns.nyu.edu/~msl/hipsdescr.html">HIPS</a> image library and format, so it is unusable nowadays. A Matlab version of SMW based on the <a href="../toolkit/index.html">Computer Vision Toolkit</a> is available <a href="StereoDemo.zip">here</a>.
 		</p>
 		<p>
 		An overview of stereo matching can be found <a href="../teaching/mvg/stereo.pdf">here</a>.
