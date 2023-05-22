@@ -1,0 +1,405 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>demo_MCT</title><meta name="generator" content="MATLAB 9.5"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2019-05-19"><meta name="DC.source" content="demo_MCT.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1></h1><!--introduction--><p>This code run Multi-class Cascaded T-linkage on a sample instance of the Adelaide Cube HF dataset. It is aimed atthe simultaneous estimation of fundamental matrices and homographies from sparse stereo-correspondences.</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">load data</a></li><li><a href="#4">fit fundamental matrix</a></li><li><a href="#7">fit nested models</a></li><li><a href="#9">model selection</a></li><li><a href="#11">result</a></li></ul></div><h2 id="1">load data</h2><div><ul><li>y is a 6xN matrix, stores the correspondence in image coords per columns. A correspondence between the first and second image (x,y,1)&lt;--&gt;(x',y',1) is represented in cartesian coordinates stacked by column: [x;y;1; x';y';1];</li><li>X is a 6xN matrix, stores the correspondence in normalized coords per columns. G is a labeling vector.</li></ul></div><pre class="codeinput"><span class="comment">%rng(0); % for debug</span>
+sequencename = <span class="string">'breadcube_FH'</span>;
+load(sequencename);
+
+<span class="comment">% show input data</span>
+figure;
+display_correspondences(y,G,img2);
+hold <span class="string">on</span>;
+scatter(y(4,G==0), y(5,G==0),<span class="string">'xk'</span>);
+</pre><img vspace="5" hspace="5" src="demo_MCT_01.png" alt=""> <p>Figure shows the input data, outliers are marked with black corsses</p><h2 id="4">fit fundamental matrix</h2><p>fit the more general model, in this case represented by fundamental matrix (other models availbale are cirlce, line,line from circle, parabola, homography, affine fundamental)</p><pre class="codeinput"><span class="comment">% Sampling parameters</span>
+opts1.epsi = 0.035;                    <span class="comment">% inlier threshold</span>
+opts1.model = <span class="string">'fundamental'</span>;           <span class="comment">% model type</span>
+opts1.sampling =<span class="string">'localized'</span>;           <span class="comment">% ( 'uniform' or 'localized' or 'neigh' )</span>
+opts1.m = 3000;                        <span class="comment">% number of sampled hyphotesis</span>
+opts1.geo =1;
+opts1.robust = <span class="string">'x84'</span>;
+opts1.voting = <span class="string">"gaussx84"</span>;             <span class="comment">% voting function (try also 'gauss' to limit the influence of the inlier threhsold)</span>
+
+
+
+<span class="comment">% Hyphoteses sampling</span>
+Y1 = sampler_homof(X,opts1);
+<span class="comment">% T-Linkage clustering</span>
+C1 = tlnkg(Y1.P);
+<span class="comment">% Outlier rejection</span>
+C1 = prune_unstable_points( X,C1, @recover_fundamental, @res_fm, 7, opts1.epsi);
+<span class="comment">% outlier rejection based on NFA is also possible</span>
+<span class="comment">%kappa = 50;</span>
+<span class="comment">%C1 = prune_nfa(X,C1, @recover_fundamental, @res_fm, 8, opts1.epsi, kappa );</span>
+M1 = recover_fundamental(X,C1);
+
+figure;
+display_correspondences(y,C1,img2);
+</pre><img vspace="5" hspace="5" src="demo_MCT_02.png" alt=""> <p>Figure shows the structures related to <b>fundamental matrix</b> models</p><h2 id="7">fit nested models</h2><pre class="codeinput">opts2.epsi = 0.01;
+opts2.model = <span class="string">'homography_from_fund'</span>;
+opts2.sampling =<span class="string">'localized'</span>;
+opts2.geo =1;
+opts2.m = 500;
+opts2.robust = <span class="string">'off'</span>;
+opts2.voting = <span class="string">'gaussx84'</span>;
+
+C2 = cascaded_tlnkg_fund(X, C1,M1, opts2);
+
+C2 = prune_unstable_points( X,C2, @recover_homography, @res_homography, 4, opts2.epsi);
+<span class="comment">%C2 = prune_nfa(X,C2, @recover_homography, @res_homography, 4, opts2.epsi, kappa );</span>
+M2 = recover_homography(X, C2);
+C2 = stabilize_homo_segmentation(X,C1,C2,M2);
+
+figure;
+display_correspondences(y,C2,img2);
+title(<span class="string">'Inlier of the nested structures'</span>);
+</pre><img vspace="5" hspace="5" src="demo_MCT_03.png" alt=""> <p>Figure displays structures related to <b>homgraphies</b> compatible with the previous attained fundamental matrices.</p><h2 id="9">model selection</h2><p>The main idea is that models belonging to different classes compete with each other only if they explain the same points and are geometrically compatible. In this way, all the intra-class model selection problems are implicitly dealt by T-linkage, whereas the inter-class model selection issues take explicitly the form of one-vs-many or one-vs-one model comparison. Here GRIC is used to compare a fundamental matrix against one or more homographies.</p><p>In the GRIC score <img src="demo_MCT_eq04398780348798888242.png" alt="$\lambda_1 = 1$" style="width:30px;height:10px;"> relates to goodness of fit, <img src="demo_MCT_eq01369474324885739147.png" alt="$\lambda_2 = 2.5$" style="width:39px;height:10px;"> relates to model complexity.</p><pre class="codeinput">lambda1 = 1;
+lambda2 = 2.5;
+
+Mu = M1;
+Mv = M2;
+Cu = C1;
+Cv = C2;
+num_u = size(Mu,2);
+num_v = size(Mv,2);
+T = zeros(num_u,num_v);
+<span class="keyword">for</span> i =1:num_u
+    <span class="keyword">for</span> j = 1:num_v
+        <span class="comment">% if the i-th U and the j-th V have non empty intersection</span>
+        <span class="comment">% (in this case the compatibility is enforced by construction,</span>
+        <span class="comment">% otherwise it should be enforced here).</span>
+        <span class="keyword">if</span>(sum((Cu == i).*(Cv == j))&gt;=1)
+            T(i,j) = 1;
+
+        <span class="keyword">end</span>
+
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+
+flg_u = true(1,max(Cu));
+flg_v = true(1,max(Cv));
+
+[~,resi_fm,~] = recover_fundamental(X,C1);
+[~,resi_h,~] = recover_homography(X,C2);
+sigma_fm = max(resi_fm);
+sigma_h  = max(resi_fm);
+<span class="keyword">for</span> i = 1:size(T,1)
+
+    res_u = res_fm(X(:,Cu==i), Mu(:,i));
+    cost_u = compute_gric(res_u.^2,sigma_fm,lambda1, lambda2, <span class="string">'fundamental'</span>);
+
+    <span class="keyword">if</span>(sum(T(i,:))&gt;0)
+        res_v =  inf*ones(size(res_u));
+        tail = 1;
+        <span class="keyword">for</span> j= 1:size(T,2)
+            <span class="keyword">if</span>(T(i,j)==1)
+                nv = sum(Cv==j);
+                res_v(tail: tail+nv-1) = res_homography(X(:,Cv==j),Mv(:,j));
+                tail = tail+nv;
+            <span class="keyword">end</span>
+        <span class="keyword">end</span>
+        Jv = sum(res_v.^2);
+
+        heta = sum(T(i,:));
+        cost_v = compute_gric(res_v.^2,sigma_h,lambda1, lambda2, <span class="string">'homography'</span>,heta);
+
+        <span class="keyword">if</span>(cost_u &lt; cost_v)
+            flg_v(T(i,:)==1)= false;
+        <span class="keyword">else</span>
+            flg_u(i)= false;
+        <span class="keyword">end</span>
+
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+
+<span class="comment">% update labeling</span>
+
+cont = 1;
+F = zeros(size(G));
+<span class="keyword">for</span> i = 1:numel(flg_u)
+
+    <span class="keyword">if</span>(flg_u(i))
+        F(Cu==i)=cont;
+        cont = cont+1;
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+<span class="keyword">for</span> i = 1:numel(flg_v)
+    <span class="keyword">if</span>(flg_v(i))
+        F(Cv==i)=cont;
+        cont = cont+1;
+
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre><h2 id="11">result</h2><pre class="codeinput">[miss , fnr, acc, gtgamma] = compute_me(F,G);
+fprintf(<span class="string">'miss error %f \n'</span>,100*miss);
+
+figure;
+display_correspondences(y,F,img2);
+</pre><pre class="codeoutput">miss error 4.291845 
+</pre><img vspace="5" hspace="5" src="demo_MCT_04.png" alt=""> <p>Final segmentation with Fundamental matrix structure and homography structure on the cube face.</p><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2018b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%%
+% This code run Multi-class Cascaded T-linkage on a sample instance of the Adelaide Cube HF dataset.
+% It is aimed atthe simultaneous estimation of fundamental matrices and homographies from sparse stereo-correspondences.
+%
+%% load data
+
+%%
+% 
+% * y is a 6xN matrix, stores the correspondence in image coords per columns.
+% A correspondence between the first and second image
+% (x,y,1)<REPLACE_WITH_DASH_DASH>(x',y',1) is represented in cartesian coordinates
+% stacked by column: [x;y;1; x';y';1];
+% * X is a 6xN matrix, stores the correspondence in normalized coords per columns.
+% G is a labeling vector.
+
+%rng(0); % for debug
+sequencename = 'breadcube_FH';
+load(sequencename);
+
+% show input data
+figure;
+display_correspondences(y,G,img2);
+hold on;
+scatter(y(4,G==0), y(5,G==0),'xk');
+%% 
+%
+% Figure shows the input data, outliers are marked with black corsses
+
+
+
+%% fit fundamental matrix
+%%
+%
+% fit the more general model, in this case represented by fundamental matrix
+% (other models availbale are cirlce, line,line from circle, parabola, homography, affine fundamental)
+
+% Sampling parameters
+opts1.epsi = 0.035;                    % inlier threshold
+opts1.model = 'fundamental';           % model type
+opts1.sampling ='localized';           % ( 'uniform' or 'localized' or 'neigh' )
+opts1.m = 3000;                        % number of sampled hyphotesis
+opts1.geo =1;
+opts1.robust = 'x84';                  
+opts1.voting = "gaussx84";             % voting function (try also 'gauss' to limit the influence of the inlier threhsold)
+
+
+
+% Hyphoteses sampling
+Y1 = sampler_homof(X,opts1);
+% T-Linkage clustering
+C1 = tlnkg(Y1.P);
+% Outlier rejection
+C1 = prune_unstable_points( X,C1, @recover_fundamental, @res_fm, 7, opts1.epsi);
+% outlier rejection based on NFA is also possible
+%kappa = 50;
+%C1 = prune_nfa(X,C1, @recover_fundamental, @res_fm, 8, opts1.epsi, kappa );
+M1 = recover_fundamental(X,C1);
+
+figure;
+display_correspondences(y,C1,img2);
+%% 
+%
+% Figure shows the structures related to *fundamental matrix* models
+%% fit nested models
+
+opts2.epsi = 0.01;
+opts2.model = 'homography_from_fund';
+opts2.sampling ='localized';
+opts2.geo =1;
+opts2.m = 500;
+opts2.robust = 'off';  
+opts2.voting = 'gaussx84';
+
+C2 = cascaded_tlnkg_fund(X, C1,M1, opts2);
+
+C2 = prune_unstable_points( X,C2, @recover_homography, @res_homography, 4, opts2.epsi);
+%C2 = prune_nfa(X,C2, @recover_homography, @res_homography, 4, opts2.epsi, kappa );
+M2 = recover_homography(X, C2);
+C2 = stabilize_homo_segmentation(X,C1,C2,M2);
+
+figure;
+display_correspondences(y,C2,img2);
+title('Inlier of the nested structures');
+%% 
+%
+% Figure displays structures related to *homgraphies* compatible with the previous attained
+% fundamental matrices.
+
+%% model selection
+%%
+%
+% The main idea is that models belonging to different classes compete with
+% each other only if they explain the same points and are geometrically 
+% compatible. In this way, all the intra-class model selection problems are
+% implicitly dealt by T-linkage, whereas the inter-class model selection 
+% issues take explicitly the form of one-vs-many or one-vs-one model 
+% comparison.
+% Here GRIC is used to compare a fundamental matrix against one or more
+% homographies.
+% 
+% In the GRIC score $\lambda_1 = 1$ relates to goodness of fit, $\lambda_2 = 2.5$ relates to
+% model complexity.
+% 
+
+lambda1 = 1;
+lambda2 = 2.5;
+
+Mu = M1;
+Mv = M2;
+Cu = C1;
+Cv = C2;
+num_u = size(Mu,2);
+num_v = size(Mv,2);
+T = zeros(num_u,num_v);
+for i =1:num_u
+    for j = 1:num_v
+        % if the i-th U and the j-th V have non empty intersection
+        % (in this case the compatibility is enforced by construction,
+        % otherwise it should be enforced here).
+        if(sum((Cu == i).*(Cv == j))>=1)
+            T(i,j) = 1;
+
+        end
+        
+    end
+end
+
+
+flg_u = true(1,max(Cu));
+flg_v = true(1,max(Cv));
+
+[~,resi_fm,~] = recover_fundamental(X,C1);
+[~,resi_h,~] = recover_homography(X,C2);
+sigma_fm = max(resi_fm);
+sigma_h  = max(resi_fm);
+for i = 1:size(T,1)
+    
+    res_u = res_fm(X(:,Cu==i), Mu(:,i));
+    cost_u = compute_gric(res_u.^2,sigma_fm,lambda1, lambda2, 'fundamental');
+    
+    if(sum(T(i,:))>0)
+        res_v =  inf*ones(size(res_u));
+        tail = 1;
+        for j= 1:size(T,2)
+            if(T(i,j)==1)
+                nv = sum(Cv==j);
+                res_v(tail: tail+nv-1) = res_homography(X(:,Cv==j),Mv(:,j));
+                tail = tail+nv; 
+            end
+        end
+        Jv = sum(res_v.^2);
+        
+        heta = sum(T(i,:));
+        cost_v = compute_gric(res_v.^2,sigma_h,lambda1, lambda2, 'homography',heta);
+
+        if(cost_u < cost_v)
+            flg_v(T(i,:)==1)= false;
+        else
+            flg_u(i)= false;
+        end
+        
+    end
+end
+
+
+% update labeling
+
+cont = 1;
+F = zeros(size(G));
+for i = 1:numel(flg_u)
+    
+    if(flg_u(i))
+        F(Cu==i)=cont;
+        cont = cont+1;
+    end
+end
+
+for i = 1:numel(flg_v)
+    if(flg_v(i))
+        F(Cv==i)=cont;
+        cont = cont+1;
+        
+    end
+end
+
+%% result
+
+[miss , fnr, acc, gtgamma] = compute_me(F,G);
+fprintf('miss error %f \n',100*miss);
+
+figure;
+display_correspondences(y,F,img2);
+%%
+%
+% Final segmentation with Fundamental matrix structure and homography
+% structure on the cube face.
+##### SOURCE END #####
+--></body></html>

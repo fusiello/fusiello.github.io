@@ -1,0 +1,107 @@
+
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Fitting Multiple Heterogeneous Models by Multi-class Cascaded T-linkage   </title>
+   <meta name="keywords" content="multi-model fitting">
+   <link rel="stylesheet" href="../demo.css">
+</head>
+<body>
+
+
+<center>
+<h1>   Fitting Multiple <strong>Heterogeneous</strong> Models by Multi-class Cascaded T-linkage  </h1>
+	
+<authors> L. Magri, A. Fusiello</authors>
+</center>
+
+
+
+<figure>
+  <center>
+  <img src="thumbnails/sample_big.jpeg" alt="sample result" style="width:60%" class="centerImage">
+  </center>
+</figure>
+
+<h2> Overview </h2> 
+
+<p>
+Multi-class cascaded T-Linkage (MCT) is a multi-model recovery framework that tackles the problem of multiple model fitting  when the sought structures can be described by a mixture of <strong>heterogeneous</strong> parametic models drawn from different classes.
+The main assumption is that model classes are nested and form a subsumption hierarchy (e.g. circle and line,  fundamental matrix and homography, cylinder and plane).
+</p>
+<ul>
+ <LI>MCT  offers a hierarchical interpretation of data in <em>nested compatible models</em>, which can be biased to serve specific purposes exploiting user provided criteria. Specifically, a cascaded extension of T-linkage sequentially extract simpler nested models starting form the more general ones.</LI>
+<LI>Geometric constraints (e.g. tangency between line and circle, or compatibility between homography and fundamental matrix) are enforced to guide the sampling and to break down a complex model selection task into a collection of easier local model selection instances.</LI>
+</ul>
+
+
+<hr>
+
+<h2>  Method  </h2>
+
+ If A denotes the more general models (circles, fundamental matrices, cylinders...) and B the nested ones (lines, homographies, planes...) 
+<ol>
+<li>At first T-linkage is performed to retrive A-structures.</li>
+<li>Then on every attained A-structure T-linkage recovers nested models of type B enforcing geometric compatibility. </li>
+<li>Hence, in a model selection step, models belonging to different classes compete with each other only if they explain the same points. In this way, all the intra-class model selection problems are implicitly dealt by T-linkage, whereas the inter-class model selection issues take explicitly the form of one-vs-many or one-vs-one model comparison, which can be efficiently tackled with classical tools such as GRIC.
+</ol>
+
+<hr>
+
+<h2>  Data  </h2>
+
+These datasets has been created with the goal of providing a benchmark for testing multiple model fitting with heterogenous data. The data is stored in the .MAT file format. Even if we are well awared that <em>models lie in the eye of the beholder</em>, a "ground-truth" segmentation that reflects the hetereogenity of the data is provided for comparison purposes.
+
+<h3> Adelaide Cube FH </h3>
+
+
+The <strong>Adelaide Cube FH dataset</strong> is comprised of eight stereo pairs (extracted from the <a href="https://cs.adelaide.edu.au/users/hwong/doku.php?id=data"> AdelaideRMF dataset</a>) where a cube togheter with other object undergoes diverse rigid motions. A multi-heterogeneous-model classification of the 2D corresponeces is presented: the 2D point-correspondences are clusterized either accordintg to multiple fundamental matrices (if the corresponding 3D points lie on a generic objet) or with multiple homographies (when the corresponding 3D points lie on one of the face of the cube).
+<figure>
+  <center>
+  <img src="thumbnails/cubedataset.jpeg" alt="Adelaide Cube FH" style="width:60%" class="centerImage">
+  </center>
+</figure>
+
+<center>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<button class="btn"><i class="fa fa-download"></i> <a href="./AdelaideCubeFH.zip">Download Adelaide Cube FH dataset</a></button>
+</center>
+
+ <h3> 2D synthetic examples </h3>
+Synthetic dataset includes four 2D datasets of points that can be described with a mixture of lines and circles.
+<figure>
+  <center>
+  <img src="thumbnails/plans.jpeg" alt="Synthetic 2D data" style="width:60%" class="centerImage">
+  </center>
+</figure>
+
+<center>
+<button class="btn"><i class="fa fa-download"></i> <a href="./synthetic2D.zip">Download 2D synthetic dataset</a></button>
+</center>
+<hr>
+
+
+
+<h2>   Code </h2>
+A <a href="./demo_html/demo_MCT.html">demo of Multi-class cascaded T-Linkage</a> is available in Matlab. 
+<center>
+<button class="btn"><i class="fa fa-download"></i> <a href="./MCT_code_beta.zip">Download MCT demo code</a></button>
+</center>
+
+<hr>
+
+
+
+<h2> Reference paper </h2>
+<ul>
+<LI> L.&nbsp;Magri, A.&nbsp;Fusiello; Fitting Multiple Heterogeneous Models by Multi-class Cascaded T-linkage
+  <CITE>CVPR</CITE>, 2019.  (<A
+  HREF="paper_mct19.pdf">PDF</A>, <A
+  HREF="poster_mct19.pdf">Poster</A>)
+</ul>
+<hr>
+
+
