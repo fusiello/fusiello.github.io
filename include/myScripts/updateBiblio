@@ -13,7 +13,7 @@ echo $static_content_before;
 
 $to_be_shown =   array('article' => 'Journals', 'book' => 'Books', 'proceedings' => 'Editorships', 'incollection' => 'Book chapters', 'inproceedings' => 	'Conference proceedings', 'mastersthesis' => 'Thesis', 'unpublished' => 'Unpublished');                   
 echo  "<style>.title {font-weight: bold;} </style> " ;               
-echo @bibfile2html('../../../../Career/cv/personal.bib', $to_be_shown, true, false, NULL, 'Fusiello', NULL, 'year');  
+echo @bibfile2html('../../../Career/cv/personal.bib', $to_be_shown, true, false, NULL, 'Fusiello', NULL, 'year');  
 
 echo $static_content_after;
 
