@@ -1,4 +1,4 @@
-#!/usr/local/bin/php
+#!/opt/homebrew/bin/php
 <?php
 
 
